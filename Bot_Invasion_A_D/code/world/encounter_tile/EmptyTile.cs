@@ -15,7 +15,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
             this.sprite = Resources.emptyTile;
         }
 
-        public new bool isFull()
+        public override bool isFull()
         {
             return false;
         }

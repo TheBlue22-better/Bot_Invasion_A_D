@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sem_Testing.code.world.encounter_tile
 {
-    public class Tile
+    public abstract class Tile
     {
         protected Bitmap sprite;
 
@@ -21,10 +21,7 @@ namespace Sem_Testing.code.world.encounter_tile
             return sprite;
         }
 
-        public bool isFull()
-        {
-            return true;
-        }
+        public abstract bool isFull();
 
         public bool hasPlayer()
         {

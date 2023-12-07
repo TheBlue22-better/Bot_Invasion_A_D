@@ -19,7 +19,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
             }
             else this.sprite = Resources.rangedGuy;
         }
-        public bool isFull()
+        public override bool isFull()
         {
             return true;
         }
