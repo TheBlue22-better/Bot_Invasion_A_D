@@ -14,20 +14,10 @@ namespace Bot_Invasion_A_D.forms.encounters
 {
     public partial class Generated_Encounter_7x7 : Generated_Encounter_Parent
     {
-        Tile[,] tileGrid;
-        SortedDictionary<string, Button> buttonDictionary;
         public Generated_Encounter_7x7()
         {
             InitializeComponent();
             CreateButtonDictionary(buttonPanel);
-        }
-
-        public void SetGrid(Tile[,] tileGrid)
-        {
-            this.tileGrid = tileGrid;
-        }
-        private void btn_general_Click(object sender, EventArgs e)
-        {
         }
     }
 }

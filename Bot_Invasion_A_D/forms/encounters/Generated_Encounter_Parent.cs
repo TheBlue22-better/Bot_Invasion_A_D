@@ -13,8 +13,8 @@ namespace Bot_Invasion_A_D.forms.encounters
 {
     public partial class Generated_Encounter_Parent : Form
     {
-        Tile[,] tileGrid;
-        SortedDictionary<string, Button> buttonDictionary;
+        protected Tile[,] tileGrid;
+        protected SortedDictionary<string, Button> buttonDictionary;
         public Generated_Encounter_Parent()
         {
             InitializeComponent();
@@ -41,6 +41,11 @@ namespace Bot_Invasion_A_D.forms.encounters
             {
                 buttonDictionary.Add(button.Name, button);
             }
+        }
+
+        protected void btn_general_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
