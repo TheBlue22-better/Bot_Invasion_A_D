@@ -70,14 +70,14 @@ namespace Bot_Invasion_A_D.code.helping_functions
             if (maxPlayer == 1) { grid[rows - 1, cols - 1] = new PlayerTile(); }                                // in case we got no player generated
             // enemies
             Random random = new Random();
-            int maxEnemies = (rows - 2) * (cols - 2);
+            int maxEnemies = (rows - 3) * (cols - 3);
             for (int i = 0; i < rows-2; i++)
             {
                 for (int j = 0; j < cols; j++)
                 {
                     if (!grid[i, j].isFull())
                     {
-                        grid[i, j] = tryFillTile(new EnemyTile(), 50, ref maxEnemies);
+                        grid[i, j] = tryFillTile(new EnemyTile(), 35, ref maxEnemies);
                     }
                 }
             }
