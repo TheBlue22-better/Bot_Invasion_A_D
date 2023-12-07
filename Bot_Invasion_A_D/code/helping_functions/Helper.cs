@@ -115,19 +115,5 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 }
             }
         }
-
-        /*public static SortedDictionary<Tuple<int, int>, Button> DictionaryStringKeyToTuple(SortedDictionary<string, Button> buttonDictionary)
-        {
-            SortedDictionary<Tuple<int, int>, Button> buttonTupleDictionary = new SortedDictionary<Tuple<int, int>, Button>();
-            foreach (string key in  buttonDictionary.Keys)
-            {
-                string[] stringKey = key.Split('_');
-                int num1 = int.Parse(stringKey[1]);
-                int num2 = int.Parse(stringKey[2]);
-                Tuple<int, int> tuppleKey = new Tuple<int, int>(num1, num2);
-                buttonTupleDictionary.Add(tuppleKey, buttonDictionary[key]);
-            }
-            return buttonTupleDictionary;
-        }*/
     }
 }

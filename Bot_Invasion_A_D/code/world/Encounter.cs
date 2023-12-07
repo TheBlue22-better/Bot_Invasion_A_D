@@ -16,6 +16,7 @@ namespace Bot_Invasion_A_D.code.world
         DIFFICULTIES diff;
         List<String> neigbours;
         Tile[,] tileGrid;
+        Tuple<int, int> playerPos;
 
         public Encounter(ENCOUNTER_TYPES type, DIFFICULTIES difficulty, List<String> neigbour)
         {
