@@ -1,4 +1,5 @@
-﻿using Sem_Testing.code.world.encounter_tile;
+﻿using Bot_Invasion_A_D.code.world;
+using Sem_Testing.code.world.encounter_tile;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,16 @@ namespace Bot_Invasion_A_D.forms.encounters
 {
     public partial class Generated_Encounter_Parent : Form
     {
-        protected Tile[,] tileGrid;
+        protected Encounter enc;
         protected SortedDictionary<string, Button> buttonDictionary;
         public Generated_Encounter_Parent()
         {
             InitializeComponent();
         }
 
-        public void SetGrid(Tile[,] tileGrid)
+        public void SetEncounter(Encounter enc)
         {
-            this.tileGrid = tileGrid;
+            this.enc = enc;
         }
 
         public ref SortedDictionary<string, Button> getDictionary()

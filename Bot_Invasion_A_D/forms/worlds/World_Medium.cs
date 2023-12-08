@@ -20,7 +20,7 @@ namespace Bot_Invasion_A_D.forms.worlds
         Dictionary<String, Button> encounterBtns;
         public World_Medium(OpenWorld world)
         {
-            InitializeComponent(); ;
+            InitializeComponent();
             this.openWorld = world;
             this.encounters = world.Encounters();
             encounterBtnsFill();
@@ -29,10 +29,12 @@ namespace Bot_Invasion_A_D.forms.worlds
 
         private void buttonGeneral_Click(object sender, EventArgs e)
         {
+            Form encounter = new Form();
             Button btn = (sender as Button);
             UpdateAvailable(btn);
-            encounters[btn.Name].Generate();
+            encounter = encounters[btn.Name].Generate();
             (sender as Button).Enabled = false;
+            encounter.ShowDialog();
 
         }
         private void UpdateAvailable(Button btn)

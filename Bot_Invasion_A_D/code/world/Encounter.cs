@@ -1,5 +1,5 @@
 ﻿using Bot_Invasion_A_D.code.enums;
-using Bot_Invasion_A_D.code.helping_functions;
+using static Bot_Invasion_A_D.code.helping_functions.GridHelper;
 using Bot_Invasion_A_D.forms.encounters;
 using Sem_Testing.code.world.encounter_tile;
 using System;
@@ -25,13 +25,13 @@ namespace Bot_Invasion_A_D.code.world
             this.neigbours = neigbour;
         }
 
-        public void Generate()
+        public Form Generate()
         {
-            Generated_Encounter_Parent enc = new Generated_Encounter_Parent();                      //TEMPORARY
+            Generated_Encounter_Parent enc = new Generated_Encounter_Parent();
             if (enType == ENCOUNTER_TYPES.BOSS)
             {
                 enc = GenerateBossEncounter();
-                this.tileGrid = Helper.FillGrid(tileGrid);
+                this.tileGrid = FillGrid(tileGrid);
             }
             else
             {
@@ -40,34 +40,34 @@ namespace Bot_Invasion_A_D.code.world
                     case DIFFICULTIES.EASY:
                         {
                             enc = GenerateEasyEncounter();
-                            this.tileGrid = Helper.FillGrid(tileGrid);
+                            this.tileGrid = FillGrid(tileGrid);
                             break;
                         }
                     case DIFFICULTIES.MEDIUM:
                         {
                             enc = GenerateMediumEncounter();
-                            this.tileGrid = Helper.FillGrid(tileGrid);
+                            this.tileGrid = FillGrid(tileGrid);
                             break;
                         }
                     case DIFFICULTIES.HARD:
                         {
                             enc = GenerateHardEncounter();
-                            this.tileGrid = Helper.FillGrid(tileGrid);
+                            this.tileGrid = FillGrid(tileGrid);
                             break;
                         }
                     default:
                         {
                             break;      //literary impossible i think
-                                        // TODO make an ERROR form to show up so i dont get a null exception here
+                                        // TODO make an ERROR form to show up in case it somehow gets here
                         }
                 }
             }
-            enc.SetGrid(tileGrid);
-            Helper.ShowGrid(tileGrid, ref enc.getDictionary());
-            enc.ShowDialog();
+            SetGrid(tileGrid);
+            ShowGrid(tileGrid, ref enc.getDictionary());
+            return enc;
         }
 
-        private  Generated_Encounter_Parent GenerateEasyEncounter()
+        private Generated_Encounter_Parent GenerateEasyEncounter()
         {
             Random rnd = new Random();
             if (rnd.Next(20) < 15)
@@ -137,6 +137,11 @@ namespace Bot_Invasion_A_D.code.world
         public ENCOUNTER_TYPES Type()
         {
             return enType;
+        }
+
+        public void SetGrid(Tile[,] tileGrid)
+        {
+            this.tileGrid = tileGrid;
         }
 
 
