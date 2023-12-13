@@ -43,5 +43,11 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 }
             }
         }
+
+        public static bool GetChance(int percent)
+        {
+            Random rnd = new Random();
+            if (percent >= rnd.Next(100)) return true; else return false;
+        }
     }
 }

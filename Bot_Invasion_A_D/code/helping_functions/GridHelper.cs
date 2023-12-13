@@ -1,4 +1,5 @@
 ﻿using Bot_Invasion_A_D.code.world.encounter_tile;
+using static Bot_Invasion_A_D.code.helping_functions.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,12 +53,11 @@ namespace Bot_Invasion_A_D.code.helping_functions
 
         public static Tile tryFillTile(Tile tile, int percent, ref int maxAmount)
         {
-            Random rnd = new Random();
             if (maxAmount == 0)
             {
                 return new EmptyTile();
             }
-            else if (rnd.Next(100) <= percent)
+            else if (GetChance(percent))
             {
                 maxAmount--;
                 return tile;
@@ -80,6 +80,11 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     k++;
                 }
             }
+        }
+
+        public static void GenerateGrid(ref Tile[,] tileGrid, int dim)
+        {
+            tileGrid = new Tile[dim,dim];
         }
     }
 }

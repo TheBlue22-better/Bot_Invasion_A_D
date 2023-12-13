@@ -1,5 +1,6 @@
 ﻿using Bot_Invasion_A_D.code.enums;
 using static Bot_Invasion_A_D.code.helping_functions.GridHelper;
+using static Bot_Invasion_A_D.code.helping_functions.Helper;
 using Bot_Invasion_A_D.forms.encounters;
 using Sem_Testing.code.world.encounter_tile;
 using System;
@@ -28,10 +29,10 @@ namespace Bot_Invasion_A_D.code.world
         public Form Generate()
         {
             Generated_Encounter_Parent enc = new Generated_Encounter_Parent();
+            int dim;
             if (enType == ENCOUNTER_TYPES.BOSS)
             {
-                enc = GenerateBossEncounter();
-                this.tileGrid = FillGrid(tileGrid);
+                dim = 7;
             }
             else
             {
@@ -39,29 +40,32 @@ namespace Bot_Invasion_A_D.code.world
                 {
                     case DIFFICULTIES.EASY:
                         {
-                            enc = GenerateEasyEncounter();
-                            this.tileGrid = FillGrid(tileGrid);
+                            if (GetChance(75)) dim = 5; else dim = 6;
+                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     case DIFFICULTIES.MEDIUM:
                         {
-                            enc = GenerateMediumEncounter();
-                            this.tileGrid = FillGrid(tileGrid);
+                            if (GetChance(90)) dim = 6; else dim = 7;
+                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     case DIFFICULTIES.HARD:
                         {
-                            enc = GenerateHardEncounter();
-                            this.tileGrid = FillGrid(tileGrid);
+                            if (GetChance(25)) dim = 6; else dim = 7;
+                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     default:
                         {
+                            dim = 5;    //impossible
                             break;      //literary impossible i think
                                         // TODO make an ERROR form to show up in case it somehow gets here
                         }
                 }
             }
+            GenerateGrid(ref this.tileGrid, dim);
+            FillGrid(tileGrid);
             SetGrid(tileGrid);
             ShowGrid(tileGrid, ref enc.getDictionary());
             return enc;
