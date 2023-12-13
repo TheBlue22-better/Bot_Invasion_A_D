@@ -11,7 +11,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static Tile[,] FillGrid(Tile[,] grid)
+        public static Tile[,] FillGrid(Tile[,] grid, ref Tuple<int, int> playerPos)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
@@ -32,6 +32,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 if (!grid[rows - 1, i].isFull())
                 {
                     grid[rows - 1, i] = tryFillTile(new PlayerTile(), 30, ref maxPlayer);
+                    if (grid[rows - 1, i].hasPlayer()) playerPos = new Tuple<int, int>(rows - 1, i);
                 }
             }
             if (maxPlayer == 1) { grid[rows - 1, cols - 1] = new PlayerTile(); }                                // in case we got no player generated

@@ -41,19 +41,19 @@ namespace Bot_Invasion_A_D.code.world
                     case DIFFICULTIES.EASY:
                         {
                             if (GetChance(75)) dim = 5; else dim = 6;
-                            enc = enc.DimEncounter(dim);
+                            enc = enc.DimEncounter(dim, this);
                             break;
                         }
                     case DIFFICULTIES.MEDIUM:
                         {
                             if (GetChance(90)) dim = 6; else dim = 7;
-                            enc = enc.DimEncounter(dim);
+                            enc = enc.DimEncounter(dim, this);
                             break;
                         }
                     case DIFFICULTIES.HARD:
                         {
                             if (GetChance(25)) dim = 6; else dim = 7;
-                            enc = enc.DimEncounter(dim);
+                            enc = enc.DimEncounter(dim, this);
                             break;
                         }
                     default:
@@ -65,7 +65,7 @@ namespace Bot_Invasion_A_D.code.world
                 }
             }
             GenerateGrid(ref this.tileGrid, dim);
-            FillGrid(tileGrid);
+            FillGrid(tileGrid, ref playerPos);
             SetGrid(tileGrid);
             ShowGrid(tileGrid, ref enc.getDictionary());
             return enc;
