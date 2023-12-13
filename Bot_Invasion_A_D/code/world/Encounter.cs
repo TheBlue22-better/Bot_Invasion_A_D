@@ -70,64 +70,6 @@ namespace Bot_Invasion_A_D.code.world
             ShowGrid(tileGrid, ref enc.getDictionary());
             return enc;
         }
-
-        private Generated_Encounter_Parent GenerateEasyEncounter()
-        {
-            Random rnd = new Random();
-            if (rnd.Next(20) < 15)
-            {
-                tileGrid = new Tile[5, 5];
-                Generated_Encounter_Parent enc = new Generated_Encounter_5x5();
-                return enc;
-            }
-            else
-            {
-                tileGrid = new Tile[6, 6];
-                Generated_Encounter_Parent enc = new Generated_Encounter_6x6();
-                return enc;
-            }
-        }
-
-        private Generated_Encounter_Parent GenerateMediumEncounter()
-        {
-            Random rnd = new Random();
-            if (rnd.Next(50) < 45)
-            {
-                tileGrid = new Tile[6, 6];
-                Generated_Encounter_Parent enc = new Generated_Encounter_6x6();
-                return enc;
-            }
-            else
-            {
-                tileGrid = new Tile[7, 7];
-                Generated_Encounter_Parent enc = new Generated_Encounter_7x7();
-                return enc;
-            }
-        }
-        private Generated_Encounter_Parent GenerateHardEncounter()
-        {
-            Random rnd = new Random();
-            if (rnd.Next(20) < 5)
-            {
-                tileGrid = new Tile[6, 6];
-                Generated_Encounter_Parent enc = new Generated_Encounter_6x6();
-                return enc;
-            }
-            else
-            {
-                tileGrid = new Tile[7, 7];
-                Generated_Encounter_Parent enc = new Generated_Encounter_7x7();
-                return enc;
-            }
-
-        }
-        private Generated_Encounter_Parent GenerateBossEncounter()
-        {
-            tileGrid = new Tile[7, 7];
-            Generated_Encounter_Parent enc = new Generated_Encounter_7x7();
-            return enc;
-        }
-
         public List<String> Neigbours()
         {
             return neigbours;
