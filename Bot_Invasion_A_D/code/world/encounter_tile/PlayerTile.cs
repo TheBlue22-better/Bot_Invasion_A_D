@@ -24,5 +24,10 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
         {
             return true;
         }
+
+        public override bool hasEnemy()
+        {
+            return false;
+        }
     }
 }

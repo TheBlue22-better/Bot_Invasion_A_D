@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sem_Testing.code.world.encounter_tile;
+using Bot_Invasion_A_D.code.entities;
 
 namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static Tile[,] FillGrid(Tile[,] grid, ref Tuple<int, int> playerPos)
+        public static Tile[,] FillGrid(Tile[,] grid, ref Player player)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
@@ -32,15 +33,14 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 if (!grid[rows - 1, i].isFull())
                 {
                     grid[rows - 1, i] = tryFillTile(new PlayerTile(), 30, ref maxPlayer);
-                    if (grid[rows - 1, i].hasPlayer()) playerPos = new Tuple<int, int>(rows - 1, i);
+                    if (grid[rows - 1, i].hasPlayer()) player.SetPosition(new Tuple<int, int>(rows - 1, i));
                 }
             }
-            if (maxPlayer == 1) { 
+            if (maxPlayer == 1) {                                                // in case we got no player generated
                 grid[rows - 1, cols - 1] = new PlayerTile();
-                playerPos = new Tuple<int, int>(rows - 1, cols - 1);
-            }                                // in case we got no player generated
+                player.SetPosition(new Tuple<int, int>(rows - 1, cols - 1));
+            }                               
             // enemies
-            Random random = new Random();
             int maxEnemies = (rows - 3) * (cols - 3);
             for (int i = 0; i < rows - 2; i++)
             {

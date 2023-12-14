@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.entities
 {
-    internal class Player
+    public class Player : Entity
     {
         private string name;
-        private double maxHealth;
-        private double health;
         public Player(string name)
         {
             this.name = name;

@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.entities.enemies
 {
-    public class Enemy
+    public class Enemy : Entity
     {
-        private double maxHealth;
-        private double health;
+
     }
 }

@@ -19,6 +19,8 @@ namespace Bot_Invasion_A_D.code.world
             FillEncounter(diff);
         }
 
+        public Player GetPlayer() { return player; }
+
         public List<String> Neigbours(String Encounter)
         {
             return encounters[Encounter].Neigbours();
@@ -86,6 +88,7 @@ namespace Bot_Invasion_A_D.code.world
 
             }
         }
+
 
     }
 }

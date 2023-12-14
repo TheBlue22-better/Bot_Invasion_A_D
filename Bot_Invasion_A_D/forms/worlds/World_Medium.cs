@@ -32,7 +32,7 @@ namespace Bot_Invasion_A_D.forms.worlds
             Form encounter = new Form();
             Button btn = (sender as Button);
             UpdateAvailable(btn);
-            encounter = encounters[btn.Name].Generate();
+            encounter = encounters[btn.Name].Generate(openWorld.GetPlayer());
             (sender as Button).Enabled = false;
             encounter.ShowDialog();
 

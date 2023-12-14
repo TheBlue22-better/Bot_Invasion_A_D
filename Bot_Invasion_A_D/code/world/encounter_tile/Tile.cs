@@ -24,5 +24,7 @@ namespace Sem_Testing.code.world.encounter_tile
         public abstract bool isFull();
 
         public abstract bool hasPlayer();
+
+        public abstract bool hasEnemy();
     }
 }
