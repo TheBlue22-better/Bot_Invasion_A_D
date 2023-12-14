@@ -20,7 +20,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
             return true;
         }
 
-        public bool hasPlayer()
+        public override bool hasPlayer()
         {
             return true;
         }

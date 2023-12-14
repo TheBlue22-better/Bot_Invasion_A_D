@@ -19,5 +19,9 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
         {
             return false;
         }
+        public override bool hasPlayer()
+        {
+            return false;
+        }
     }
 }

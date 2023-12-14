@@ -23,9 +23,6 @@ namespace Sem_Testing.code.world.encounter_tile
 
         public abstract bool isFull();
 
-        public bool hasPlayer()
-        {
-            return false;
-        }
+        public abstract bool hasPlayer();
     }
 }

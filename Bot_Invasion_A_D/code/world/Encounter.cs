@@ -41,19 +41,19 @@ namespace Bot_Invasion_A_D.code.world
                     case DIFFICULTIES.EASY:
                         {
                             if (GetChance(75)) dim = 5; else dim = 6;
-                            enc = enc.DimEncounter(dim, this);
+                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     case DIFFICULTIES.MEDIUM:
                         {
                             if (GetChance(90)) dim = 6; else dim = 7;
-                            enc = enc.DimEncounter(dim, this);
+                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     case DIFFICULTIES.HARD:
                         {
                             if (GetChance(25)) dim = 6; else dim = 7;
-                            enc = enc.DimEncounter(dim, this);
+                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     default:
@@ -68,6 +68,7 @@ namespace Bot_Invasion_A_D.code.world
             FillGrid(tileGrid, ref playerPos);
             SetGrid(tileGrid);
             ShowGrid(tileGrid, ref enc.getDictionary());
+            enc.UpdateEncounter(this);
             return enc;
         }
         public List<String> Neigbours()

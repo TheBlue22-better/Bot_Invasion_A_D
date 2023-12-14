@@ -35,7 +35,10 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     if (grid[rows - 1, i].hasPlayer()) playerPos = new Tuple<int, int>(rows - 1, i);
                 }
             }
-            if (maxPlayer == 1) { grid[rows - 1, cols - 1] = new PlayerTile(); }                                // in case we got no player generated
+            if (maxPlayer == 1) { 
+                grid[rows - 1, cols - 1] = new PlayerTile();
+                playerPos = new Tuple<int, int>(rows - 1, cols - 1);
+            }                                // in case we got no player generated
             // enemies
             Random random = new Random();
             int maxEnemies = (rows - 3) * (cols - 3);
@@ -45,7 +48,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 {
                     if (!grid[i, j].isFull())
                     {
-                        grid[i, j] = tryFillTile(new EnemyTile(), 35, ref maxEnemies);
+                        grid[i, j] = tryFillTile(new EnemyTile(), 20, ref maxEnemies);
                     }
                 }
             }

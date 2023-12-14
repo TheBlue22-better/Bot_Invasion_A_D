@@ -21,7 +21,7 @@ namespace Bot_Invasion_A_D.forms.encounters
             InitializeComponent();
         }
 
-        public Generated_Encounter_Parent DimEncounter(int dim, Encounter enc)
+        public Generated_Encounter_Parent DimEncounter(int dim)
         {
             if (dim == 5) return new Generated_Encounter_5x5(enc);
             else if (dim == 6) return new Generated_Encounter_6x6(enc);
@@ -51,7 +51,7 @@ namespace Bot_Invasion_A_D.forms.encounters
             }
         }
 
-
+        public void UpdateEncounter(Encounter enc) { this.enc = enc; }
 
         protected void btn_general_Click(object sender, EventArgs e)
         {
