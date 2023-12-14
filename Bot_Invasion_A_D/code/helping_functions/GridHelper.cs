@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Sem_Testing.code.world.encounter_tile;
 using Bot_Invasion_A_D.code.entities;
+using Bot_Invasion_A_D.code.entities.enemies;
 
 namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static Tile[,] FillGrid(Tile[,] grid, ref Player player)
+        public static Tile[,] FillGrid(Tile[,] grid, ref Player player, ref List<Enemy> enemies)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
@@ -49,6 +50,11 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     if (!grid[i, j].isFull())
                     {
                         grid[i, j] = tryFillTile(new EnemyTile(), 20, ref maxEnemies);
+                        if (grid[i, j].hasEnemy()) {
+                            Enemy enemy = (grid[i, j] as EnemyTile).GetEnemy();
+                            enemy.SetPosition(new Tuple<int, int>(i, j));
+                            enemies.Add(enemy);
+                        }                   // because it hasEnemy = true, and only EnemyTile is true in this method, we can safely use as Enemy tile.
                     }
                 }
             }

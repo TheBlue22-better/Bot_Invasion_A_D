@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bot_Invasion_A_D.code.entities;
+using Bot_Invasion_A_D.code.entities.enemies;
 
 namespace Bot_Invasion_A_D.code.world
 {
@@ -19,12 +20,14 @@ namespace Bot_Invasion_A_D.code.world
         List<String> neigbours;
         Tile[,] tileGrid;
         Player player;
+        List<Enemy> enemies;
 
         public Encounter(ENCOUNTER_TYPES type, DIFFICULTIES difficulty, List<String> neigbour)
         {
             this.enType = type;
             this.diff = difficulty;
             this.neigbours = neigbour;
+            this.enemies = new List<Enemy>();
         }
 
         public Form Generate(Player player)
@@ -66,7 +69,7 @@ namespace Bot_Invasion_A_D.code.world
                 }
             }
             GenerateGrid(ref this.tileGrid, dim);
-            FillGrid(tileGrid, ref player);
+            FillGrid(tileGrid, ref player, ref enemies);
             SetGrid(tileGrid);
             ShowGrid(tileGrid, ref enc.getDictionary());
             enc.UpdateEncounter(this);
