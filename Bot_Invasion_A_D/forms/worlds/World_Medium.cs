@@ -40,7 +40,7 @@ namespace Bot_Invasion_A_D.forms.worlds
         private void UpdateAvailable(Button btn)
         {
             Encounter encounter = encounters[btn.Name];
-            List<String> neigbours = encounter.Neigbours();
+            List<String> neigbours = encounter.GetNeigbours();
             foreach (String neigbour in neigbours)
             {
                 if (!encounterBtns[neigbour].Enabled) encounterBtns[neigbour].Enabled = true;

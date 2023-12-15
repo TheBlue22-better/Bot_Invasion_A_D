@@ -23,7 +23,7 @@ namespace Bot_Invasion_A_D.code.world
 
         public List<String> Neigbours(String Encounter)
         {
-            return encounters[Encounter].Neigbours();
+            return encounters[Encounter].GetNeigbours();
         }
 
         public Dictionary<String, Encounter> Encounters()

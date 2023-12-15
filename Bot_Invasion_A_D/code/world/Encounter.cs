@@ -64,39 +64,29 @@ namespace Bot_Invasion_A_D.code.world
                     default:
                         {
                             dim = 5;    //impossible
-                            break;      //literary impossible i think
-                                        // TODO make an ERROR form to show up in case it somehow gets here
+                            break;      // TODO make an ERROR form to show up in case it somehow gets here
                         }
                 }
             }
             GenerateGrid(ref this.tileGrid, dim);
             FillGrid(tileGrid, ref player, ref enemies);
-            SetGrid(tileGrid);
             ShowGrid(tileGrid, ref enc.getDictionary());
             enc.UpdateEncounter(this);
             return enc;
         }
-        public List<String> Neigbours()
+        public List<String> GetNeigbours()
         {
             return neigbours;
         }
 
-        public DIFFICULTIES Difficulty()
+        public DIFFICULTIES GetDifficulty()
         {
             return diff;
         }
 
-        public ENCOUNTER_TYPES Type()
+        public ENCOUNTER_TYPES GetType()
         {
             return enType;
         }
-
-        public void SetGrid(Tile[,] tileGrid)
-        {
-            this.tileGrid = tileGrid;
-        }
-
-
-
     }
 }

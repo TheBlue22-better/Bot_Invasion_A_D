@@ -25,15 +25,15 @@ namespace Bot_Invasion_A_D.code.helping_functions
             }
             else
             {
-                if (encounters[button.Name.ToString()].Type() == ENCOUNTER_TYPES.BOSS)      //Boss has a difficulty, but same color no matter what
+                if (encounters[button.Name.ToString()].GetType() == ENCOUNTER_TYPES.BOSS)      //Boss has a difficulty, but same color no matter what
                 {
                     button.BackColor = Color.Black;
                 }
-                else if (encounters[button.Name.ToString()].Difficulty() == DIFFICULTIES.EASY)
+                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTIES.EASY)
                 {
                     button.BackColor = easy;
                 }
-                else if (encounters[button.Name.ToString()].Difficulty() == DIFFICULTIES.MEDIUM)
+                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTIES.MEDIUM)
                 {
                     button.BackColor = medium;
                 }

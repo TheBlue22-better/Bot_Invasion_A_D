@@ -55,7 +55,7 @@ namespace Bot_Invasion_A_D.forms.encounters
 
         protected void btn_general_Click(object sender, EventArgs e)
         {
-            Form form = new Form();
+            
         }
     }
 }
