@@ -37,6 +37,7 @@ namespace Bot_Invasion_A_D.code.world
             if (enType == ENCOUNTER_TYPES.BOSS)
             {
                 dim = 7;
+                enc = enc.DimEncounter(dim);
             }
             else
             {

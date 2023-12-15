@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_Testing", "Sem_Testing\Sem_Testing.csproj", "{9F3C5207-3B4E-4CB8-80AE-C60893413470}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot_Invasion_A_D", "Bot_Invasion_A_D\Bot_Invasion_A_D.csproj", "{29A4B53E-5489-4BC3-A16A-5D5F2D0B99D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot_Invasion_A_D", "Bot_Invasion_A_D\Bot_Invasion_A_D.csproj", "{29A4B53E-5489-4BC3-A16A-5D5F2D0B99D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

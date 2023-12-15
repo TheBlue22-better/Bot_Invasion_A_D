@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Bot_Invasion_A_D.forms.worlds
 {
-    public partial class World_Medium : Form
+    public partial class World_Medium : Form   
     {
         OpenWorld openWorld;
         Dictionary<String, Encounter> encounters;
