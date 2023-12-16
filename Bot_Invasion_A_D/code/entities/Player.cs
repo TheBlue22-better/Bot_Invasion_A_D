@@ -8,7 +8,6 @@ namespace Bot_Invasion_A_D.code.entities
 {
     public class Player : Entity
     {
-        private string name;
         public Player(string name)
         {
             this.name = name;

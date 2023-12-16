@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.entities.enemies
 {
-    internal class RangedEnemy : Enemy
+    public class RangedEnemy : ParentEnemy
     {
+        public RangedEnemy()
+        {
+            this.name = "rangedEnemy";
+        }
     }
 }

@@ -2,7 +2,6 @@
 using static Bot_Invasion_A_D.code.helping_functions.GridHelper;
 using static Bot_Invasion_A_D.code.helping_functions.Helper;
 using Bot_Invasion_A_D.forms.encounters;
-using Bot_Invasion_A_D.code.world.encounter_tile;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Bot_Invasion_A_D.code.entities;
 using Bot_Invasion_A_D.code.entities.enemies;
+using Bot_Invasion_A_D.code.world.encounter_tile;
 
 namespace Bot_Invasion_A_D.code.world
 {
@@ -18,16 +18,16 @@ namespace Bot_Invasion_A_D.code.world
         ENCOUNTER_TYPE enType;
         DIFFICULTY diff;
         List<String> neigbours;
-        Tile[,] tileGrid;
+        ParentTile[,] tileGrid;
         Player player;
-        List<Enemy> enemies;
+        List<ParentEnemy> enemies;
 
         public Encounter(ENCOUNTER_TYPE type, DIFFICULTY difficulty, List<String> neigbour)
         {
             this.enType = type;
             this.diff = difficulty;
             this.neigbours = neigbour;
-            this.enemies = new List<Enemy>();
+            this.enemies = new List<ParentEnemy>();
         }
         public List<String> GetNeigbours()
         {
@@ -88,7 +88,7 @@ namespace Bot_Invasion_A_D.code.world
             // parse string to get a tuple of location
             Tuple<int, int> location = NameToLocation(name);
             // check what kind of tile the location is
-            TILE_TYPE tileType = tileGrid[location.Item1, location.Item2].getType();
+            TILE_TYPE tileType = tileGrid[location.Item1, location.Item2].GetType();
             // switch depending on the type (maybe a local enum)
             switch (tileType)
             {

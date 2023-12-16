@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.entities.enemies
 {
-    public class Enemy : Entity
+    public abstract class ParentEnemy : Entity
     {
-
+        protected int range;
+        public ParentEnemy()
+        {
+        }
     }
 }

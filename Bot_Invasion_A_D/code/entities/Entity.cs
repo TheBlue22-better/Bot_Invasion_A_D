@@ -8,6 +8,7 @@ namespace Bot_Invasion_A_D.code.entities
 {
     public class Entity
     {
+        protected string name;
         protected double maxHealth;
         protected double health;
         protected Tuple<int, int> positionInEncounter;
@@ -17,5 +18,6 @@ namespace Bot_Invasion_A_D.code.entities
         {
             return this.positionInEncounter;
         }
+        public string GetName() { return name; }
     }
 }
