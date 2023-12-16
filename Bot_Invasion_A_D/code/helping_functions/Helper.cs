@@ -53,7 +53,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
         public static Tuple<int,int> NameToLocation(String name)
         {
             String[] locString = name.Split('_');
-            return new Tuple<int, int>(int.Parse(locString[0]), int.Parse(locString[1]));
+            return new Tuple<int, int>(int.Parse(locString[1]), int.Parse(locString[2]));
         }
     }
 }

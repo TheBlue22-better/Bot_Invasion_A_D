@@ -44,8 +44,9 @@ namespace Bot_Invasion_A_D.code.world
 
         public Form Generate(Player player)
         {
+            this.player = player;
             Generated_Encounter_Parent enc = new Generated_Encounter_Parent();
-            int dim;
+            int dim = 5;            // so its not unassigned
             if (enType == ENCOUNTER_TYPE.BOSS)
             {
                 dim = 7;
@@ -73,11 +74,6 @@ namespace Bot_Invasion_A_D.code.world
                             enc = enc.DimEncounter(dim);
                             break;
                         }
-                    default:
-                        {
-                            dim = 5;    //impossible
-                            break;      // TODO make an ERROR form to show up in case it somehow gets here
-                        }
                 }
             }
             GenerateGrid(ref tileGrid, dim);
@@ -90,10 +86,48 @@ namespace Bot_Invasion_A_D.code.world
         public RESULT UpdateEncounter(String name, ref SortedDictionary<string, Button> buttonDictionary)
         {
             // parse string to get a tuple of location
-            Tuple<int, int> location = NameToLocation(name); 
+            Tuple<int, int> location = NameToLocation(name);
             // check what kind of tile the location is
-
+            TILE_TYPE tileType = tileGrid[location.Item1, location.Item2].getType();
             // switch depending on the type (maybe a local enum)
+            switch (tileType)
+            {
+                case TILE_TYPE.EMPTY:
+                    {
+                        // check if tile is next to player, if yes move to it, if not... uHHHHHHHH
+                        if (PositionNextToPlayer(location, player.GetPosition()))
+                        {
+                            MovePlayer(ref tileGrid, player.GetPosition(), location);
+                            player.SetPosition(location);
+                            ShowGrid(tileGrid, ref buttonDictionary);
+                        }
+                        else
+                        {
+
+                        }
+                        return RESULT.NOTHING;
+                    }
+                case TILE_TYPE.PLAYER:
+                    {
+                        // show stats
+                        break;
+                    }
+                case TILE_TYPE.ENEMY:
+                    {
+                        // check if tile is next to player, if yes attack, if not show stats
+                        break;
+                    }
+                case TILE_TYPE.MOUNTAIN:
+                    {
+                        // "You cant move there bruh"
+                        break;
+                    }
+                case TILE_TYPE.BOSS:
+                    {
+                        // in retrospect, probably same as enemy.... so i dont really need this category...
+                        break;
+                    }
+            }
             return RESULT.SURRENDER;
         }
         

@@ -9,6 +9,7 @@ namespace Bot_Invasion_A_D.code.enums
     public enum RESULT
     {
         VICTORY,
+        NOTHING,
         SURRENDER,
         DEATH
     }

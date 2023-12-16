@@ -50,10 +50,10 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     {
                         grid[i, j] = tryFillTile(new EnemyTile(), 20, ref maxEnemies);
                         if (grid[i, j].hasEnemy()) {
-                            Enemy enemy = (grid[i, j] as EnemyTile).GetEnemy();
+                            Enemy enemy = (grid[i, j] as EnemyTile).GetEnemy();              // because hasEnemy == true, and only EnemyTile is true in this method, we can safely use as Enemy tile.
                             enemy.SetPosition(new Tuple<int, int>(i, j));
                             enemies.Add(enemy);
-                        }                   // because it hasEnemy = true, and only EnemyTile is true in this method, we can safely use as Enemy tile.
+                        }                  
                     }
                 }
             }
@@ -94,6 +94,18 @@ namespace Bot_Invasion_A_D.code.helping_functions
         public static void GenerateGrid(ref Tile[,] tileGrid, int dim)
         {
             tileGrid = new Tile[dim,dim];
+        }
+
+        public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos)
+        {
+            if ((pos.Item1 + 1 == playerPos.Item1 || (pos.Item1 - 1 == playerPos.Item1)) || (pos.Item2 + 1 == playerPos.Item2 || (pos.Item2 - 1 == playerPos.Item2))) return true;
+            else return false;
+        }
+
+        public static void MovePlayer(ref Tile[,] tileGrid, Tuple<int, int> oldPos, Tuple<int, int> newPos)
+        {
+            tileGrid[oldPos.Item1, oldPos.Item2] = new EmptyTile();
+            tileGrid[newPos.Item1, newPos.Item2] = new PlayerTile();
         }
     }
 }

@@ -13,5 +13,9 @@ namespace Bot_Invasion_A_D.code.entities
         protected Tuple<int, int> positionInEncounter;
 
         public void SetPosition(Tuple<int, int> positionInEncounter) { this.positionInEncounter = positionInEncounter; }
+        public Tuple<int, int> GetPosition()
+        {
+            return this.positionInEncounter;
+        }
     }
 }

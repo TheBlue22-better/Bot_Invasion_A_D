@@ -23,10 +23,16 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
             return sprite;
         }
 
+        public TILE_TYPE getType()
+        {
+            return tileType;
+        }
+
         public abstract bool isFull();
 
         public abstract bool hasPlayer();
 
         public abstract bool hasEnemy();
+        
     }
 }
