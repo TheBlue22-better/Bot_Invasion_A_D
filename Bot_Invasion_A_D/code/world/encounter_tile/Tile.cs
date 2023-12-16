@@ -1,15 +1,17 @@
-﻿using Bot_Invasion_A_D.Properties;
+﻿using Bot_Invasion_A_D.code.enums;
+using Bot_Invasion_A_D.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sem_Testing.code.world.encounter_tile
+namespace Bot_Invasion_A_D.code.world.encounter_tile
 {
     public abstract class Tile
     {
         protected Bitmap sprite;
+        protected TILE_TYPE tileType;
 
         public Tile()
         {

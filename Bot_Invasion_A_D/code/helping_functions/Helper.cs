@@ -25,15 +25,15 @@ namespace Bot_Invasion_A_D.code.helping_functions
             }
             else
             {
-                if (encounters[button.Name.ToString()].GetType() == ENCOUNTER_TYPES.BOSS)      //Boss has a difficulty, but same color no matter what
+                if (encounters[button.Name.ToString()].GetType() == ENCOUNTER_TYPE.BOSS)      //Boss has a difficulty, but same color no matter what
                 {
                     button.BackColor = Color.Black;
                 }
-                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTIES.EASY)
+                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTY.EASY)
                 {
                     button.BackColor = easy;
                 }
-                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTIES.MEDIUM)
+                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTY.MEDIUM)
                 {
                     button.BackColor = medium;
                 }
@@ -48,6 +48,12 @@ namespace Bot_Invasion_A_D.code.helping_functions
         {
             Random rnd = new Random();
             if (percent >= rnd.Next(100)) return true; else return false;
+        }
+
+        public static Tuple<int,int> NameToLocation(String name)
+        {
+            String[] locString = name.Split('_');
+            return new Tuple<int, int>(int.Parse(locString[0]), int.Parse(locString[1]));
         }
     }
 }

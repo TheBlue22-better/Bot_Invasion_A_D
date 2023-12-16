@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.enums
 {
-    public enum DIFFICULTIES
+    public enum TILE_TYPE
     {
-        EASY,
-        MEDIUM,
-        HARD
+        EMPTY,
+        ENEMY,
+        BOSS,
+        MOUNTAIN,
+        PLAYER
     }
 }

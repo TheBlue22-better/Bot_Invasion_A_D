@@ -1,5 +1,4 @@
 ﻿using Bot_Invasion_A_D.Properties;
-using Sem_Testing.code.world.encounter_tile;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
         public EmptyTile()
         {
             this.sprite = Resources.emptyTile;
+            this.tileType = enums.TILE_TYPE.EMPTY;
         }
 
         public override bool isFull()

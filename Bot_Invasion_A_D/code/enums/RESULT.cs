@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.enums
 {
-    public enum ENCOUNTER_TYPES
+    public enum RESULT
     {
-        REGULAR,
-        OPTIONAL,
-        BOSS
+        VICTORY,
+        SURRENDER,
+        DEATH
     }
 }

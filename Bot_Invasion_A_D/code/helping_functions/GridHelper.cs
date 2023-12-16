@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sem_Testing.code.world.encounter_tile;
 using Bot_Invasion_A_D.code.entities;
 using Bot_Invasion_A_D.code.entities.enemies;
 

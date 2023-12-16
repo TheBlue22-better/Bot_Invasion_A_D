@@ -1,6 +1,6 @@
 ﻿using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.Properties;
-using Sem_Testing.code.world.encounter_tile;
+using static Bot_Invasion_A_D.code.helping_functions.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +14,8 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
         private Enemy enemy;
         public EnemyTile() 
         {
-            Random rnd = new Random();                                                  // temporary
-            if (rnd.Next(0, 100) >= 50)
-            {
-                this.sprite = Resources.meleeSpider;
-                this.enemy = new MeleeEnemy();
-            }
-            else
-            {
-                this.sprite = Resources.rangedGuy;
-                this.enemy = new RangedEnemy();
-            }
+            randomEnemy();
+            this.tileType = enums.TILE_TYPE.ENEMY;
         }
 
         public Enemy GetEnemy() {  return enemy; }
@@ -36,10 +27,22 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
         {
             return false;
         }
-
         public override bool hasEnemy()
         {
             return true;
+        }
+        private void randomEnemy()
+        {
+            if (GetChance(50))
+            {
+                this.sprite = Resources.meleeSpider;
+                this.enemy = new MeleeEnemy();
+            }
+            else
+            {
+                this.sprite = Resources.rangedGuy;
+                this.enemy = new RangedEnemy();
+            }
         }
     }
 }
