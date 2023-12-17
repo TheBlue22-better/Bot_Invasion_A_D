@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
             E1 = new Button();
             E4 = new Button();
             E2 = new Button();
@@ -82,6 +83,7 @@
             E1.UseVisualStyleBackColor = false;
             E1.EnabledChanged += btn_EnabledChanged;
             E1.Click += buttonGeneral_Click;
+            
             // 
             // E4
             // 
@@ -655,6 +657,7 @@
             Name = "World_Medium";
             Text = "Form2";
             ResumeLayout(false);
+            this.DoubleBuffered = true;
         }
 
         #endregion

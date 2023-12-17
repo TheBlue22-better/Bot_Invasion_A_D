@@ -74,7 +74,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
             else return new TileFactory(EMPTY).GetTile();
         }
 
-        public static void ShowGrid(ParentTile[,] tileGrid, ref SortedDictionary<string, Button> buttonDictionary)                    //view 
+        public static void ShowGrid(ParentTile[,] tileGrid, ref SortedDictionary<string, Button> buttonDictionary)                    
         {
             int rows = tileGrid.GetLength(0);
             int cols = tileGrid.GetLength(1);
@@ -98,7 +98,12 @@ namespace Bot_Invasion_A_D.code.helping_functions
 
         public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos)
         {
-            if ((pos.Item1 + 1 == playerPos.Item1 || (pos.Item1 - 1 == playerPos.Item1)) || (pos.Item2 + 1 == playerPos.Item2 || (pos.Item2 - 1 == playerPos.Item2))) return true;
+            if ((pos.Item1 == playerPos.Item1 && (pos.Item2 + 1 == playerPos.Item2 || pos.Item2 - 1 == playerPos.Item2)) ||
+                (pos.Item2 == playerPos.Item2 && (pos.Item1 + 1 == playerPos.Item1 || pos.Item1 - 1 == playerPos.Item1)) ||
+                (pos.Item1 + 1 == playerPos.Item1 && pos.Item2 + 1 == playerPos.Item2) ||
+                (pos.Item1 - 1 == playerPos.Item1 && pos.Item2 + 1 == playerPos.Item2) ||
+                (pos.Item1 + 1 == playerPos.Item1 && pos.Item2 - 1 == playerPos.Item2) ||
+                (pos.Item1 - 1 == playerPos.Item1 && pos.Item2 - 1 == playerPos.Item2)) return true;
             else return false;
         }
 
