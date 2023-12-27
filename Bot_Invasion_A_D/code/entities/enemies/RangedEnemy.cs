@@ -11,6 +11,7 @@ namespace Bot_Invasion_A_D.code.entities.enemies
         public RangedEnemy()
         {
             this.name = "rangedEnemy";
+            this.range = 0;
         }
     }
 }

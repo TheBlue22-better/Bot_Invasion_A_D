@@ -13,7 +13,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static ParentTile[,] FillGrid(ParentTile[,] grid, ref Player player, ref List<ParentEnemy> enemies)
+        public static ParentTile[,] FillGrid(ParentTile[,] grid, ref Player player, ref Dictionary<Tuple<int,int>, ParentEnemy> enemies)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
@@ -52,7 +52,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
                         grid[i, j] = tryFillTile(new TileFactory(ENEMY).GetTile(), 20, ref maxEnemies);
                         if (grid[i, j].HasEnemy()) {
                             grid[i, j].GetEnemy().SetPosition(new Tuple<int, int>(i, j));
-                            enemies.Add(grid[i, j].GetEnemy());
+                            enemies.Add(new Tuple<int,int>(i,j), grid[i, j].GetEnemy());
                         }                  
                     }
                 }
@@ -91,12 +91,12 @@ namespace Bot_Invasion_A_D.code.helping_functions
             }
         }
 
-        public static void GenerateGrid(ref ParentTile[,] tileGrid, int dim)
+        public static void InitializeGrid(ref ParentTile[,] tileGrid, int dim)
         {
             tileGrid = new ParentTile[dim,dim];
         }
 
-        public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos)
+        public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos, int range = 0)
         {
             if ((pos.Item1 == playerPos.Item1 && (pos.Item2 + 1 == playerPos.Item2 || pos.Item2 - 1 == playerPos.Item2)) ||
                 (pos.Item2 == playerPos.Item2 && (pos.Item1 + 1 == playerPos.Item1 || pos.Item1 - 1 == playerPos.Item1)) ||
@@ -107,10 +107,16 @@ namespace Bot_Invasion_A_D.code.helping_functions
             else return false;
         }
 
-        public static void MovePlayer(ref ParentTile[,] tileGrid, Tuple<int, int> oldPos, Tuple<int, int> newPos)
+
+        // FIX THIS IN THE MORNING, MAKE IT SO IT GETS AND ENTITY, YOU GOTTA AD A CONSTUCTOR OR A METHOD MATE OK THANKS GOOD NIGHT
+        public static void MoveEntity(ref ParentTile[,] tileGrid, Tuple<int, int> oldPos, Tuple<int, int> newPos)
         {
-            tileGrid[oldPos.Item1, oldPos.Item2] = new TileFactory(EMPTY).GetTile();
-            tileGrid[newPos.Item1, newPos.Item2] = new TileFactory(PLAYER).GetTile();
+            if (oldPos != newPos)
+            {
+                ParentTile entityTile = tileGrid[oldPos.Item1, oldPos.Item2];
+                tileGrid[oldPos.Item1, oldPos.Item2] = new TileFactory(EMPTY).GetTile();
+                tileGrid[newPos.Item1, newPos.Item2] = entityTile;
+            }
         }
     }
 }

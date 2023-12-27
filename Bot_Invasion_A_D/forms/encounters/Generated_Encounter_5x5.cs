@@ -16,11 +16,12 @@ namespace Bot_Invasion_A_D.forms.encounters
 {
     public partial class Generated_Encounter_5x5 : Generated_Encounter_Parent
     {
-        public Generated_Encounter_5x5(Encounter enc)
+        public Generated_Encounter_5x5(Encounter enc)   // i hate that i have to copy the same damn constructor 3 times...
         {
             this.enc = enc;
             InitializeComponent();
             CreateButtonDictionary(buttonPanel);
+            //this.playerHealth.Text = InitialPlayerHealth(enc);
         }
     }
 }

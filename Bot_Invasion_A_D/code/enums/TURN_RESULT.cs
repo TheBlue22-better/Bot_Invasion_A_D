@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.enums
 {
-    public enum TILE_TYPE
+    public enum TURN_RESULT
     {
-        EMPTY,
-        ENEMY,
-        MOUNTAIN,
-        PLAYER
+        SKIP,
+        STAY
     }
 }

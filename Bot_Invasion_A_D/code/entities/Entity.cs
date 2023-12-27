@@ -19,5 +19,7 @@ namespace Bot_Invasion_A_D.code.entities
             return this.positionInEncounter;
         }
         public string GetName() { return name; }
+
+        public string GetHealthString() { return health.ToString() + "/" + maxHealth.ToString(); }
     }
 }

@@ -54,12 +54,24 @@
             btn_0_1 = new Button();
             btn_0_0 = new Button();
             buttonPanel = new Panel();
+            tooltipPanel = new Panel();
+            toottipLabel = new Label();
+            label4 = new Label();
+            highlitedHealth = new Label();
+            label3 = new Label();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
+            playerPicture = new PictureBox();
+            playerHealth = new Label();
             buttonPanel.SuspendLayout();
+            tooltipPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)playerPicture).BeginInit();
             SuspendLayout();
             // 
             // btn_4_4
             // 
-            btn_4_4.Location = new Point(439, 366);
+            btn_4_4.Location = new Point(438, 337);
             btn_4_4.Margin = new Padding(3, 2, 3, 2);
             btn_4_4.Name = "btn_4_4";
             btn_4_4.Size = new Size(88, 75);
@@ -69,7 +81,7 @@
             // 
             // btn_4_2
             // 
-            btn_4_2.Location = new Point(254, 366);
+            btn_4_2.Location = new Point(253, 337);
             btn_4_2.Margin = new Padding(3, 2, 3, 2);
             btn_4_2.Name = "btn_4_2";
             btn_4_2.Size = new Size(88, 75);
@@ -79,7 +91,7 @@
             // 
             // btn_4_3
             // 
-            btn_4_3.Location = new Point(346, 366);
+            btn_4_3.Location = new Point(345, 337);
             btn_4_3.Margin = new Padding(3, 2, 3, 2);
             btn_4_3.Name = "btn_4_3";
             btn_4_3.Size = new Size(88, 75);
@@ -89,7 +101,7 @@
             // 
             // btn_4_1
             // 
-            btn_4_1.Location = new Point(164, 366);
+            btn_4_1.Location = new Point(163, 337);
             btn_4_1.Margin = new Padding(3, 2, 3, 2);
             btn_4_1.Name = "btn_4_1";
             btn_4_1.Size = new Size(88, 75);
@@ -99,7 +111,7 @@
             // 
             // btn_4_0
             // 
-            btn_4_0.Location = new Point(71, 366);
+            btn_4_0.Location = new Point(70, 337);
             btn_4_0.Margin = new Padding(3, 2, 3, 2);
             btn_4_0.Name = "btn_4_0";
             btn_4_0.Size = new Size(88, 75);
@@ -109,7 +121,7 @@
             // 
             // btn_3_4
             // 
-            btn_3_4.Location = new Point(439, 286);
+            btn_3_4.Location = new Point(438, 257);
             btn_3_4.Margin = new Padding(3, 2, 3, 2);
             btn_3_4.Name = "btn_3_4";
             btn_3_4.Size = new Size(88, 75);
@@ -119,7 +131,7 @@
             // 
             // btn_3_2
             // 
-            btn_3_2.Location = new Point(254, 286);
+            btn_3_2.Location = new Point(253, 257);
             btn_3_2.Margin = new Padding(3, 2, 3, 2);
             btn_3_2.Name = "btn_3_2";
             btn_3_2.Size = new Size(88, 75);
@@ -129,7 +141,7 @@
             // 
             // btn_3_3
             // 
-            btn_3_3.Location = new Point(346, 286);
+            btn_3_3.Location = new Point(345, 257);
             btn_3_3.Margin = new Padding(3, 2, 3, 2);
             btn_3_3.Name = "btn_3_3";
             btn_3_3.Size = new Size(88, 75);
@@ -139,7 +151,7 @@
             // 
             // btn_3_1
             // 
-            btn_3_1.Location = new Point(164, 286);
+            btn_3_1.Location = new Point(163, 257);
             btn_3_1.Margin = new Padding(3, 2, 3, 2);
             btn_3_1.Name = "btn_3_1";
             btn_3_1.Size = new Size(88, 75);
@@ -149,7 +161,7 @@
             // 
             // btn_3_0
             // 
-            btn_3_0.Location = new Point(71, 286);
+            btn_3_0.Location = new Point(70, 257);
             btn_3_0.Margin = new Padding(3, 2, 3, 2);
             btn_3_0.Name = "btn_3_0";
             btn_3_0.Size = new Size(88, 75);
@@ -159,7 +171,7 @@
             // 
             // btn_2_4
             // 
-            btn_2_4.Location = new Point(439, 207);
+            btn_2_4.Location = new Point(438, 178);
             btn_2_4.Margin = new Padding(3, 2, 3, 2);
             btn_2_4.Name = "btn_2_4";
             btn_2_4.Size = new Size(88, 75);
@@ -169,7 +181,7 @@
             // 
             // btn_2_2
             // 
-            btn_2_2.Location = new Point(254, 207);
+            btn_2_2.Location = new Point(253, 178);
             btn_2_2.Margin = new Padding(3, 2, 3, 2);
             btn_2_2.Name = "btn_2_2";
             btn_2_2.Size = new Size(88, 75);
@@ -179,7 +191,7 @@
             // 
             // btn_2_3
             // 
-            btn_2_3.Location = new Point(346, 207);
+            btn_2_3.Location = new Point(345, 178);
             btn_2_3.Margin = new Padding(3, 2, 3, 2);
             btn_2_3.Name = "btn_2_3";
             btn_2_3.Size = new Size(88, 75);
@@ -189,7 +201,7 @@
             // 
             // btn_2_1
             // 
-            btn_2_1.Location = new Point(161, 207);
+            btn_2_1.Location = new Point(160, 178);
             btn_2_1.Margin = new Padding(3, 2, 3, 2);
             btn_2_1.Name = "btn_2_1";
             btn_2_1.Size = new Size(88, 75);
@@ -199,7 +211,7 @@
             // 
             // btn_2_0
             // 
-            btn_2_0.Location = new Point(71, 207);
+            btn_2_0.Location = new Point(70, 178);
             btn_2_0.Margin = new Padding(3, 2, 3, 2);
             btn_2_0.Name = "btn_2_0";
             btn_2_0.Size = new Size(88, 75);
@@ -209,7 +221,7 @@
             // 
             // btn_1_4
             // 
-            btn_1_4.Location = new Point(439, 128);
+            btn_1_4.Location = new Point(438, 99);
             btn_1_4.Margin = new Padding(3, 2, 3, 2);
             btn_1_4.Name = "btn_1_4";
             btn_1_4.Size = new Size(88, 75);
@@ -219,7 +231,7 @@
             // 
             // btn_1_2
             // 
-            btn_1_2.Location = new Point(254, 128);
+            btn_1_2.Location = new Point(253, 99);
             btn_1_2.Margin = new Padding(3, 2, 3, 2);
             btn_1_2.Name = "btn_1_2";
             btn_1_2.Size = new Size(88, 75);
@@ -229,7 +241,7 @@
             // 
             // btn_1_3
             // 
-            btn_1_3.Location = new Point(346, 128);
+            btn_1_3.Location = new Point(345, 99);
             btn_1_3.Margin = new Padding(3, 2, 3, 2);
             btn_1_3.Name = "btn_1_3";
             btn_1_3.Size = new Size(88, 75);
@@ -239,7 +251,7 @@
             // 
             // btn_1_1
             // 
-            btn_1_1.Location = new Point(161, 128);
+            btn_1_1.Location = new Point(160, 99);
             btn_1_1.Margin = new Padding(3, 2, 3, 2);
             btn_1_1.Name = "btn_1_1";
             btn_1_1.Size = new Size(88, 75);
@@ -249,7 +261,7 @@
             // 
             // btn_1_0
             // 
-            btn_1_0.Location = new Point(71, 128);
+            btn_1_0.Location = new Point(70, 99);
             btn_1_0.Margin = new Padding(3, 2, 3, 2);
             btn_1_0.Name = "btn_1_0";
             btn_1_0.Size = new Size(88, 75);
@@ -259,7 +271,7 @@
             // 
             // btn_0_4
             // 
-            btn_0_4.Location = new Point(439, 48);
+            btn_0_4.Location = new Point(438, 19);
             btn_0_4.Margin = new Padding(3, 2, 3, 2);
             btn_0_4.Name = "btn_0_4";
             btn_0_4.Size = new Size(88, 75);
@@ -269,7 +281,7 @@
             // 
             // btn_0_2
             // 
-            btn_0_2.Location = new Point(254, 48);
+            btn_0_2.Location = new Point(253, 19);
             btn_0_2.Margin = new Padding(3, 2, 3, 2);
             btn_0_2.Name = "btn_0_2";
             btn_0_2.Size = new Size(88, 75);
@@ -279,7 +291,7 @@
             // 
             // btn_0_3
             // 
-            btn_0_3.Location = new Point(346, 48);
+            btn_0_3.Location = new Point(345, 19);
             btn_0_3.Margin = new Padding(3, 2, 3, 2);
             btn_0_3.Name = "btn_0_3";
             btn_0_3.Size = new Size(88, 75);
@@ -289,7 +301,7 @@
             // 
             // btn_0_1
             // 
-            btn_0_1.Location = new Point(161, 48);
+            btn_0_1.Location = new Point(160, 19);
             btn_0_1.Margin = new Padding(3, 2, 3, 2);
             btn_0_1.Name = "btn_0_1";
             btn_0_1.Size = new Size(88, 75);
@@ -299,7 +311,7 @@
             // 
             // btn_0_0
             // 
-            btn_0_0.Location = new Point(71, 48);
+            btn_0_0.Location = new Point(70, 19);
             btn_0_0.Margin = new Padding(3, 2, 3, 2);
             btn_0_0.Name = "btn_0_0";
             btn_0_0.Size = new Size(88, 75);
@@ -334,22 +346,118 @@
             buttonPanel.Controls.Add(btn_2_3);
             buttonPanel.Controls.Add(btn_2_2);
             buttonPanel.Controls.Add(btn_2_1);
-            buttonPanel.Location = new Point(88, 86);
+            buttonPanel.Location = new Point(88, 145);
             buttonPanel.Margin = new Padding(3, 2, 3, 2);
             buttonPanel.Name = "buttonPanel";
-            buttonPanel.Size = new Size(612, 525);
+            buttonPanel.Size = new Size(612, 494);
             buttonPanel.TabIndex = 75;
+            // 
+            // tooltipPanel
+            // 
+            tooltipPanel.Controls.Add(toottipLabel);
+            tooltipPanel.Controls.Add(label4);
+            tooltipPanel.Controls.Add(highlitedHealth);
+            tooltipPanel.Controls.Add(label3);
+            tooltipPanel.Controls.Add(pictureBox1);
+            tooltipPanel.Controls.Add(label2);
+            tooltipPanel.Controls.Add(playerPicture);
+            tooltipPanel.Controls.Add(playerHealth);
+            tooltipPanel.Location = new Point(117, 6);
+            tooltipPanel.Name = "tooltipPanel";
+            tooltipPanel.Size = new Size(555, 134);
+            tooltipPanel.TabIndex = 75;
+            // 
+            // toottipLabel
+            // 
+            toottipLabel.AutoSize = true;
+            toottipLabel.Location = new Point(187, 57);
+            toottipLabel.Name = "toottipLabel";
+            toottipLabel.Size = new Size(62, 15);
+            toottipLabel.TabIndex = 8;
+            toottipLabel.Text = "DONT DIE!";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(122, 57);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 15);
+            label4.TabIndex = 7;
+            label4.Text = "_TOOLTIP:";
+            // 
+            // highlitedHealth
+            // 
+            highlitedHealth.AutoSize = true;
+            highlitedHealth.Location = new Point(454, 95);
+            highlitedHealth.Name = "highlitedHealth";
+            highlitedHealth.Size = new Size(85, 15);
+            highlitedHealth.TabIndex = 6;
+            highlitedHealth.Text = "<UNKNOWN>";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(454, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(75, 15);
+            label3.TabIndex = 5;
+            label3.Text = "_HIGHLITED_";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.nothing;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.InitialImage = Properties.Resources.nothing;
+            pictureBox1.Location = new Point(454, 27);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(75, 65);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(26, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(41, 15);
+            label2.TabIndex = 3;
+            label2.Text = "_YOU_";
+            // 
+            // playerPicture
+            // 
+            playerPicture.BackgroundImage = Properties.Resources.player;
+            playerPicture.BackgroundImageLayout = ImageLayout.Zoom;
+            playerPicture.InitialImage = Properties.Resources.nothing;
+            playerPicture.Location = new Point(10, 27);
+            playerPicture.Name = "playerPicture";
+            playerPicture.Size = new Size(71, 65);
+            playerPicture.TabIndex = 2;
+            playerPicture.TabStop = false;
+            // 
+            // playerHealth
+            // 
+            playerHealth.AutoSize = true;
+            playerHealth.Location = new Point(10, 95);
+            playerHealth.Name = "playerHealth";
+            playerHealth.Size = new Size(74, 15);
+            playerHealth.TabIndex = 1;
+            playerHealth.Text = "playerHealth";
             // 
             // Generated_Encounter_5x5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(772, 640);
+            Controls.Add(tooltipPanel);
             Controls.Add(buttonPanel);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Generated_Encounter_5x5";
             Text = "This place feels cramped...";
             buttonPanel.ResumeLayout(false);
+            tooltipPanel.ResumeLayout(false);
+            tooltipPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)playerPicture).EndInit();
             ResumeLayout(false);
         }
 
@@ -381,5 +489,14 @@
         private Button btn_0_1;
         private Button btn_0_0;
         private Panel buttonPanel;
+        private Panel tooltipPanel;
+        private Label toottipLabel;
+        private Label label4;
+        private Label highlitedHealth;
+        private Label label3;
+        private PictureBox pictureBox1;
+        private Label label2;
+        private PictureBox playerPicture;
+        private Label playerHealth;
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Bot_Invasion_A_D.code.entities;
 using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.world.encounter_tile;
+using System.Diagnostics;
 
 namespace Bot_Invasion_A_D.code.world
 {
@@ -20,14 +21,14 @@ namespace Bot_Invasion_A_D.code.world
         List<String> neigbours;
         ParentTile[,] tileGrid;
         Player player;
-        List<ParentEnemy> enemies;
+        Dictionary<Tuple<int,int>,ParentEnemy> enemies;
 
         public Encounter(ENCOUNTER_TYPE type, DIFFICULTY difficulty, List<String> neigbour)
         {
             this.enType = type;
             this.diff = difficulty;
             this.neigbours = neigbour;
-            this.enemies = new List<ParentEnemy>();
+            this.enemies = new Dictionary<Tuple<int, int>, ParentEnemy>();
         }
         public List<String> GetNeigbours()
         {
@@ -42,6 +43,8 @@ namespace Bot_Invasion_A_D.code.world
             return enType;
         }
 
+        public Player GetPlayer() { return player; }
+
         public Form Generate(Player player)
         {
             this.player = player;
@@ -50,7 +53,6 @@ namespace Bot_Invasion_A_D.code.world
             if (enType == ENCOUNTER_TYPE.BOSS)
             {
                 dim = 7;
-                enc = enc.DimEncounter(dim);
             }
             else
             {
@@ -59,24 +61,22 @@ namespace Bot_Invasion_A_D.code.world
                     case DIFFICULTY.EASY:
                         {
                             if (GetChance(75)) dim = 5; else dim = 6;
-                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     case DIFFICULTY.MEDIUM:
                         {
                             if (GetChance(90)) dim = 6; else dim = 7;
-                            enc = enc.DimEncounter(dim);
                             break;
                         }
                     case DIFFICULTY.HARD:
                         {
                             if (GetChance(25)) dim = 6; else dim = 7;
-                            enc = enc.DimEncounter(dim);
                             break;
                         }
                 }
             }
-            GenerateGrid(ref tileGrid, dim);
+            enc = enc.DimEncounter(dim);
+            InitializeGrid(ref tileGrid, dim);
             FillGrid(tileGrid, ref player, ref enemies);
             ShowGrid(tileGrid, ref enc.getDictionary());
             enc.UpdateEncounter(this);
@@ -89,47 +89,69 @@ namespace Bot_Invasion_A_D.code.world
             Tuple<int, int> location = NameToLocation(name);
             // check what kind of tile the location is
             TILE_TYPE tileType = tileGrid[location.Item1, location.Item2].GetType();
-            // switch depending on the type (maybe a local enum)
-            switch (tileType)
-            {
-                case TILE_TYPE.EMPTY:
-                    {
-                        // check if tile is next to player, if yes move to it, if not... uHHHHHHHH
-                        if (PositionNextToPlayer(location, player.GetPosition()))
-                        {
-                            MovePlayer(ref tileGrid, player.GetPosition(), location);
-                            player.SetPosition(location);
-                            ShowGrid(tileGrid, ref buttonDictionary);
-                        }
-                        else
-                        {
+            // player turn
+            TURN_RESULT result = PlayerTurn(location, tileType);
+            // enemy move
+            // if (result == TURN_RESULT.SKIP) EnemyTurn();             currently broken fix needed
+            ShowGrid(tileGrid, ref buttonDictionary);
 
-                        }
-                        return RESULT.NOTHING;
-                    }
-                case TILE_TYPE.PLAYER:
-                    {
-                        // show stats
-                        break;
-                    }
-                case TILE_TYPE.ENEMY:
-                    {
-                        // check if tile is next to player, if yes attack, if not show stats
-                        break;
-                    }
-                case TILE_TYPE.MOUNTAIN:
-                    {
-                        // "You cant move there bruh"
-                        break;
-                    }
-                case TILE_TYPE.BOSS:
-                    {
-                        // in retrospect, probably same as enemy.... so i dont really need this category...
-                        break;
-                    }
-            }
-            return RESULT.SURRENDER;
+            return RESULT.NOTHING;
         }
         
+        private TURN_RESULT PlayerTurn(Tuple<int,int> location, TILE_TYPE tileType)
+        {
+            if (location == player.GetPosition())
+            {
+                // do something with tooltip
+                return TURN_RESULT.STAY;
+            }
+            else if (PositionNextToPlayer(location, player.GetPosition()))
+            {
+                switch (tileType)
+                {
+                    case TILE_TYPE.EMPTY:
+                        {
+                            MoveEntity(ref tileGrid, player.GetPosition(), location);
+                            player.SetPosition(location);
+                            return TURN_RESULT.SKIP;
+                        }
+                    case TILE_TYPE.MOUNTAIN:
+                        {
+                            // do something with tooltip
+                            return TURN_RESULT.STAY;
+                        }
+                    case TILE_TYPE.ENEMY:
+                        {
+                            // attack
+                            return TURN_RESULT.SKIP;
+                        }
+                    default: return TURN_RESULT.STAY;
+                }
+            }
+            else
+            {
+                return TURN_RESULT.STAY;
+            }
+        }
+
+        private void EnemyTurn()
+        {
+            // traverse through the dictionary
+            foreach (var enem in enemies)
+            {
+                if (PositionNextToPlayer(enem.Key, player.GetPosition(), enem.Value.GetRange()))
+                {
+                    // attack
+                }
+                else
+                {
+                    Tuple<int, int> newLocation = enem.Value.FindPath(player.GetPosition(), tileGrid);
+                    MoveEntity(ref tileGrid, enem.Key, newLocation);
+                    enem.Value.SetPosition(newLocation);
+                }
+            }
+
+        }
+
     }
 }

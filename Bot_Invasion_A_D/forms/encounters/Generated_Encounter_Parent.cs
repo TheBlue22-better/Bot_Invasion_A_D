@@ -16,10 +16,6 @@ namespace Bot_Invasion_A_D.forms.encounters
     {
         protected Encounter enc;
         protected SortedDictionary<string, Button> buttonDictionary;
-        public Generated_Encounter_Parent()
-        {
-            InitializeComponent();
-        }
 
         public Generated_Encounter_Parent DimEncounter(int dim)
         {
@@ -51,11 +47,15 @@ namespace Bot_Invasion_A_D.forms.encounters
             }
         }
 
+        protected string InitialPlayerHealth(Encounter encounter) { return encounter.GetPlayer().GetHealthString(); }
+
         public void UpdateEncounter(Encounter enc) { this.enc = enc; }
 
         protected void btn_general_Click(object sender, EventArgs e)
         {
             enc.UpdateEncounter((sender as Button).Name, ref buttonDictionary);
         }
+
+
     }
 }

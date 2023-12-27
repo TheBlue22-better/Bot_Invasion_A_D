@@ -11,6 +11,7 @@ namespace Bot_Invasion_A_D.code.entities.enemies
         public MeleeEnemy() 
         {
             this.name = "meleeEnemy";
+            this.range = 0;
         }
     }
 }
