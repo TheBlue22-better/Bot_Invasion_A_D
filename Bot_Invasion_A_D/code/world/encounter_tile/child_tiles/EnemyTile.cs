@@ -13,12 +13,12 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
     {
         public EnemyTile()
         {
-            this.enemy = RandomEnemy();
+            this.entity = RandomEnemy();
         }
 
         public override void SetSprite()
         {
-            switch (enemy.GetName())
+            switch (entity.GetName())
             {
                 case "meleeEnemy":
                     {

@@ -1,4 +1,4 @@
-﻿using Bot_Invasion_A_D.code.entities.enemies;
+﻿using Bot_Invasion_A_D.code.entities;
 using Bot_Invasion_A_D.code.enums;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
     {
         TILE_TYPE tileType;
         protected Bitmap sprite;
-        protected ParentEnemy? enemy;
+        protected Entity? entity;
         public bool IsFull() { return tileType != TILE_TYPE.EMPTY; }
         public bool HasPlayer() { return tileType == TILE_TYPE.PLAYER; }
         public bool HasEnemy() { return tileType == TILE_TYPE.ENEMY; }
@@ -25,9 +25,9 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
         {
             return tileType;
         }
-        public ParentEnemy GetEnemy()
+        public Entity GetEntity()
         {
-            return enemy;
+            return entity;
         }
         public void SetType(TILE_TYPE type) { tileType = type; } 
         public abstract void SetSprite();

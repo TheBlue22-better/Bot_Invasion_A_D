@@ -6,35 +6,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bot_Invasion_A_D.code.entities;
-using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.world.encounter_tile;
 
 namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static ParentTile[,] FillGrid(ParentTile[,] grid, ref Player player, ref Dictionary<Tuple<int,int>, ParentEnemy> enemies)
+        public static ParentTile[,] FillGrid(ParentTile[,] grid, ref Player player, ref Dictionary<Tuple<int,int>, Enemy> enemies)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
 
             // mountain
             int maxMountains = rows - 1;        // rows == cols; rows is dym
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < rows; i++)      // y
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < cols; j++)     //x
                 {
                     grid[i, j] = tryFillTile(new TileFactory(MOUNTAIN).GetTile(), 10, ref maxMountains);
                 }
             }
             // player
             int maxPlayer = 1;
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < rows; i++)      // x
             {
                 if (!grid[rows - 1, i].IsFull())
                 {
                     grid[rows - 1, i] = tryFillTile(new TileFactory(PLAYER).GetTile(), 30, ref maxPlayer);
-                    if (grid[rows - 1, i].HasPlayer()) player.SetPosition(new Tuple<int, int>(rows - 1, i));
+                    if (grid[rows - 1, i].HasPlayer()) player.SetPosition(new Tuple<int, int>(i, rows - 1));
                 }
             }
             if (maxPlayer == 1) {                                                // in case we got no player generated
@@ -51,8 +50,8 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     {
                         grid[i, j] = tryFillTile(new TileFactory(ENEMY).GetTile(), 20, ref maxEnemies);
                         if (grid[i, j].HasEnemy()) {
-                            grid[i, j].GetEnemy().SetPosition(new Tuple<int, int>(i, j));
-                            enemies.Add(new Tuple<int,int>(i,j), grid[i, j].GetEnemy());
+                            grid[i, j].GetEntity().SetPosition(new Tuple<int, int>(j, i));
+                            enemies.Add(new Tuple<int,int>(i,j), (grid[i, j].GetEntity() as Enemy));
                         }                  
                     }
                 }
@@ -96,25 +95,24 @@ namespace Bot_Invasion_A_D.code.helping_functions
             tileGrid = new ParentTile[dim,dim];
         }
 
-        public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos, int range = 0)
+        public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos, int range = 1)
         {
-            if ((pos.Item1 == playerPos.Item1 && (pos.Item2 + 1 == playerPos.Item2 || pos.Item2 - 1 == playerPos.Item2)) ||
-                (pos.Item2 == playerPos.Item2 && (pos.Item1 + 1 == playerPos.Item1 || pos.Item1 - 1 == playerPos.Item1)) ||
-                (pos.Item1 + 1 == playerPos.Item1 && pos.Item2 + 1 == playerPos.Item2) ||
-                (pos.Item1 - 1 == playerPos.Item1 && pos.Item2 + 1 == playerPos.Item2) ||
-                (pos.Item1 + 1 == playerPos.Item1 && pos.Item2 - 1 == playerPos.Item2) ||
-                (pos.Item1 - 1 == playerPos.Item1 && pos.Item2 - 1 == playerPos.Item2)) return true;
+            if ((pos.Item1 == playerPos.Item1 && (pos.Item2 + range == playerPos.Item2 || pos.Item2 - range == playerPos.Item2)) ||
+                (pos.Item2 == playerPos.Item2 && (pos.Item1 + range == playerPos.Item1 || pos.Item1 - range == playerPos.Item1)) ||
+                (pos.Item1 + range == playerPos.Item1 && pos.Item2 + range == playerPos.Item2) ||
+                (pos.Item1 - range == playerPos.Item1 && pos.Item2 + range == playerPos.Item2) ||
+                (pos.Item1 + range == playerPos.Item1 && pos.Item2 - range == playerPos.Item2) ||
+                (pos.Item1 - range == playerPos.Item1 && pos.Item2 - range == playerPos.Item2)) return true;
             else return false;
         }
 
 
-        // FIX THIS IN THE MORNING, MAKE IT SO IT GETS AND ENTITY, YOU GOTTA AD A CONSTUCTOR OR A METHOD MATE OK THANKS GOOD NIGHT
         public static void MoveEntity(ref ParentTile[,] tileGrid, Tuple<int, int> oldPos, Tuple<int, int> newPos)
         {
             if (oldPos != newPos)
             {
                 ParentTile entityTile = tileGrid[oldPos.Item1, oldPos.Item2];
-                tileGrid[oldPos.Item1, oldPos.Item2] = new TileFactory(EMPTY).GetTile();
+                tileGrid[oldPos.Item1, oldPos.Item2] = tileGrid[newPos.Item1, newPos.Item2];
                 tileGrid[newPos.Item1, newPos.Item2] = entityTile;
             }
         }

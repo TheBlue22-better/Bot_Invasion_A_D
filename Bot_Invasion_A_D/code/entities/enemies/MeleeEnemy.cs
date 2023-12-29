@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.entities.enemies
 {
-    internal class MeleeEnemy : ParentEnemy
+    internal class MeleeEnemy : Enemy
     {
         public MeleeEnemy() 
         {

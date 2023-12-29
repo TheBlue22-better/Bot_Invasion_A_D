@@ -21,14 +21,15 @@ namespace Bot_Invasion_A_D.code.world
         List<String> neigbours;
         ParentTile[,] tileGrid;
         Player player;
-        Dictionary<Tuple<int,int>,ParentEnemy> enemies;
+        Dictionary<Tuple<int,int>,Enemy> enemies;
+        TURN_RESULT turnResult;
 
         public Encounter(ENCOUNTER_TYPE type, DIFFICULTY difficulty, List<String> neigbour)
         {
             this.enType = type;
             this.diff = difficulty;
             this.neigbours = neigbour;
-            this.enemies = new Dictionary<Tuple<int, int>, ParentEnemy>();
+            this.enemies = new Dictionary<Tuple<int, int>, Enemy>();
         }
         public List<String> GetNeigbours()
         {
@@ -85,72 +86,7 @@ namespace Bot_Invasion_A_D.code.world
 
         public RESULT UpdateEncounter(String name, ref SortedDictionary<string, Button> buttonDictionary)
         {
-            // parse string to get a tuple of location
-            Tuple<int, int> location = NameToLocation(name);
-            // check what kind of tile the location is
-            TILE_TYPE tileType = tileGrid[location.Item1, location.Item2].GetType();
-            // player turn
-            TURN_RESULT result = PlayerTurn(location, tileType);
-            // enemy move
-            // if (result == TURN_RESULT.SKIP) EnemyTurn();             currently broken fix needed
-            ShowGrid(tileGrid, ref buttonDictionary);
-
             return RESULT.NOTHING;
-        }
-        
-        private TURN_RESULT PlayerTurn(Tuple<int,int> location, TILE_TYPE tileType)
-        {
-            if (location == player.GetPosition())
-            {
-                // do something with tooltip
-                return TURN_RESULT.STAY;
-            }
-            else if (PositionNextToPlayer(location, player.GetPosition()))
-            {
-                switch (tileType)
-                {
-                    case TILE_TYPE.EMPTY:
-                        {
-                            MoveEntity(ref tileGrid, player.GetPosition(), location);
-                            player.SetPosition(location);
-                            return TURN_RESULT.SKIP;
-                        }
-                    case TILE_TYPE.MOUNTAIN:
-                        {
-                            // do something with tooltip
-                            return TURN_RESULT.STAY;
-                        }
-                    case TILE_TYPE.ENEMY:
-                        {
-                            // attack
-                            return TURN_RESULT.SKIP;
-                        }
-                    default: return TURN_RESULT.STAY;
-                }
-            }
-            else
-            {
-                return TURN_RESULT.STAY;
-            }
-        }
-
-        private void EnemyTurn()
-        {
-            // traverse through the dictionary
-            foreach (var enem in enemies)
-            {
-                if (PositionNextToPlayer(enem.Key, player.GetPosition(), enem.Value.GetRange()))
-                {
-                    // attack
-                }
-                else
-                {
-                    Tuple<int, int> newLocation = enem.Value.FindPath(player.GetPosition(), tileGrid);
-                    MoveEntity(ref tileGrid, enem.Key, newLocation);
-                    enem.Value.SetPosition(newLocation);
-                }
-            }
-
         }
 
     }

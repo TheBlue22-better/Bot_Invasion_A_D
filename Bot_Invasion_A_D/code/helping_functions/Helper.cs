@@ -1,4 +1,5 @@
-﻿using Bot_Invasion_A_D.code.entities.enemies;
+﻿using Bot_Invasion_A_D.code.entities;
+using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.enums;
 using Bot_Invasion_A_D.code.world;
 using System;
@@ -55,7 +56,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
             return new Tuple<int, int>(int.Parse(locString[1]), int.Parse(locString[2]));
         }
 
-        public static ParentEnemy RandomEnemy()
+        public static Enemy RandomEnemy()
         {
             if (GetChance(50)) return new MeleeEnemy();
             else return new RangedEnemy();
