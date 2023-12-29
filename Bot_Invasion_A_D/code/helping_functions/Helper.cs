@@ -1,7 +1,6 @@
 ﻿using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.enums;
 using Bot_Invasion_A_D.code.world;
-using Sem_Testing.code.world.encounter_tile;
 using System;
 using System.Collections.Generic;
 using System.Linq;

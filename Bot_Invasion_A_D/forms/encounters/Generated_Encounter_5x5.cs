@@ -1,7 +1,6 @@
 ﻿using Bot_Invasion_A_D.code.helping_functions;
 using Bot_Invasion_A_D.code.world;
 using Bot_Invasion_A_D.Properties;
-using Sem_Testing.code.world.encounter_tile;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

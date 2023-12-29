@@ -1,5 +1,4 @@
 ﻿using Bot_Invasion_A_D.code.world;
-using Sem_Testing.code.world.encounter_tile;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
