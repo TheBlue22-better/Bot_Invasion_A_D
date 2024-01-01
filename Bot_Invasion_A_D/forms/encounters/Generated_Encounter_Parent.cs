@@ -1,4 +1,5 @@
-﻿using Bot_Invasion_A_D.code.world;
+﻿using Bot_Invasion_A_D.code.helping_functions;
+using Bot_Invasion_A_D.code.world;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +53,8 @@ namespace Bot_Invasion_A_D.forms.encounters
 
         protected void btn_general_Click(object sender, EventArgs e)
         {
-            enc.UpdateEncounter((sender as Button).Name, ref buttonDictionary);
+            enc.UpdateEncounter((sender as Button).Name);
+            GridHelper.ShowGrid(enc.GetGrid(), ref buttonDictionary);
         }
 
 

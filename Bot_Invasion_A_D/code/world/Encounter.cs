@@ -1,6 +1,7 @@
 ﻿using Bot_Invasion_A_D.code.enums;
 using static Bot_Invasion_A_D.code.helping_functions.GridHelper;
 using static Bot_Invasion_A_D.code.helping_functions.Helper;
+using static Bot_Invasion_A_D.code.enums.TILE_TYPE;
 using Bot_Invasion_A_D.forms.encounters;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,6 @@ namespace Bot_Invasion_A_D.code.world
         ParentTile[,] tileGrid;
         Player player;
         Dictionary<Tuple<int,int>,Turret> enemies;
-        TURN_RESULT turnResult;
 
         public Encounter(ENCOUNTER_TYPE type, DIFFICULTY difficulty, List<String> neigbour)
         {
@@ -43,6 +43,8 @@ namespace Bot_Invasion_A_D.code.world
         {
             return enType;
         }
+
+        public ParentTile[,] GetGrid() { return tileGrid; }
 
         public Player GetPlayer() { return player; }
 
@@ -84,9 +86,44 @@ namespace Bot_Invasion_A_D.code.world
             return enc;
         }
 
-        public RESULT UpdateEncounter(String name, ref SortedDictionary<string, Button> buttonDictionary)
+        public RESULT UpdateEncounter(String name)
         {
+            // move player
+            MovePlayer(NameToLocation(name));
+            // enemy action
             return RESULT.NOTHING;
+        }
+
+        public void MovePlayer(Tuple<int,int> position)
+        {
+            if (PositionNextToPlayer(position, player.GetPosition()))
+            {
+                switch (tileGrid[position.Item1, position.Item2].GetType()) {
+                    case EMPTY:
+                        {
+                            MoveEntity(ref tileGrid, player.GetPosition(), position);
+                            player.SetPosition(position);
+                            break;
+                        }
+                    case MOUNTAIN:
+                        {
+                            break;
+                        }
+                    case ENEMY:
+                        {
+                            break;
+                        }
+                    case PLAYER:
+                        {
+                            break;
+                        }
+                }
+                    
+            }
+            else
+            {
+                // tooltip: too far
+            }
         }
 
     }

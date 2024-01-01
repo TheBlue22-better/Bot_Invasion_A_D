@@ -33,7 +33,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 if (!grid[rows - 1, i].IsFull())
                 {
                     grid[rows - 1, i] = tryFillTile(new TileFactory(PLAYER).GetTile(), 30, ref maxPlayer);
-                    if (grid[rows - 1, i].HasPlayer()) player.SetPosition(new Tuple<int, int>(i, rows - 1));
+                    if (grid[rows - 1, i].HasPlayer()) player.SetPosition(new Tuple<int, int>(rows - 1, i));
                 }
             }
             if (maxPlayer == 1) {                                                // in case we got no player generated
@@ -50,7 +50,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     {
                         grid[i, j] = tryFillTile(new TileFactory(ENEMY).GetTile(), 20, ref maxEnemies);
                         if (grid[i, j].HasEnemy()) {
-                            grid[i, j].GetEntity().SetPosition(new Tuple<int, int>(j, i));
+                            grid[i, j].GetEntity().SetPosition(new Tuple<int, int>(i, j));
                             enemies.Add(new Tuple<int,int>(i,j), (grid[i, j].GetEntity() as Turret));
                         }                  
                     }
