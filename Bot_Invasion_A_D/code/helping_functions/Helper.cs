@@ -2,11 +2,6 @@
 using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.enums;
 using Bot_Invasion_A_D.code.world;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.helping_functions
 {
@@ -56,10 +51,10 @@ namespace Bot_Invasion_A_D.code.helping_functions
             return new Tuple<int, int>(int.Parse(locString[1]), int.Parse(locString[2]));
         }
 
-        public static Enemy RandomEnemy()
+        public static Turret RandomTurret()
         {
-            if (GetChance(50)) return new MeleeEnemy();
-            else return new RangedEnemy();
+            if (GetChance(50)) return new MeleeTurret();
+            else return new RangedTurret();
         }
 
 

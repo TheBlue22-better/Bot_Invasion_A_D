@@ -103,6 +103,16 @@ namespace Bot_Invasion_A_D.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap meleeTurret {
+            get {
+                object obj = ResourceManager.GetObject("meleeTurret", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mountain {
             get {
                 object obj = ResourceManager.GetObject("mountain", resourceCulture);
@@ -136,6 +146,16 @@ namespace Bot_Invasion_A_D.Properties {
         internal static System.Drawing.Bitmap rangedGuy {
             get {
                 object obj = ResourceManager.GetObject("rangedGuy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rangedTurret {
+            get {
+                object obj = ResourceManager.GetObject("rangedTurret", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

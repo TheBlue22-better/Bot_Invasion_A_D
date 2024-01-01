@@ -27,7 +27,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
                     }
                 case ENEMY:
                     {
-                        tile = new EnemyTile();
+                        tile = new TurretTile();
                         break;
                     }
                 case MOUNTAIN:

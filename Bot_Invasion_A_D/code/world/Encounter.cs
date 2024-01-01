@@ -21,7 +21,7 @@ namespace Bot_Invasion_A_D.code.world
         List<String> neigbours;
         ParentTile[,] tileGrid;
         Player player;
-        Dictionary<Tuple<int,int>,Enemy> enemies;
+        Dictionary<Tuple<int,int>,Turret> enemies;
         TURN_RESULT turnResult;
 
         public Encounter(ENCOUNTER_TYPE type, DIFFICULTY difficulty, List<String> neigbour)
@@ -29,7 +29,7 @@ namespace Bot_Invasion_A_D.code.world
             this.enType = type;
             this.diff = difficulty;
             this.neigbours = neigbour;
-            this.enemies = new Dictionary<Tuple<int, int>, Enemy>();
+            this.enemies = new Dictionary<Tuple<int, int>, Turret>();
         }
         public List<String> GetNeigbours()
         {

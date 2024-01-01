@@ -12,7 +12,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static ParentTile[,] FillGrid(ParentTile[,] grid, ref Player player, ref Dictionary<Tuple<int,int>, Enemy> enemies)
+        public static ParentTile[,] FillGrid(ParentTile[,] grid, ref Player player, ref Dictionary<Tuple<int,int>, Turret> enemies)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
@@ -51,7 +51,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
                         grid[i, j] = tryFillTile(new TileFactory(ENEMY).GetTile(), 20, ref maxEnemies);
                         if (grid[i, j].HasEnemy()) {
                             grid[i, j].GetEntity().SetPosition(new Tuple<int, int>(j, i));
-                            enemies.Add(new Tuple<int,int>(i,j), (grid[i, j].GetEntity() as Enemy));
+                            enemies.Add(new Tuple<int,int>(i,j), (grid[i, j].GetEntity() as Turret));
                         }                  
                     }
                 }

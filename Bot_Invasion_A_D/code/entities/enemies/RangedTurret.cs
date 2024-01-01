@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.entities.enemies
 {
-    internal class MeleeEnemy : Enemy
+    public class RangedTurret : Turret
     {
-        public MeleeEnemy() 
+        public RangedTurret()
         {
-            this.name = "meleeEnemy";
-            this.range = 0;
+            this.name = "rangedTurret";
+            this.range = 2;
         }
     }
 }

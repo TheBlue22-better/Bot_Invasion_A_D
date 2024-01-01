@@ -9,25 +9,25 @@ using Bot_Invasion_A_D.code.entities.enemies;
 
 namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
 {
-    internal class EnemyTile : ParentTile
+    internal class TurretTile : ParentTile
     {
-        public EnemyTile()
+        public TurretTile()
         {
-            this.entity = RandomEnemy();
+            this.entity = RandomTurret();
         }
 
         public override void SetSprite()
         {
             switch (entity.GetName())
             {
-                case "meleeEnemy":
+                case "meleeTurret":
                     {
-                        this.sprite = Resources.meleeSpider;
+                        this.sprite = Resources.meleeTurret;
                         break;
                     }
-                case "rangedEnemy":
+                case "rangedTurret":
                     {
-                        this.sprite = Resources.rangedGuy;
+                        this.sprite = Resources.rangedTurret;
                         break;
                     }
             }
