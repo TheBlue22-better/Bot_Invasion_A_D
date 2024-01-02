@@ -7,14 +7,23 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static Bot_Invasion_A_D.code.enums.STATE;
+using Bot_Invasion_A_D.code.enums;
 
 namespace Bot_Invasion_A_D.code.entities
 {
-    public abstract class Turret : Entity
+    public class Turret : Entity
     {
         protected int range;
+        protected STATE state;
         public Turret()
         {
+
+        }
+
+        public override string GetInfo()
+        {
+            return health.ToString() + "/" + maxHealth.ToString() + "\nCurrent State: " + state + "\nRange: " + range.ToString();
         }
 
         public int GetRange() { return range;}

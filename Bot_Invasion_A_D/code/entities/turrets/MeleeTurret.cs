@@ -10,8 +10,11 @@ namespace Bot_Invasion_A_D.code.entities.enemies
     {
         public MeleeTurret() 
         {
+            this.health = 300;
+            this.maxHealth = 300;
             this.name = "meleeTurret";
             this.range = 1;
+            this.state = enums.STATE.AIMING;
         }
     }
 }

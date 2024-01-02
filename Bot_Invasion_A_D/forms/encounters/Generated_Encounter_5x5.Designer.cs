@@ -57,15 +57,15 @@
             tooltipPanel = new Panel();
             toottipLabel = new Label();
             label4 = new Label();
-            highlitedHealth = new Label();
+            highlitedInfo = new Label();
             label3 = new Label();
-            pictureBox1 = new PictureBox();
+            highlightPicture = new PictureBox();
             label2 = new Label();
             playerPicture = new PictureBox();
             playerHealth = new Label();
             buttonPanel.SuspendLayout();
             tooltipPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)highlightPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)playerPicture).BeginInit();
             SuspendLayout();
             // 
@@ -78,6 +78,8 @@
             btn_4_4.TabIndex = 74;
             btn_4_4.UseVisualStyleBackColor = true;
             btn_4_4.Click += btn_general_Click;
+            btn_4_4.MouseEnter += btn_mouse_Enter;
+            btn_4_4.MouseLeave += btn_mouse_Exit;
             // 
             // btn_4_2
             // 
@@ -88,6 +90,8 @@
             btn_4_2.TabIndex = 73;
             btn_4_2.UseVisualStyleBackColor = true;
             btn_4_2.Click += btn_general_Click;
+            btn_4_2.MouseEnter += btn_mouse_Enter;
+            btn_4_2.MouseLeave += btn_mouse_Exit;
             // 
             // btn_4_3
             // 
@@ -98,6 +102,8 @@
             btn_4_3.TabIndex = 72;
             btn_4_3.UseVisualStyleBackColor = true;
             btn_4_3.Click += btn_general_Click;
+            btn_4_3.MouseEnter += btn_mouse_Enter;
+            btn_4_3.MouseLeave += btn_mouse_Exit;
             // 
             // btn_4_1
             // 
@@ -108,6 +114,8 @@
             btn_4_1.TabIndex = 71;
             btn_4_1.UseVisualStyleBackColor = true;
             btn_4_1.Click += btn_general_Click;
+            btn_4_1.MouseEnter += btn_mouse_Enter;
+            btn_4_1.MouseLeave += btn_mouse_Exit;
             // 
             // btn_4_0
             // 
@@ -118,6 +126,8 @@
             btn_4_0.TabIndex = 70;
             btn_4_0.UseVisualStyleBackColor = true;
             btn_4_0.Click += btn_general_Click;
+            btn_4_0.MouseEnter += btn_mouse_Enter;
+            btn_4_0.MouseLeave += btn_mouse_Exit;
             // 
             // btn_3_4
             // 
@@ -128,6 +138,8 @@
             btn_3_4.TabIndex = 69;
             btn_3_4.UseVisualStyleBackColor = true;
             btn_3_4.Click += btn_general_Click;
+            btn_3_4.MouseEnter += btn_mouse_Enter;
+            btn_3_4.MouseLeave += btn_mouse_Exit;
             // 
             // btn_3_2
             // 
@@ -138,6 +150,8 @@
             btn_3_2.TabIndex = 68;
             btn_3_2.UseVisualStyleBackColor = true;
             btn_3_2.Click += btn_general_Click;
+            btn_3_2.MouseEnter += btn_mouse_Enter;
+            btn_3_2.MouseLeave += btn_mouse_Exit;
             // 
             // btn_3_3
             // 
@@ -148,6 +162,8 @@
             btn_3_3.TabIndex = 67;
             btn_3_3.UseVisualStyleBackColor = true;
             btn_3_3.Click += btn_general_Click;
+            btn_3_3.MouseEnter += btn_mouse_Enter;
+            btn_3_3.MouseLeave += btn_mouse_Exit;
             // 
             // btn_3_1
             // 
@@ -158,6 +174,8 @@
             btn_3_1.TabIndex = 66;
             btn_3_1.UseVisualStyleBackColor = true;
             btn_3_1.Click += btn_general_Click;
+            btn_3_1.MouseEnter += btn_mouse_Enter;
+            btn_3_1.MouseLeave += btn_mouse_Exit;
             // 
             // btn_3_0
             // 
@@ -168,6 +186,8 @@
             btn_3_0.TabIndex = 65;
             btn_3_0.UseVisualStyleBackColor = true;
             btn_3_0.Click += btn_general_Click;
+            btn_3_0.MouseEnter += btn_mouse_Enter;
+            btn_3_0.MouseLeave += btn_mouse_Exit;
             // 
             // btn_2_4
             // 
@@ -178,6 +198,8 @@
             btn_2_4.TabIndex = 64;
             btn_2_4.UseVisualStyleBackColor = true;
             btn_2_4.Click += btn_general_Click;
+            btn_2_4.MouseEnter += btn_mouse_Enter;
+            btn_2_4.MouseLeave += btn_mouse_Exit;
             // 
             // btn_2_2
             // 
@@ -188,6 +210,8 @@
             btn_2_2.TabIndex = 63;
             btn_2_2.UseVisualStyleBackColor = true;
             btn_2_2.Click += btn_general_Click;
+            btn_2_2.MouseEnter += btn_mouse_Enter;
+            btn_2_2.MouseLeave += btn_mouse_Exit;
             // 
             // btn_2_3
             // 
@@ -198,6 +222,8 @@
             btn_2_3.TabIndex = 62;
             btn_2_3.UseVisualStyleBackColor = true;
             btn_2_3.Click += btn_general_Click;
+            btn_2_3.MouseEnter += btn_mouse_Enter;
+            btn_2_3.MouseLeave += btn_mouse_Exit;
             // 
             // btn_2_1
             // 
@@ -208,6 +234,8 @@
             btn_2_1.TabIndex = 61;
             btn_2_1.UseVisualStyleBackColor = true;
             btn_2_1.Click += btn_general_Click;
+            btn_2_1.MouseEnter += btn_mouse_Enter;
+            btn_2_1.MouseLeave += btn_mouse_Exit;
             // 
             // btn_2_0
             // 
@@ -218,6 +246,8 @@
             btn_2_0.TabIndex = 60;
             btn_2_0.UseVisualStyleBackColor = true;
             btn_2_0.Click += btn_general_Click;
+            btn_2_0.MouseEnter += btn_mouse_Enter;
+            btn_2_0.MouseLeave += btn_mouse_Exit;
             // 
             // btn_1_4
             // 
@@ -228,6 +258,8 @@
             btn_1_4.TabIndex = 59;
             btn_1_4.UseVisualStyleBackColor = true;
             btn_1_4.Click += btn_general_Click;
+            btn_1_4.MouseEnter += btn_mouse_Enter;
+            btn_1_4.MouseLeave += btn_mouse_Exit;
             // 
             // btn_1_2
             // 
@@ -238,6 +270,8 @@
             btn_1_2.TabIndex = 58;
             btn_1_2.UseVisualStyleBackColor = true;
             btn_1_2.Click += btn_general_Click;
+            btn_1_2.MouseEnter += btn_mouse_Enter;
+            btn_1_2.MouseLeave += btn_mouse_Exit;
             // 
             // btn_1_3
             // 
@@ -248,6 +282,8 @@
             btn_1_3.TabIndex = 57;
             btn_1_3.UseVisualStyleBackColor = true;
             btn_1_3.Click += btn_general_Click;
+            btn_1_3.MouseEnter += btn_mouse_Enter;
+            btn_1_3.MouseLeave += btn_mouse_Exit;
             // 
             // btn_1_1
             // 
@@ -258,6 +294,8 @@
             btn_1_1.TabIndex = 56;
             btn_1_1.UseVisualStyleBackColor = true;
             btn_1_1.Click += btn_general_Click;
+            btn_1_1.MouseEnter += btn_mouse_Enter;
+            btn_1_1.MouseLeave += btn_mouse_Exit;
             // 
             // btn_1_0
             // 
@@ -268,6 +306,8 @@
             btn_1_0.TabIndex = 55;
             btn_1_0.UseVisualStyleBackColor = true;
             btn_1_0.Click += btn_general_Click;
+            btn_1_0.MouseEnter += btn_mouse_Enter;
+            btn_1_0.MouseLeave += btn_mouse_Exit;
             // 
             // btn_0_4
             // 
@@ -278,6 +318,8 @@
             btn_0_4.TabIndex = 54;
             btn_0_4.UseVisualStyleBackColor = true;
             btn_0_4.Click += btn_general_Click;
+            btn_0_4.MouseEnter += btn_mouse_Enter;
+            btn_0_4.MouseLeave += btn_mouse_Exit;
             // 
             // btn_0_2
             // 
@@ -288,6 +330,8 @@
             btn_0_2.TabIndex = 53;
             btn_0_2.UseVisualStyleBackColor = true;
             btn_0_2.Click += btn_general_Click;
+            btn_0_2.MouseEnter += btn_mouse_Enter;
+            btn_0_2.MouseLeave += btn_mouse_Exit;
             // 
             // btn_0_3
             // 
@@ -298,6 +342,8 @@
             btn_0_3.TabIndex = 52;
             btn_0_3.UseVisualStyleBackColor = true;
             btn_0_3.Click += btn_general_Click;
+            btn_0_3.MouseEnter += btn_mouse_Enter;
+            btn_0_3.MouseLeave += btn_mouse_Exit;
             // 
             // btn_0_1
             // 
@@ -308,6 +354,8 @@
             btn_0_1.TabIndex = 51;
             btn_0_1.UseVisualStyleBackColor = true;
             btn_0_1.Click += btn_general_Click;
+            btn_0_1.MouseEnter += btn_mouse_Enter;
+            btn_0_1.MouseLeave += btn_mouse_Exit;
             // 
             // btn_0_0
             // 
@@ -318,6 +366,8 @@
             btn_0_0.TabIndex = 50;
             btn_0_0.UseVisualStyleBackColor = true;
             btn_0_0.Click += btn_general_Click;
+            btn_0_0.MouseEnter += btn_mouse_Enter;
+            btn_0_0.MouseLeave += btn_mouse_Exit;
             // 
             // buttonPanel
             // 
@@ -356,9 +406,9 @@
             // 
             tooltipPanel.Controls.Add(toottipLabel);
             tooltipPanel.Controls.Add(label4);
-            tooltipPanel.Controls.Add(highlitedHealth);
+            tooltipPanel.Controls.Add(highlitedInfo);
             tooltipPanel.Controls.Add(label3);
-            tooltipPanel.Controls.Add(pictureBox1);
+            tooltipPanel.Controls.Add(highlightPicture);
             tooltipPanel.Controls.Add(label2);
             tooltipPanel.Controls.Add(playerPicture);
             tooltipPanel.Controls.Add(playerHealth);
@@ -385,39 +435,39 @@
             label4.TabIndex = 7;
             label4.Text = "_TOOLTIP:";
             // 
-            // highlitedHealth
+            // highlitedInfo
             // 
-            highlitedHealth.AutoSize = true;
-            highlitedHealth.Location = new Point(454, 95);
-            highlitedHealth.Name = "highlitedHealth";
-            highlitedHealth.Size = new Size(85, 15);
-            highlitedHealth.TabIndex = 6;
-            highlitedHealth.Text = "<UNKNOWN>";
+            highlitedInfo.AutoSize = true;
+            highlitedInfo.Location = new Point(454, 89);
+            highlitedInfo.Name = "highlitedInfo";
+            highlitedInfo.Size = new Size(85, 15);
+            highlitedInfo.TabIndex = 6;
+            highlitedInfo.Text = "<UNKNOWN>";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(454, 9);
+            label3.Location = new Point(454, 3);
             label3.Name = "label3";
             label3.Size = new Size(75, 15);
             label3.TabIndex = 5;
             label3.Text = "_HIGHLITED_";
             // 
-            // pictureBox1
+            // highlightPicture
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.nothing;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.InitialImage = Properties.Resources.nothing;
-            pictureBox1.Location = new Point(454, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(75, 65);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            highlightPicture.BackgroundImage = Properties.Resources.nothing;
+            highlightPicture.BackgroundImageLayout = ImageLayout.Stretch;
+            highlightPicture.InitialImage = Properties.Resources.nothing;
+            highlightPicture.Location = new Point(454, 21);
+            highlightPicture.Name = "highlightPicture";
+            highlightPicture.Size = new Size(75, 65);
+            highlightPicture.TabIndex = 4;
+            highlightPicture.TabStop = false;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(26, 9);
+            label2.Location = new Point(26, 3);
             label2.Name = "label2";
             label2.Size = new Size(41, 15);
             label2.TabIndex = 3;
@@ -428,7 +478,7 @@
             playerPicture.BackgroundImage = Properties.Resources.player;
             playerPicture.BackgroundImageLayout = ImageLayout.Zoom;
             playerPicture.InitialImage = Properties.Resources.nothing;
-            playerPicture.Location = new Point(10, 27);
+            playerPicture.Location = new Point(13, 21);
             playerPicture.Name = "playerPicture";
             playerPicture.Size = new Size(71, 65);
             playerPicture.TabIndex = 2;
@@ -437,7 +487,7 @@
             // playerHealth
             // 
             playerHealth.AutoSize = true;
-            playerHealth.Location = new Point(10, 95);
+            playerHealth.Location = new Point(13, 89);
             playerHealth.Name = "playerHealth";
             playerHealth.Size = new Size(74, 15);
             playerHealth.TabIndex = 1;
@@ -456,7 +506,7 @@
             buttonPanel.ResumeLayout(false);
             tooltipPanel.ResumeLayout(false);
             tooltipPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)highlightPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)playerPicture).EndInit();
             ResumeLayout(false);
         }
@@ -492,9 +542,9 @@
         private Panel tooltipPanel;
         private Label toottipLabel;
         private Label label4;
-        private Label highlitedHealth;
+        private Label highlitedInfo;
         private Label label3;
-        private PictureBox pictureBox1;
+        private PictureBox highlightPicture;
         private Label label2;
         private PictureBox playerPicture;
         private Label playerHealth;

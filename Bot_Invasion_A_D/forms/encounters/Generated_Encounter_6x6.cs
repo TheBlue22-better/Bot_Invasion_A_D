@@ -19,7 +19,9 @@ namespace Bot_Invasion_A_D.forms.encounters
             this.enc = enc;
             InitializeComponent();
             CreateButtonDictionary(buttonPanel);
-            //this.playerHealth.Text = InitialPlayerHealth(enc);
+            this.highlighted = highlightPicture;
+            this.pHealth = playerHealth;
+            this.hInfo = highlitedInfo;
         }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using Bot_Invasion_A_D.code.helping_functions;
 using Bot_Invasion_A_D.code.world;
+using Bot_Invasion_A_D.Properties;
+using static Bot_Invasion_A_D.code.helping_functions.Helper;
+using static Bot_Invasion_A_D.code.enums.TILE_TYPE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +19,9 @@ namespace Bot_Invasion_A_D.forms.encounters
     {
         protected Encounter enc;
         protected SortedDictionary<string, Button> buttonDictionary;
+        protected PictureBox highlighted;
+        protected Label pHealth;
+        protected Label hInfo;
 
         public Generated_Encounter_Parent DimEncounter(int dim)
         {
@@ -47,14 +53,36 @@ namespace Bot_Invasion_A_D.forms.encounters
             }
         }
 
-        protected string InitialPlayerHealth(Encounter encounter) { return encounter.GetPlayer().GetHealthString(); }
-
         public void UpdateEncounter(Encounter enc) { this.enc = enc; }
 
         protected void btn_general_Click(object sender, EventArgs e)
         {
             enc.UpdateEncounter((sender as Button).Name);
             GridHelper.ShowGrid(enc.GetGrid(), ref buttonDictionary);
+        }
+
+        protected void btn_mouse_Enter(object sender, EventArgs e)
+        {
+            highlighted.BackgroundImage = (sender as Button).Image;
+            Tuple<int, int> location = NameToLocation((sender as Button).Name);
+            if (enc.GetGrid()[location.Item1, location.Item2].GetEntity() != null)
+            {
+                hInfo.Text = enc.GetGrid()[location.Item1, location.Item2].GetEntity().GetInfo();
+            }
+            else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == MOUNTAIN)
+            {
+                hInfo.Text = "IMPASSABLE.";
+            }
+            else
+            {
+                hInfo.Text = "NOTHING.";
+            }
+        }
+
+        protected void btn_mouse_Exit(object sender, EventArgs e)
+        {
+            highlighted.BackgroundImage = Resources.nothing;
+            hInfo.Text = "<UNKNOWN>";
         }
 
 

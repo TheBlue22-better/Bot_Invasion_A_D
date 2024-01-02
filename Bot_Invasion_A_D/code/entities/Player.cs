@@ -14,5 +14,10 @@ namespace Bot_Invasion_A_D.code.entities
             this.maxHealth = 1000;
             this.health = 1000;
         }
+
+        public override string GetInfo()
+        {
+            return health.ToString() + "/" + maxHealth.ToString();
+        }
     }
 }

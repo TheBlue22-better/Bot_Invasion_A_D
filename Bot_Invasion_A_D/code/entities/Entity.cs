@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.entities
 {
-    public class Entity
+    public abstract class Entity
     {
         protected string name;
         protected double maxHealth;
@@ -20,6 +20,6 @@ namespace Bot_Invasion_A_D.code.entities
         }
         public string GetName() { return name; }
 
-        public string GetHealthString() { return health.ToString() + "/" + maxHealth.ToString(); }
+        public abstract string GetInfo();
     }
 }
