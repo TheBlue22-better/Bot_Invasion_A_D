@@ -11,6 +11,7 @@ namespace Bot_Invasion_A_D.code.enums
         EMPTY,
         ENEMY,
         MOUNTAIN,
-        PLAYER
+        PLAYER,
+        FINISH
     }
 }

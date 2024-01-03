@@ -26,6 +26,20 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     grid[i, j] = tryFillTile(new TileFactory(MOUNTAIN).GetTile(), 10, ref maxMountains);
                 }
             }
+            // finish
+            int maxFinish = 1;
+            for (int i = 0; i < rows; i++)      // x
+            {
+                if (!grid[0, i].IsFull())
+                {
+                    grid[0, i] = tryFillTile(new TileFactory(FINISH).GetTile(), 30, ref maxFinish);
+                }
+            }
+            if (maxFinish == 1)
+            {                                                // in case we got no finish generated
+                grid[0, 0] = new TileFactory(FINISH).GetTile();
+            }
+
             // player
             int maxPlayer = 1;
             for (int i = 0; i < rows; i++)      // x

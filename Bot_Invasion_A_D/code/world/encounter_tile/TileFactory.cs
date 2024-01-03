@@ -40,6 +40,11 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
                         tile = new PlayerTile();
                         break;
                     }
+                case FINISH: 
+                    {
+                        tile = new FinishTile();
+                        break;
+                    }
             }
 
             tile.SetSprite();
