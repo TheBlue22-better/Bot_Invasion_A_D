@@ -111,12 +111,10 @@ namespace Bot_Invasion_A_D.code.helping_functions
 
         public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos, int range = 1)
         {
-            if ((pos.Item1 == playerPos.Item1 && (pos.Item2 + range == playerPos.Item2 || pos.Item2 - range == playerPos.Item2)) ||
-                (pos.Item2 == playerPos.Item2 && (pos.Item1 + range == playerPos.Item1 || pos.Item1 - range == playerPos.Item1)) ||
-                (pos.Item1 + range == playerPos.Item1 && pos.Item2 + range == playerPos.Item2) ||
-                (pos.Item1 - range == playerPos.Item1 && pos.Item2 + range == playerPos.Item2) ||
-                (pos.Item1 + range == playerPos.Item1 && pos.Item2 - range == playerPos.Item2) ||
-                (pos.Item1 - range == playerPos.Item1 && pos.Item2 - range == playerPos.Item2)) return true;
+            if (pos.Item1 == playerPos.Item1 + range && pos.Item2 <= playerPos.Item2 + range && pos.Item2 >= playerPos.Item2 - range
+                ||(pos.Item1 == playerPos.Item1 - range && pos.Item2 <= playerPos.Item2 + range && pos.Item2 >= playerPos.Item2 - range)
+                || pos.Item2 == playerPos.Item2 + range && pos.Item1 <= playerPos.Item1 + range && pos.Item1 >= playerPos.Item1 - range
+                || (pos.Item2 == playerPos.Item2 - range && pos.Item1 <= playerPos.Item1 + range && pos.Item1 >= playerPos.Item1 - range)) return true;
             else return false;
         }
 

@@ -83,6 +83,7 @@ namespace Bot_Invasion_A_D.code.world
             FillGrid(tileGrid, ref player, ref turrets);
             ShowGrid(tileGrid, ref enc.getDictionary());
             enc.UpdateEncounter(this);
+            enc.UpdatePlayerHealth(player.GetInfo());
             return enc;
         }
 

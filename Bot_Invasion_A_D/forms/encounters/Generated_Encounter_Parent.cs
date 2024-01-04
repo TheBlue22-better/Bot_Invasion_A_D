@@ -90,6 +90,11 @@ namespace Bot_Invasion_A_D.forms.encounters
             hInfo.Text = "<UNKNOWN>";
         }
 
+        public void UpdatePlayerHealth(string health)
+        {
+            pHealth.Text = health;
+        }
+
 
     }
 }
