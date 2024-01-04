@@ -5,15 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bot_Invasion_A_D.code.entities
+namespace Bot_Invasion_A_D.code.entities.enemies
 {
-    public class Player : Entity
+    internal class MeleeTurret : Turret
     {
-        public Player(string name)
+        public MeleeTurret() 
         {
-            this.name = name;
-            this.maxHealth = 1000;
-            this.health = 1000;
+            this.health = 300;
+            this.maxHealth = 300;
+            this.name = "meleeTurret";
+            this.range = 1;
+            this.state = enums.STATE.AIM;
         }
 
         public override double DealDamage(DIFFICULTY diff)
@@ -28,21 +30,16 @@ namespace Bot_Invasion_A_D.code.entities
                     }
                 case DIFFICULTY.MEDIUM:
                     {
-                        return random.NextDouble() * (50.0 - 25.0) + (25.0);
+                        return random.NextDouble() * (150.0 - 70.0) + (70.0);
                         break;
                     }
                 case DIFFICULTY.HARD:
                     {
-                        return random.NextDouble() * 25.0;
+                        return random.NextDouble() * (250.0 - 120.0) + (120.0);
                         break;
                     }
             }
             return 0;       // not possible as long as the world is one of 3 chosen difficulties
-        }
-
-        public override string GetInfo()
-        {
-            return health.ToString("F2") + "/" + maxHealth.ToString("F2");
         }
     }
 }

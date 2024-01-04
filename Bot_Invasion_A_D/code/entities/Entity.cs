@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bot_Invasion_A_D.code.enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,12 @@ namespace Bot_Invasion_A_D.code.entities
         }
         public string GetName() { return name; }
 
+        public void SetHealth(double health) { this.health = health; }
+
+        public double GetHealth() { return this.health; }
+
         public abstract string GetInfo();
+
+        public abstract double DealDamage(DIFFICULTY diff);
     }
 }

@@ -59,6 +59,7 @@ namespace Bot_Invasion_A_D.forms.encounters
         {
             enc.UpdateEncounter((sender as Button).Name);
             GridHelper.ShowGrid(enc.GetGrid(), ref buttonDictionary);
+            UpdatePlayerHealth(enc.GetPlayer().GetInfo());
         }
 
         protected void btn_mouse_Enter(object sender, EventArgs e)

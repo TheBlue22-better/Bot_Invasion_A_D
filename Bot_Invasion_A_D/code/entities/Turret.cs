@@ -23,7 +23,7 @@ namespace Bot_Invasion_A_D.code.entities
 
         public override string GetInfo()
         {
-            return health.ToString() + "/" + maxHealth.ToString() + "\nCurrent State: " + state + "\nRange: " + range.ToString();
+            return health.ToString("F2") + "/" + maxHealth.ToString("F2") + "\nCurrent State: " + state + "\nRange: " + range.ToString();
         }
 
         public int GetRange() { return range;}
@@ -31,5 +31,10 @@ namespace Bot_Invasion_A_D.code.entities
         public void SetState(STATE state) { this.state = state; }
 
         public STATE GetState() { return state;}
+
+        public override double DealDamage(DIFFICULTY diff)
+        {
+            return 0; // it is overridden in child turrets
+        }
     }
 }

@@ -143,8 +143,16 @@ namespace Bot_Invasion_A_D.code.world
                     turret.Value.SetState(STATE.AIM);
                     tileGrid[turret.Key.Item1, turret.Key.Item2].SetSprite();
                 }
-                
+                else if (turret.Value.GetState() == STATE.FIRE && PositionNextToPlayer(turret.Key, player.GetPosition(), turret.Value.GetRange()))
+                {
+                    Damage(turret.Value, player);
+                }
             }
+        }
+
+        public void Damage(Entity dealer, Entity receiver)
+        {
+            receiver.SetHealth(receiver.GetHealth() - dealer.DealDamage(this.diff));
         }
     }
 }
