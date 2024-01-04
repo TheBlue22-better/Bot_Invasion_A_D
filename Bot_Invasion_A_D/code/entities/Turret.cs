@@ -27,5 +27,9 @@ namespace Bot_Invasion_A_D.code.entities
         }
 
         public int GetRange() { return range;}
+
+        public void SetState(STATE state) { this.state = state; }
+
+        public STATE GetState() { return state;}
     }
 }

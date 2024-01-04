@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bot_Invasion_A_D.code.entities.enemies;
+using Bot_Invasion_A_D.code.entities;
 
 namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
 {
@@ -18,19 +19,41 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
 
         public override void SetSprite()
         {
-            switch (entity.GetName())
+            
+            if ((entity as Turret).GetState() == enums.STATE.AIM)
             {
-                case "meleeTurret":
-                    {
-                        this.sprite = Resources.meleeTurret;
-                        break;
-                    }
-                case "rangedTurret":
-                    {
-                        this.sprite = Resources.rangedTurret;
-                        break;
-                    }
+                switch (entity.GetName())
+                {
+                    case "meleeTurret":
+                        {
+                            this.sprite = Resources.meleeTurret;
+                            break;
+                        }
+                    case "rangedTurret":
+                        {
+                            this.sprite = Resources.rangedTurret;
+                            break;
+                        }
+                }
             }
+            else
+            {
+                switch (entity.GetName())
+                {
+                    case "meleeTurret":
+                        {
+                            this.sprite = Resources.meleeTurretAttack;
+                            break;
+                        }
+                    case "rangedTurret":
+                        {
+                            this.sprite = Resources.rangedTurretAttack;
+                            break;
+                        }
+                }
+            }
+            
         }
+
     }
 }

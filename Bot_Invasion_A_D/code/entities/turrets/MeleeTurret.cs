@@ -14,7 +14,7 @@ namespace Bot_Invasion_A_D.code.entities.enemies
             this.maxHealth = 300;
             this.name = "meleeTurret";
             this.range = 1;
-            this.state = enums.STATE.AIMING;
+            this.state = enums.STATE.AIM;
         }
     }
 }

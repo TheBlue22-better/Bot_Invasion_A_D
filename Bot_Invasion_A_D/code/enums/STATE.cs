@@ -8,7 +8,7 @@ namespace Bot_Invasion_A_D.code.enums
 {
     public enum STATE
     {
-        AIMING,
-        FIRING
+        AIM,
+        FIRE
     }
 }

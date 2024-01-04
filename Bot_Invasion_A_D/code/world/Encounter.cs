@@ -22,14 +22,14 @@ namespace Bot_Invasion_A_D.code.world
         List<String> neigbours;
         ParentTile[,] tileGrid;
         Player player;
-        Dictionary<Tuple<int,int>,Turret> enemies;
+        Dictionary<Tuple<int,int>,Turret> turrets;
 
         public Encounter(ENCOUNTER_TYPE type, DIFFICULTY difficulty, List<String> neigbour)
         {
             this.enType = type;
             this.diff = difficulty;
             this.neigbours = neigbour;
-            this.enemies = new Dictionary<Tuple<int, int>, Turret>();
+            this.turrets = new Dictionary<Tuple<int, int>, Turret>();
         }
         public List<String> GetNeigbours()
         {
@@ -80,7 +80,7 @@ namespace Bot_Invasion_A_D.code.world
             }
             enc = enc.DimEncounter(dim);
             InitializeGrid(ref tileGrid, dim);
-            FillGrid(tileGrid, ref player, ref enemies);
+            FillGrid(tileGrid, ref player, ref turrets);
             ShowGrid(tileGrid, ref enc.getDictionary());
             enc.UpdateEncounter(this);
             return enc;
@@ -88,13 +88,15 @@ namespace Bot_Invasion_A_D.code.world
 
         public RESULT UpdateEncounter(String name)
         {
-            // move player
-            MovePlayer(NameToLocation(name));
-            // enemy action
+            // player turn
+            PlayerTurn(NameToLocation(name));
+            // enemy turn
+            EnemyTurn();
+            
             return RESULT.NOTHING;
         }
 
-        public void MovePlayer(Tuple<int,int> position)
+        public void PlayerTurn(Tuple<int,int> position)
         {
             if (PositionNextToPlayer(position, player.GetPosition()))
             {
@@ -126,5 +128,22 @@ namespace Bot_Invasion_A_D.code.world
             }
         }
 
+        public void EnemyTurn()
+        {
+            foreach (var turret in turrets)
+            {
+                if (turret.Value.GetState() == STATE.AIM && PositionNextToPlayer(turret.Key, player.GetPosition(), turret.Value.GetRange()))
+                {
+                    turret.Value.SetState(STATE.FIRE);
+                    tileGrid[turret.Key.Item1, turret.Key.Item2].SetSprite();
+                }
+                else if (turret.Value.GetState() == STATE.FIRE && !PositionNextToPlayer(turret.Key, player.GetPosition(), turret.Value.GetRange()))
+                {
+                    turret.Value.SetState(STATE.AIM);
+                    tileGrid[turret.Key.Item1, turret.Key.Item2].SetSprite();
+                }
+                
+            }
+        }
     }
 }
