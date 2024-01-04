@@ -15,7 +15,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
         protected Entity? entity;
         public bool IsFull() { return tileType != TILE_TYPE.EMPTY; }
         public bool HasPlayer() { return tileType == TILE_TYPE.PLAYER; }
-        public bool HasEnemy() { return tileType == TILE_TYPE.ENEMY; }
+        public bool HasTurret() { return tileType == TILE_TYPE.TURRET; }
 
         public Bitmap GetSprite()
         {

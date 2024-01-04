@@ -62,8 +62,8 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 {
                     if (!grid[i, j].IsFull())
                     {
-                        grid[i, j] = tryFillTile(new TileFactory(ENEMY).GetTile(), 20, ref maxEnemies);
-                        if (grid[i, j].HasEnemy()) {
+                        grid[i, j] = tryFillTile(new TileFactory(TURRET).GetTile(), 20, ref maxEnemies);
+                        if (grid[i, j].HasTurret()) {
                             grid[i, j].GetEntity().SetPosition(new Tuple<int, int>(i, j));
                             enemies.Add(new Tuple<int,int>(i,j), (grid[i, j].GetEntity() as Turret));
                         }                  

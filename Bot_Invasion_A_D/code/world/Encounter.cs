@@ -109,7 +109,7 @@ namespace Bot_Invasion_A_D.code.world
                         {
                             break;
                         }
-                    case ENEMY:
+                    case TURRET:
                         {
                             break;
                         }

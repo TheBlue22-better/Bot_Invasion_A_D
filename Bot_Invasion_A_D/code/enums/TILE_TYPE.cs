@@ -9,7 +9,7 @@ namespace Bot_Invasion_A_D.code.enums
     public enum TILE_TYPE
     {
         EMPTY,
-        ENEMY,
+        TURRET,
         MOUNTAIN,
         PLAYER,
         FINISH

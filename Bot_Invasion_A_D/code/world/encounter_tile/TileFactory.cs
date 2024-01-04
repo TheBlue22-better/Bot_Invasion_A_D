@@ -25,7 +25,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile
                         tile = new EmptyTile();
                         break;
                     }
-                case ENEMY:
+                case TURRET:
                     {
                         tile = new TurretTile();
                         break;

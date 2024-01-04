@@ -68,10 +68,19 @@ namespace Bot_Invasion_A_D.forms.encounters
             if (enc.GetGrid()[location.Item1, location.Item2].GetEntity() != null)
             {
                 hInfo.Text = enc.GetGrid()[location.Item1, location.Item2].GetEntity().GetInfo();
+                if (enc.GetGrid()[location.Item1, location.Item2].GetType() == TURRET)
+                {
+
+                }
+                
             }
             else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == MOUNTAIN)
             {
                 hInfo.Text = "IMPASSABLE.";
+            }
+            else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == FINISH)
+            {
+                hInfo.Text = "MOVE HERE TO ESCAPE.";
             }
             else
             {
