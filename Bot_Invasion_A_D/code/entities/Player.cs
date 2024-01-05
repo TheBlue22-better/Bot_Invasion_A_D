@@ -16,22 +16,22 @@ namespace Bot_Invasion_A_D.code.entities
             this.health = 1000;
         }
 
-        public override double DealDamage(DIFFICULTY diff)
+        public override double DealDamage(WORLD_DIFFICULTY diff)
         {
             Random random = new Random();
             switch (diff)
             {
-                case DIFFICULTY.EASY:
+                case WORLD_DIFFICULTY.EASY:
                     {
                         return random.NextDouble() * (75.0 - 50.0) + (50.0);
                         break;
                     }
-                case DIFFICULTY.MEDIUM:
+                case WORLD_DIFFICULTY.MEDIUM:
                     {
                         return random.NextDouble() * (50.0 - 25.0) + (25.0);
                         break;
                     }
-                case DIFFICULTY.HARD:
+                case WORLD_DIFFICULTY.HARD:
                     {
                         return random.NextDouble() * 25.0;
                         break;

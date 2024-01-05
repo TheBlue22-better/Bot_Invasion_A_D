@@ -24,11 +24,11 @@ namespace Bot_Invasion_A_D.code.helping_functions
                 {
                     button.BackColor = Color.Black;
                 }
-                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTY.EASY)
+                else if (encounters[button.Name.ToString()].GetDifficulty() == WORLD_DIFFICULTY.EASY)
                 {
                     button.BackColor = easy;
                 }
-                else if (encounters[button.Name.ToString()].GetDifficulty() == DIFFICULTY.MEDIUM)
+                else if (encounters[button.Name.ToString()].GetDifficulty() == WORLD_DIFFICULTY.MEDIUM)
                 {
                     button.BackColor = medium;
                 }

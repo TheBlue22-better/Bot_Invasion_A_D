@@ -32,7 +32,7 @@ namespace Bot_Invasion_A_D.code.entities
 
         public STATE GetState() { return state;}
 
-        public override double DealDamage(DIFFICULTY diff)
+        public override double DealDamage(WORLD_DIFFICULTY diff)
         {
             return 0; // it is overridden in child turrets
         }

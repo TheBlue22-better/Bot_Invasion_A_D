@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.enums
 {
-    public enum DIFFICULTY
+    public enum WORLD_DIFFICULTY
     {
         EASY,
         MEDIUM,

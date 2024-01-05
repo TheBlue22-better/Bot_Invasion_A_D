@@ -18,22 +18,22 @@ namespace Bot_Invasion_A_D.code.entities.enemies
             this.state = enums.STATE.AIM;
         }
 
-        public override double DealDamage(DIFFICULTY diff)
+        public override double DealDamage(WORLD_DIFFICULTY diff)
         {
             Random random = new Random();
             switch (diff)
             {
-                case DIFFICULTY.EASY:
+                case WORLD_DIFFICULTY.EASY:
                     {
                         return random.NextDouble() * (50 - 25.0) + (25.0);
                         break;
                     }
-                case DIFFICULTY.MEDIUM:
+                case WORLD_DIFFICULTY.MEDIUM:
                     {
                         return random.NextDouble() * (100.0 - 60.0) + (60.0);
                         break;
                     }
-                case DIFFICULTY.HARD:
+                case WORLD_DIFFICULTY.HARD:
                     {
                         return random.NextDouble() * (180.0 - 100.0) + (100.0);
                         break;

@@ -18,16 +18,18 @@ namespace Bot_Invasion_A_D.code.world
     public class Encounter
     {
         ENCOUNTER_TYPE enType;
-        DIFFICULTY diff;
+        WORLD_DIFFICULTY encDiff;
+        WORLD_DIFFICULTY wDiff;
         List<String> neigbours;
         ParentTile[,] tileGrid;
         Player player;
         Dictionary<Tuple<int,int>,Turret> turrets;
 
-        public Encounter(ENCOUNTER_TYPE type, DIFFICULTY difficulty, List<String> neigbour)
+        public Encounter(ENCOUNTER_TYPE type, WORLD_DIFFICULTY encDiff, WORLD_DIFFICULTY wDiff, List<String> neigbour)
         {
             this.enType = type;
-            this.diff = difficulty;
+            this.encDiff = encDiff;
+            this.wDiff = wDiff;
             this.neigbours = neigbour;
             this.turrets = new Dictionary<Tuple<int, int>, Turret>();
         }
@@ -35,9 +37,9 @@ namespace Bot_Invasion_A_D.code.world
         {
             return neigbours;
         }
-        public DIFFICULTY GetDifficulty()
+        public WORLD_DIFFICULTY GetDifficulty()
         {
-            return diff;
+            return encDiff;
         }
         public ENCOUNTER_TYPE GetType()
         {
@@ -59,19 +61,19 @@ namespace Bot_Invasion_A_D.code.world
             }
             else
             {
-                switch (diff)
+                switch (encDiff)
                 {
-                    case DIFFICULTY.EASY:
+                    case WORLD_DIFFICULTY.EASY:
                         {
                             if (GetChance(75)) dim = 5; else dim = 6;
                             break;
                         }
-                    case DIFFICULTY.MEDIUM:
+                    case WORLD_DIFFICULTY.MEDIUM:
                         {
                             if (GetChance(90)) dim = 6; else dim = 7;
                             break;
                         }
-                    case DIFFICULTY.HARD:
+                    case WORLD_DIFFICULTY.HARD:
                         {
                             if (GetChance(25)) dim = 6; else dim = 7;
                             break;
@@ -157,7 +159,7 @@ namespace Bot_Invasion_A_D.code.world
 
         public void Damage(Entity dealer, Entity receiver)
         {
-            receiver.SetHealth(receiver.GetHealth() - dealer.DealDamage(this.diff));
+            receiver.SetHealth(receiver.GetHealth() - dealer.DealDamage(this.wDiff));
         }
 
         public double EscapeDamage()
@@ -165,7 +167,7 @@ namespace Bot_Invasion_A_D.code.world
             double damage = 0;
             foreach(var turret in turrets)
             {
-                damage += turret.Value.DealDamage(this.diff);
+                damage += turret.Value.DealDamage(this.wDiff);
             }
             return damage;
         }
