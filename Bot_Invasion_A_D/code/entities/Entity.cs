@@ -25,6 +25,12 @@ namespace Bot_Invasion_A_D.code.entities
 
         public double GetHealth() { return this.health; }
 
+        public bool IsDead()
+        {
+            if (health <= 0) return true;
+            return false;
+        }
+
         public abstract string GetInfo();
 
         public abstract double DealDamage(WORLD_DIFFICULTY diff);

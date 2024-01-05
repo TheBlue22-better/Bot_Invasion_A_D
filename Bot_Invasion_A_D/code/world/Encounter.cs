@@ -12,6 +12,7 @@ using Bot_Invasion_A_D.code.entities;
 using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.world.encounter_tile;
 using System.Diagnostics;
+using Bot_Invasion_A_D.code.world.encounter_tile.child_tiles;
 
 namespace Bot_Invasion_A_D.code.world
 {
@@ -117,7 +118,13 @@ namespace Bot_Invasion_A_D.code.world
                         }
                     case TURRET:
                         {
-                            //attack
+                            Damage(this.player, tileGrid[position.Item1, position.Item2].GetEntity());
+                            if (tileGrid[position.Item1, position.Item2].GetEntity().IsDead())
+                            {
+                                turrets.Remove(position);
+                                tileGrid[position.Item1, position.Item2] = new EmptyTile();
+                                tileGrid[position.Item1, position.Item2].SetSprite();
+                            }
                             skipTurn = false;
                             break;
                         }
