@@ -65,7 +65,7 @@ namespace Bot_Invasion_A_D.forms.encounters
 
         protected void btn_mouse_Enter(object sender, EventArgs e)
         {
-            highlighted.BackgroundImage = (sender as Button).Image;
+            highlighted.BackgroundImage = (sender as Button).BackgroundImage;
             Tuple<int, int> location = NameToLocation((sender as Button).Name);
             if (enc.GetGrid()[location.Item1, location.Item2].GetEntity() != null)
             {

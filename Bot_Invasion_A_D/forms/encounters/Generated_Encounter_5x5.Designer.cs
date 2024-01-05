@@ -72,6 +72,7 @@
             // 
             // btn_4_4
             // 
+            btn_4_4.BackgroundImageLayout = ImageLayout.Stretch;
             btn_4_4.Location = new Point(438, 337);
             btn_4_4.Margin = new Padding(3, 2, 3, 2);
             btn_4_4.Name = "btn_4_4";
@@ -84,6 +85,7 @@
             // 
             // btn_4_2
             // 
+            btn_4_2.BackgroundImageLayout = ImageLayout.Stretch;
             btn_4_2.Location = new Point(253, 337);
             btn_4_2.Margin = new Padding(3, 2, 3, 2);
             btn_4_2.Name = "btn_4_2";
@@ -96,6 +98,7 @@
             // 
             // btn_4_3
             // 
+            btn_4_3.BackgroundImageLayout = ImageLayout.Stretch;
             btn_4_3.Location = new Point(345, 337);
             btn_4_3.Margin = new Padding(3, 2, 3, 2);
             btn_4_3.Name = "btn_4_3";
@@ -108,7 +111,8 @@
             // 
             // btn_4_1
             // 
-            btn_4_1.Location = new Point(163, 337);
+            btn_4_1.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_4_1.Location = new Point(160, 336);
             btn_4_1.Margin = new Padding(3, 2, 3, 2);
             btn_4_1.Name = "btn_4_1";
             btn_4_1.Size = new Size(88, 75);
@@ -120,6 +124,7 @@
             // 
             // btn_4_0
             // 
+            btn_4_0.BackgroundImageLayout = ImageLayout.Stretch;
             btn_4_0.Location = new Point(70, 337);
             btn_4_0.Margin = new Padding(3, 2, 3, 2);
             btn_4_0.Name = "btn_4_0";
@@ -132,6 +137,7 @@
             // 
             // btn_3_4
             // 
+            btn_3_4.BackgroundImageLayout = ImageLayout.Stretch;
             btn_3_4.Location = new Point(438, 257);
             btn_3_4.Margin = new Padding(3, 2, 3, 2);
             btn_3_4.Name = "btn_3_4";
@@ -144,6 +150,7 @@
             // 
             // btn_3_2
             // 
+            btn_3_2.BackgroundImageLayout = ImageLayout.Stretch;
             btn_3_2.Location = new Point(253, 257);
             btn_3_2.Margin = new Padding(3, 2, 3, 2);
             btn_3_2.Name = "btn_3_2";
@@ -156,6 +163,7 @@
             // 
             // btn_3_3
             // 
+            btn_3_3.BackgroundImageLayout = ImageLayout.Stretch;
             btn_3_3.Location = new Point(345, 257);
             btn_3_3.Margin = new Padding(3, 2, 3, 2);
             btn_3_3.Name = "btn_3_3";
@@ -168,7 +176,8 @@
             // 
             // btn_3_1
             // 
-            btn_3_1.Location = new Point(163, 257);
+            btn_3_1.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_3_1.Location = new Point(160, 257);
             btn_3_1.Margin = new Padding(3, 2, 3, 2);
             btn_3_1.Name = "btn_3_1";
             btn_3_1.Size = new Size(88, 75);
@@ -180,6 +189,7 @@
             // 
             // btn_3_0
             // 
+            btn_3_0.BackgroundImageLayout = ImageLayout.Stretch;
             btn_3_0.Location = new Point(70, 257);
             btn_3_0.Margin = new Padding(3, 2, 3, 2);
             btn_3_0.Name = "btn_3_0";
@@ -192,6 +202,7 @@
             // 
             // btn_2_4
             // 
+            btn_2_4.BackgroundImageLayout = ImageLayout.Stretch;
             btn_2_4.Location = new Point(438, 178);
             btn_2_4.Margin = new Padding(3, 2, 3, 2);
             btn_2_4.Name = "btn_2_4";
@@ -204,6 +215,7 @@
             // 
             // btn_2_2
             // 
+            btn_2_2.BackgroundImageLayout = ImageLayout.Stretch;
             btn_2_2.Location = new Point(253, 178);
             btn_2_2.Margin = new Padding(3, 2, 3, 2);
             btn_2_2.Name = "btn_2_2";
@@ -216,6 +228,7 @@
             // 
             // btn_2_3
             // 
+            btn_2_3.BackgroundImageLayout = ImageLayout.Stretch;
             btn_2_3.Location = new Point(345, 178);
             btn_2_3.Margin = new Padding(3, 2, 3, 2);
             btn_2_3.Name = "btn_2_3";
@@ -228,6 +241,7 @@
             // 
             // btn_2_1
             // 
+            btn_2_1.BackgroundImageLayout = ImageLayout.Stretch;
             btn_2_1.Location = new Point(160, 178);
             btn_2_1.Margin = new Padding(3, 2, 3, 2);
             btn_2_1.Name = "btn_2_1";
@@ -240,6 +254,7 @@
             // 
             // btn_2_0
             // 
+            btn_2_0.BackgroundImageLayout = ImageLayout.Stretch;
             btn_2_0.Location = new Point(70, 178);
             btn_2_0.Margin = new Padding(3, 2, 3, 2);
             btn_2_0.Name = "btn_2_0";
@@ -252,6 +267,7 @@
             // 
             // btn_1_4
             // 
+            btn_1_4.BackgroundImageLayout = ImageLayout.Stretch;
             btn_1_4.Location = new Point(438, 99);
             btn_1_4.Margin = new Padding(3, 2, 3, 2);
             btn_1_4.Name = "btn_1_4";
@@ -264,6 +280,7 @@
             // 
             // btn_1_2
             // 
+            btn_1_2.BackgroundImageLayout = ImageLayout.Stretch;
             btn_1_2.Location = new Point(253, 99);
             btn_1_2.Margin = new Padding(3, 2, 3, 2);
             btn_1_2.Name = "btn_1_2";
@@ -276,6 +293,7 @@
             // 
             // btn_1_3
             // 
+            btn_1_3.BackgroundImageLayout = ImageLayout.Stretch;
             btn_1_3.Location = new Point(345, 99);
             btn_1_3.Margin = new Padding(3, 2, 3, 2);
             btn_1_3.Name = "btn_1_3";
@@ -288,6 +306,7 @@
             // 
             // btn_1_1
             // 
+            btn_1_1.BackgroundImageLayout = ImageLayout.Stretch;
             btn_1_1.Location = new Point(160, 99);
             btn_1_1.Margin = new Padding(3, 2, 3, 2);
             btn_1_1.Name = "btn_1_1";
@@ -300,6 +319,7 @@
             // 
             // btn_1_0
             // 
+            btn_1_0.BackgroundImageLayout = ImageLayout.Stretch;
             btn_1_0.Location = new Point(70, 99);
             btn_1_0.Margin = new Padding(3, 2, 3, 2);
             btn_1_0.Name = "btn_1_0";
@@ -312,6 +332,7 @@
             // 
             // btn_0_4
             // 
+            btn_0_4.BackgroundImageLayout = ImageLayout.Stretch;
             btn_0_4.Location = new Point(438, 19);
             btn_0_4.Margin = new Padding(3, 2, 3, 2);
             btn_0_4.Name = "btn_0_4";
@@ -324,6 +345,7 @@
             // 
             // btn_0_2
             // 
+            btn_0_2.BackgroundImageLayout = ImageLayout.Stretch;
             btn_0_2.Location = new Point(253, 19);
             btn_0_2.Margin = new Padding(3, 2, 3, 2);
             btn_0_2.Name = "btn_0_2";
@@ -336,6 +358,7 @@
             // 
             // btn_0_3
             // 
+            btn_0_3.BackgroundImageLayout = ImageLayout.Stretch;
             btn_0_3.Location = new Point(345, 19);
             btn_0_3.Margin = new Padding(3, 2, 3, 2);
             btn_0_3.Name = "btn_0_3";
@@ -348,6 +371,7 @@
             // 
             // btn_0_1
             // 
+            btn_0_1.BackgroundImageLayout = ImageLayout.Stretch;
             btn_0_1.Location = new Point(160, 19);
             btn_0_1.Margin = new Padding(3, 2, 3, 2);
             btn_0_1.Name = "btn_0_1";
@@ -360,6 +384,7 @@
             // 
             // btn_0_0
             // 
+            btn_0_0.BackgroundImageLayout = ImageLayout.Stretch;
             btn_0_0.Location = new Point(70, 19);
             btn_0_0.Margin = new Padding(3, 2, 3, 2);
             btn_0_0.Name = "btn_0_0";

@@ -98,7 +98,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    buttons[k].Image = tileGrid[i, j].GetSprite();
+                    buttons[k].BackgroundImage = tileGrid[i, j].GetSprite();
                     k++;
                 }
             }
