@@ -154,5 +154,15 @@ namespace Bot_Invasion_A_D.code.world
         {
             receiver.SetHealth(receiver.GetHealth() - dealer.DealDamage(this.diff));
         }
+
+        public double EscapeDamage()
+        {
+            double damage = 0;
+            foreach(var turret in turrets)
+            {
+                damage += turret.Value.DealDamage(this.diff);
+            }
+            return damage;
+        }
     }
 }

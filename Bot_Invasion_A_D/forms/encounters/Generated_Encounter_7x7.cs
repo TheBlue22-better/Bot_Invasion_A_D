@@ -22,6 +22,8 @@ namespace Bot_Invasion_A_D.forms.encounters
             this.highlighted = highlightPicture;
             this.pHealth = playerHealth;
             this.hInfo = highlitedInfo;
+            this.escButton = escapeButton;
+            this.ControlBox = false;
         }
     }
 }

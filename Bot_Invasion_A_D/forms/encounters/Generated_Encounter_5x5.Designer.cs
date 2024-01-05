@@ -63,6 +63,7 @@
             label2 = new Label();
             playerPicture = new PictureBox();
             playerHealth = new Label();
+            escapeButton = new Button();
             buttonPanel.SuspendLayout();
             tooltipPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)highlightPicture).BeginInit();
@@ -493,11 +494,24 @@
             playerHealth.TabIndex = 1;
             playerHealth.Text = "playerHealth";
             // 
+            // escapeButton
+            // 
+            escapeButton.Location = new Point(678, 27);
+            escapeButton.Name = "escapeButton";
+            escapeButton.Size = new Size(82, 69);
+            escapeButton.TabIndex = 76;
+            escapeButton.Text = "<ESCAPE!>\r\n";
+            escapeButton.UseVisualStyleBackColor = true;
+            escapeButton.Click += btn_Escape_Click;
+            escapeButton.MouseEnter += btn_Escape_Enter;
+            escapeButton.MouseLeave += btn_Escape_Exit;
+            // 
             // Generated_Encounter_5x5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(772, 640);
+            Controls.Add(escapeButton);
             Controls.Add(tooltipPanel);
             Controls.Add(buttonPanel);
             Margin = new Padding(3, 2, 3, 2);
@@ -548,5 +562,6 @@
         private Label label2;
         private PictureBox playerPicture;
         private Label playerHealth;
+        private Button escapeButton;
     }
 }

@@ -35,6 +35,7 @@ namespace Bot_Invasion_A_D.forms.menu
             Form wrld_medium = new World_Medium(new OpenWorld(DIFFICULTY.MEDIUM));
             wrld_medium.ShowDialog();
             this.Close();
+            
         }
 
         private void btn_hard_Click(object sender, EventArgs e)

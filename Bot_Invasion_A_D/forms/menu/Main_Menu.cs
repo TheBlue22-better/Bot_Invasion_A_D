@@ -14,7 +14,7 @@ namespace Sem_Testing
             Difficulty_Select dif_select = new Difficulty_Select();
             this.Hide();
             dif_select.ShowDialog();
-            this.Close();
+            this.Show();
         }
 
         private void btnCredits_Click(object sender, EventArgs e)
