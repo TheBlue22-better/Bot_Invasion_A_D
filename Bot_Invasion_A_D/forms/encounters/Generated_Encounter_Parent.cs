@@ -80,6 +80,7 @@ namespace Bot_Invasion_A_D.forms.encounters
                     {
                         GridHelper.ShowGrid(enc.GetGrid(), ref buttonDictionary);
                         UpdatePlayerHealth(enc.GetPlayer().GetInfo());
+                        UpdateMedkitButton();
 
                         Tuple<int, int> location = NameToLocation((sender as Button).Name);
                         if (enc.GetGrid()[location.Item1, location.Item2].HasTurret())
@@ -89,6 +90,11 @@ namespace Bot_Invasion_A_D.forms.encounters
                         break;
                     }
                 case RESULT.VICTORY:
+                    {
+                        this.Close();
+                        break;
+                    }
+                case RESULT.DEATH:
                     {
                         this.Close();
                         break;
@@ -138,6 +144,13 @@ namespace Bot_Invasion_A_D.forms.encounters
         {
             enc.GetPlayer().SetHealth(enc.GetPlayer().GetHealth() - enc.EscapeDamage());
             this.Close();
+        }
+
+        protected void btn_Medkit_Click(object sender, EventArgs e)
+        {
+            enc.GetPlayer().ConsumeMedkit(enc.GetWorldDifficulty());
+            UpdatePlayerHealth(enc.GetPlayer().GetInfo());
+            UpdateMedkitButton();
         }
     }
 }

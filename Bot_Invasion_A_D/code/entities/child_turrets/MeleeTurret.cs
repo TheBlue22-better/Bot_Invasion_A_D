@@ -1,4 +1,5 @@
 ﻿using Bot_Invasion_A_D.code.enums;
+using static Bot_Invasion_A_D.code.helping_functions.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,28 +19,35 @@ namespace Bot_Invasion_A_D.code.entities.enemies
             this.state = enums.STATE.AIM;
         }
 
-        public override double DealDamage(WORLD_DIFFICULTY diff)
+        public override double DealDamage(DIFFICULTY diff)
         {
             Random random = new Random();
             switch (diff)
             {
-                case WORLD_DIFFICULTY.EASY:
+                case DIFFICULTY.EASY:
                     {
                         return random.NextDouble() * (75.0 - 50.0) + (50.0);
                         break;
                     }
-                case WORLD_DIFFICULTY.MEDIUM:
+                case DIFFICULTY.MEDIUM:
                     {
                         return random.NextDouble() * (150.0 - 70.0) + (70.0);
                         break;
                     }
-                case WORLD_DIFFICULTY.HARD:
+                case DIFFICULTY.HARD:
                     {
                         return random.NextDouble() * (250.0 - 120.0) + (120.0);
                         break;
                     }
             }
             return 0;       // not possible as long as the world is one of 3 chosen difficulties
+        }
+
+        public override bool DropsMedkit(DIFFICULTY diff)
+        {
+            if (diff == DIFFICULTY.EASY) return GetChance(35);
+            else if (diff == DIFFICULTY.MEDIUM) return GetChance(60);
+            else return GetChance(80);
         }
     }
 }

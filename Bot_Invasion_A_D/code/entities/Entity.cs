@@ -33,6 +33,6 @@ namespace Bot_Invasion_A_D.code.entities
 
         public abstract string GetInfo();
 
-        public abstract double DealDamage(WORLD_DIFFICULTY diff);
+        public abstract double DealDamage(DIFFICULTY diff);
     }
 }

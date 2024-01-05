@@ -1,6 +1,7 @@
 ﻿using Bot_Invasion_A_D.code.enums;
 using Bot_Invasion_A_D.code.helping_functions;
 using Bot_Invasion_A_D.code.world;
+using Bot_Invasion_A_D.forms.menu;
 using Bot_Invasion_A_D.Properties;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Bot_Invasion_A_D.forms.worlds
 {
-    public partial class World_Medium : Form   
+    public partial class World_Medium : Form
     {
         OpenWorld openWorld;
         Dictionary<String, Encounter> encounters;
@@ -38,7 +39,7 @@ namespace Bot_Invasion_A_D.forms.worlds
             (sender as Button).Enabled = false;
             encounter.ShowDialog();
             UpdatePlayerInfo();
-
+            if (openWorld.GetPlayer().IsDead()) ShowGameOverScreen();
         }
         private void UpdateAvailable(Button btn)
         {
@@ -109,6 +110,20 @@ namespace Bot_Invasion_A_D.forms.worlds
             medkitLabel.Text = openWorld.GetPlayer().GetMedkits() + " Medkit(s) left";
             if (openWorld.GetPlayer().GetMedkits() == 0) btn_medkit.Enabled = false;
             else btn_medkit.Enabled = true;
+        }
+
+        private void btn_medkit_Click(object sender, EventArgs e)
+        {
+            openWorld.GetPlayer().ConsumeMedkit(openWorld.GetDifficulty());
+            UpdatePlayerInfo();
+        }
+
+        private void ShowGameOverScreen()
+        {
+            this.Hide();
+            Game_Over gameOverScreen = new Game_Over();
+            gameOverScreen.ShowDialog();
+            this.Close();
         }
     }
 

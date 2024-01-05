@@ -10,7 +10,6 @@ namespace Bot_Invasion_A_D.code.enums
     {
         VICTORY,
         NOTHING,
-        SURRENDER,
         DEATH
     }
 }

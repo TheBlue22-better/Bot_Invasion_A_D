@@ -630,6 +630,7 @@
             btn_medkit.TabIndex = 9;
             btn_medkit.Text = "  Medkit(s) left";
             btn_medkit.UseVisualStyleBackColor = true;
+            btn_medkit.Click += btn_Medkit_Click;
             // 
             // toottipLabel
             // 

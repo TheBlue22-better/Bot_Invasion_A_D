@@ -19,14 +19,14 @@ namespace Bot_Invasion_A_D.code.world
     public class Encounter
     {
         ENCOUNTER_TYPE enType;
-        WORLD_DIFFICULTY encDiff;
-        WORLD_DIFFICULTY wDiff;
+        DIFFICULTY encDiff;
+        DIFFICULTY wDiff;
         List<String> neigbours;
         ParentTile[,] tileGrid;
         Player player;
         Dictionary<Tuple<int,int>,Turret> turrets;
 
-        public Encounter(ENCOUNTER_TYPE type, WORLD_DIFFICULTY encDiff, WORLD_DIFFICULTY wDiff, List<String> neigbour)
+        public Encounter(ENCOUNTER_TYPE type, DIFFICULTY encDiff, DIFFICULTY wDiff, List<String> neigbour)
         {
             this.enType = type;
             this.encDiff = encDiff;
@@ -38,9 +38,14 @@ namespace Bot_Invasion_A_D.code.world
         {
             return neigbours;
         }
-        public WORLD_DIFFICULTY GetDifficulty()
+        public DIFFICULTY GetEncounterDifficulty()
         {
             return encDiff;
+        }
+
+        public DIFFICULTY GetWorldDifficulty()
+        {
+            return wDiff;
         }
         public ENCOUNTER_TYPE GetType()
         {
@@ -64,17 +69,17 @@ namespace Bot_Invasion_A_D.code.world
             {
                 switch (encDiff)
                 {
-                    case WORLD_DIFFICULTY.EASY:
+                    case DIFFICULTY.EASY:
                         {
                             if (GetChance(75)) dim = 5; else dim = 6;
                             break;
                         }
-                    case WORLD_DIFFICULTY.MEDIUM:
+                    case DIFFICULTY.MEDIUM:
                         {
                             if (GetChance(90)) dim = 6; else dim = 7;
                             break;
                         }
-                    case WORLD_DIFFICULTY.HARD:
+                    case DIFFICULTY.HARD:
                         {
                             if (GetChance(25)) dim = 6; else dim = 7;
                             break;
@@ -103,6 +108,7 @@ namespace Bot_Invasion_A_D.code.world
                 EnemyTurn();
             }
             if (win) return RESULT.VICTORY;
+            if (player.IsDead()) return RESULT.DEATH;
             return RESULT.NOTHING;
         }
 
@@ -123,6 +129,7 @@ namespace Bot_Invasion_A_D.code.world
                             Damage(this.player, tileGrid[position.Item1, position.Item2].GetEntity());
                             if (tileGrid[position.Item1, position.Item2].GetEntity().IsDead())
                             {
+                                if ((tileGrid[position.Item1, position.Item2].GetEntity() as Turret).DropsMedkit(wDiff)) player.GiveMedkit();
                                 turrets.Remove(position);
                                 tileGrid[position.Item1, position.Item2] = new EmptyTile();
                                 tileGrid[position.Item1, position.Item2].SetSprite();

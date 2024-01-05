@@ -642,6 +642,7 @@
             btn_medkit.TabIndex = 3;
             btn_medkit.Text = "<USE MEDKIT>";
             btn_medkit.UseVisualStyleBackColor = true;
+            btn_medkit.Click += btn_medkit_Click;
             // 
             // playerInfoLabel
             // 
