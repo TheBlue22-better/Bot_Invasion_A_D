@@ -89,15 +89,19 @@ namespace Bot_Invasion_A_D.code.world
 
         public RESULT UpdateEncounter(String name)
         {
+            bool skipTurn = false;
             // player turn
-            PlayerTurn(NameToLocation(name));
+            PlayerTurn(NameToLocation(name), ref skipTurn);
             // enemy turn
-            EnemyTurn();
+            if (!skipTurn)
+            {
+                EnemyTurn();
+            }
             
             return RESULT.NOTHING;
         }
 
-        public void PlayerTurn(Tuple<int,int> position)
+        public void PlayerTurn(Tuple<int,int> position, ref bool skipTurn)
         {
             if (PositionNextToPlayer(position, player.GetPosition()))
             {
@@ -106,18 +110,18 @@ namespace Bot_Invasion_A_D.code.world
                         {
                             MoveEntity(ref tileGrid, player.GetPosition(), position);
                             player.SetPosition(position);
-                            break;
-                        }
-                    case MOUNTAIN:
-                        {
+                            skipTurn = false;
                             break;
                         }
                     case TURRET:
                         {
+                            //attack
+                            skipTurn = false;
                             break;
                         }
-                    case PLAYER:
+                    default:
                         {
+                            skipTurn = true;
                             break;
                         }
                 }
@@ -125,6 +129,7 @@ namespace Bot_Invasion_A_D.code.world
             }
             else
             {
+                skipTurn = true;
                 // tooltip: too far
             }
         }
