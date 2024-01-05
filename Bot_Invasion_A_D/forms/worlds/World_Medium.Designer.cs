@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
             E1 = new Button();
             E4 = new Button();
             E2 = new Button();
@@ -70,6 +69,14 @@
             E33 = new Button();
             E34 = new Button();
             E35 = new Button();
+            panel1 = new Panel();
+            medkitLabel = new Label();
+            btn_medkit = new Button();
+            playerInfoLabel = new Label();
+            playerPicture = new PictureBox();
+            label1 = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)playerPicture).BeginInit();
             SuspendLayout();
             // 
             // E1
@@ -83,7 +90,6 @@
             E1.UseVisualStyleBackColor = false;
             E1.EnabledChanged += btn_EnabledChanged;
             E1.Click += buttonGeneral_Click;
-            
             // 
             // E4
             // 
@@ -605,6 +611,66 @@
             E35.EnabledChanged += btn_EnabledChanged;
             E35.Click += buttonGeneral_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DarkGray;
+            panel1.Controls.Add(medkitLabel);
+            panel1.Controls.Add(btn_medkit);
+            panel1.Controls.Add(playerInfoLabel);
+            panel1.Controls.Add(playerPicture);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(46, 29);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(143, 209);
+            panel1.TabIndex = 40;
+            // 
+            // medkitLabel
+            // 
+            medkitLabel.AutoSize = true;
+            medkitLabel.Location = new Point(29, 184);
+            medkitLabel.Name = "medkitLabel";
+            medkitLabel.Size = new Size(80, 15);
+            medkitLabel.TabIndex = 4;
+            medkitLabel.Text = " Medkit(s) left";
+            medkitLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btn_medkit
+            // 
+            btn_medkit.Location = new Point(20, 158);
+            btn_medkit.Name = "btn_medkit";
+            btn_medkit.Size = new Size(103, 23);
+            btn_medkit.TabIndex = 3;
+            btn_medkit.Text = "<USE MEDKIT>";
+            btn_medkit.UseVisualStyleBackColor = true;
+            // 
+            // playerInfoLabel
+            // 
+            playerInfoLabel.AutoSize = true;
+            playerInfoLabel.Location = new Point(20, 124);
+            playerInfoLabel.Name = "playerInfoLabel";
+            playerInfoLabel.Size = new Size(103, 15);
+            playerInfoLabel.TabIndex = 2;
+            playerInfoLabel.Text = "health/maxHealth";
+            playerInfoLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // playerPicture
+            // 
+            playerPicture.Location = new Point(20, 21);
+            playerPicture.Name = "playerPicture";
+            playerPicture.Size = new Size(100, 100);
+            playerPicture.TabIndex = 1;
+            playerPicture.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(136, 21);
+            label1.TabIndex = 0;
+            label1.Text = "---<BOT INFO>---";
+            // 
             // World_Medium
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -612,6 +678,7 @@
             BackColor = Color.Silver;
             BackgroundImage = Properties.Resources.map_medium_v2;
             ClientSize = new Size(1904, 1041);
+            Controls.Add(panel1);
             Controls.Add(E35);
             Controls.Add(E34);
             Controls.Add(E33);
@@ -653,11 +720,14 @@
             Controls.Add(E2);
             Controls.Add(E4);
             Controls.Add(E1);
+            DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "World_Medium";
             Text = "Form2";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)playerPicture).EndInit();
             ResumeLayout(false);
-            this.DoubleBuffered = true;
         }
 
         #endregion
@@ -703,5 +773,11 @@
         private Button E33;
         private Button E34;
         private Button E35;
+        private Panel panel1;
+        private Label label1;
+        private Label medkitLabel;
+        private Button btn_medkit;
+        private Label playerInfoLabel;
+        private PictureBox playerPicture;
     }
 }

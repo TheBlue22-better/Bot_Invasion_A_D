@@ -55,6 +55,7 @@
             btn_0_0 = new Button();
             buttonPanel = new Panel();
             tooltipPanel = new Panel();
+            btn_medkit = new Button();
             toottipLabel = new Label();
             label4 = new Label();
             highlitedInfo = new Label();
@@ -430,6 +431,7 @@
             // 
             // tooltipPanel
             // 
+            tooltipPanel.Controls.Add(btn_medkit);
             tooltipPanel.Controls.Add(toottipLabel);
             tooltipPanel.Controls.Add(label4);
             tooltipPanel.Controls.Add(highlitedInfo);
@@ -442,6 +444,15 @@
             tooltipPanel.Name = "tooltipPanel";
             tooltipPanel.Size = new Size(555, 134);
             tooltipPanel.TabIndex = 75;
+            // 
+            // btn_medkit
+            // 
+            btn_medkit.Location = new Point(3, 107);
+            btn_medkit.Name = "btn_medkit";
+            btn_medkit.Size = new Size(95, 23);
+            btn_medkit.TabIndex = 9;
+            btn_medkit.Text = "  Medkit(s) left";
+            btn_medkit.UseVisualStyleBackColor = true;
             // 
             // toottipLabel
             // 
@@ -588,5 +599,6 @@
         private PictureBox playerPicture;
         private Label playerHealth;
         private Button escapeButton;
+        private Button btn_medkit;
     }
 }

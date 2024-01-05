@@ -65,7 +65,9 @@
             btn_5_1 = new Button();
             btn_5_0 = new Button();
             buttonPanel = new Panel();
+            escapeButton = new Button();
             tooltipPanel = new Panel();
+            btn_medkit = new Button();
             toottipLabel = new Label();
             label4 = new Label();
             highlitedInfo = new Label();
@@ -74,7 +76,6 @@
             label2 = new Label();
             playerPicture = new PictureBox();
             playerHealth = new Label();
-            escapeButton = new Button();
             buttonPanel.SuspendLayout();
             tooltipPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)highlightPicture).BeginInit();
@@ -593,8 +594,21 @@
             buttonPanel.Size = new Size(558, 478);
             buttonPanel.TabIndex = 61;
             // 
+            // escapeButton
+            // 
+            escapeButton.Location = new Point(678, 33);
+            escapeButton.Name = "escapeButton";
+            escapeButton.Size = new Size(82, 69);
+            escapeButton.TabIndex = 77;
+            escapeButton.Text = "<ESCAPE!>\r\n";
+            escapeButton.UseVisualStyleBackColor = true;
+            escapeButton.Click += btn_Escape_Click;
+            escapeButton.MouseEnter += btn_Escape_Enter;
+            escapeButton.MouseLeave += btn_Escape_Exit;
+            // 
             // tooltipPanel
             // 
+            tooltipPanel.Controls.Add(btn_medkit);
             tooltipPanel.Controls.Add(toottipLabel);
             tooltipPanel.Controls.Add(label4);
             tooltipPanel.Controls.Add(highlitedInfo);
@@ -606,7 +620,16 @@
             tooltipPanel.Location = new Point(108, 12);
             tooltipPanel.Name = "tooltipPanel";
             tooltipPanel.Size = new Size(555, 134);
-            tooltipPanel.TabIndex = 76;
+            tooltipPanel.TabIndex = 78;
+            // 
+            // btn_medkit
+            // 
+            btn_medkit.Location = new Point(3, 107);
+            btn_medkit.Name = "btn_medkit";
+            btn_medkit.Size = new Size(95, 23);
+            btn_medkit.TabIndex = 9;
+            btn_medkit.Text = "  Medkit(s) left";
+            btn_medkit.UseVisualStyleBackColor = true;
             // 
             // toottipLabel
             // 
@@ -684,25 +707,13 @@
             playerHealth.TabIndex = 1;
             playerHealth.Text = "playerHealth";
             // 
-            // escapeButton
-            // 
-            escapeButton.Location = new Point(678, 33);
-            escapeButton.Name = "escapeButton";
-            escapeButton.Size = new Size(82, 69);
-            escapeButton.TabIndex = 77;
-            escapeButton.Text = "<ESCAPE!>\r\n";
-            escapeButton.UseVisualStyleBackColor = true;
-            escapeButton.Click += btn_Escape_Click;
-            escapeButton.MouseEnter += btn_Escape_Enter;
-            escapeButton.MouseLeave += btn_Escape_Exit;
-            // 
             // Generated_Encounter_6x6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(772, 640);
-            Controls.Add(escapeButton);
             Controls.Add(tooltipPanel);
+            Controls.Add(escapeButton);
             Controls.Add(buttonPanel);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Generated_Encounter_6x6";
@@ -754,7 +765,9 @@
         private Button btn_5_1;
         private Button btn_5_0;
         private Panel buttonPanel;
+        private Button escapeButton;
         private Panel tooltipPanel;
+        private Button btn_medkit;
         private Label toottipLabel;
         private Label label4;
         private Label highlitedInfo;
@@ -763,6 +776,5 @@
         private Label label2;
         private PictureBox playerPicture;
         private Label playerHealth;
-        private Button escapeButton;
     }
 }

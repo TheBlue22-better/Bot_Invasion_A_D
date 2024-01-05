@@ -118,7 +118,6 @@ namespace Bot_Invasion_A_D.code.helping_functions
             else return false;
         }
 
-
         public static void MoveEntity(ref ParentTile[,] tileGrid, Tuple<int, int> oldPos, Tuple<int, int> newPos)
         {
             if (oldPos != newPos)

@@ -87,24 +87,26 @@ namespace Bot_Invasion_A_D.code.world
             ShowGrid(tileGrid, ref enc.getDictionary());
             enc.UpdateEncounter(this);
             enc.UpdatePlayerHealth(player.GetInfo());
+            enc.UpdateMedkitButton();
             return enc;
         }
 
         public RESULT UpdateEncounter(String name)
         {
             bool skipTurn = false;
+            bool win = false;
             // player turn
-            PlayerTurn(NameToLocation(name), ref skipTurn);
+            PlayerTurn(NameToLocation(name), ref skipTurn, ref win);
             // enemy turn
             if (!skipTurn)
             {
                 EnemyTurn();
             }
-            
+            if (win) return RESULT.VICTORY;
             return RESULT.NOTHING;
         }
 
-        public void PlayerTurn(Tuple<int,int> position, ref bool skipTurn)
+        public void PlayerTurn(Tuple<int,int> position, ref bool skipTurn, ref bool win)
         {
             if (PositionNextToPlayer(position, player.GetPosition()))
             {
@@ -126,6 +128,12 @@ namespace Bot_Invasion_A_D.code.world
                                 tileGrid[position.Item1, position.Item2].SetSprite();
                             }
                             skipTurn = false;
+                            break;
+                        }
+                    case FINISH:
+                        {
+                            win = true;
+                            skipTurn = true;
                             break;
                         }
                     default:

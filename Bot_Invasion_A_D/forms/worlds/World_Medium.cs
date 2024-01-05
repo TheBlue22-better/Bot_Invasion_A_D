@@ -1,6 +1,7 @@
 ﻿using Bot_Invasion_A_D.code.enums;
 using Bot_Invasion_A_D.code.helping_functions;
 using Bot_Invasion_A_D.code.world;
+using Bot_Invasion_A_D.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,7 +24,8 @@ namespace Bot_Invasion_A_D.forms.worlds
             InitializeComponent();
             this.openWorld = world;
             this.encounters = world.Encounters();
-            encounterBtnsFill();
+            EncounterBtnsFill();
+            UpdatePlayerInfo();
 
         }
 
@@ -35,6 +37,7 @@ namespace Bot_Invasion_A_D.forms.worlds
             encounter = encounters[btn.Name].Generate(openWorld.GetPlayer());
             (sender as Button).Enabled = false;
             encounter.ShowDialog();
+            UpdatePlayerInfo();
 
         }
         private void UpdateAvailable(Button btn)
@@ -48,7 +51,7 @@ namespace Bot_Invasion_A_D.forms.worlds
         }
 
         // extemely ugly, a better way to do this maybe?
-        private void encounterBtnsFill()
+        private void EncounterBtnsFill()
         {
             this.encounterBtns = new Dictionary<string, Button>();
             encounterBtns.Add("E1", E1);
@@ -97,6 +100,15 @@ namespace Bot_Invasion_A_D.forms.worlds
         private void btn_EnabledChanged(object sender, EventArgs e)
         {
             Helper.OnClickChange(sender, encounters);
+        }
+
+        private void UpdatePlayerInfo()
+        {
+            playerPicture.BackgroundImage = Resources.player;
+            playerInfoLabel.Text = openWorld.GetPlayer().GetInfo();
+            medkitLabel.Text = openWorld.GetPlayer().GetMedkits() + " Medkit(s) left";
+            if (openWorld.GetPlayer().GetMedkits() == 0) btn_medkit.Enabled = false;
+            else btn_medkit.Enabled = true;
         }
     }
 

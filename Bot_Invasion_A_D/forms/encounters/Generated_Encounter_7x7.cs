@@ -23,6 +23,7 @@ namespace Bot_Invasion_A_D.forms.encounters
             this.pHealth = playerHealth;
             this.hInfo = highlitedInfo;
             this.escButton = escapeButton;
+            this.medkitButton = btn_medkit;
             this.ControlBox = false;
         }
     }

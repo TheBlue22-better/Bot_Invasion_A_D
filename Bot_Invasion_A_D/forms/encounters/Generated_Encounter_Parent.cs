@@ -3,6 +3,7 @@ using Bot_Invasion_A_D.code.world;
 using Bot_Invasion_A_D.Properties;
 using static Bot_Invasion_A_D.code.helping_functions.Helper;
 using static Bot_Invasion_A_D.code.enums.TILE_TYPE;
+using Bot_Invasion_A_D.code.enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,7 @@ namespace Bot_Invasion_A_D.forms.encounters
         protected Label pHealth;
         protected Label hInfo;
         protected Button escButton;
+        protected Button medkitButton;
 
         public Generated_Encounter_Parent DimEncounter(int dim)
         {
@@ -55,12 +57,44 @@ namespace Bot_Invasion_A_D.forms.encounters
         }
 
         public void UpdateEncounter(Encounter enc) { this.enc = enc; }
+        public void UpdatePlayerHealth(string health)
+        {
+            pHealth.Text = health;
+        }
+        public void UpdateEnemyHealth(Tuple<int, int> location)
+        {
+            hInfo.Text = enc.GetGrid()[location.Item1, location.Item2].GetEntity().GetInfo();
+        }
+        public void UpdateMedkitButton()
+        {
+            medkitButton.Text = enc.GetPlayer().GetMedkits() + " Medkit(s) left";
+            if (enc.GetPlayer().GetMedkits() == 0) medkitButton.Enabled = false;
+            else medkitButton.Enabled = true;
+        }
 
         protected void btn_general_Click(object sender, EventArgs e)
         {
-            enc.UpdateEncounter((sender as Button).Name);
-            GridHelper.ShowGrid(enc.GetGrid(), ref buttonDictionary);
-            UpdatePlayerHealth(enc.GetPlayer().GetInfo());
+            switch (enc.UpdateEncounter((sender as Button).Name))
+            {
+                case RESULT.NOTHING:
+                    {
+                        GridHelper.ShowGrid(enc.GetGrid(), ref buttonDictionary);
+                        UpdatePlayerHealth(enc.GetPlayer().GetInfo());
+
+                        Tuple<int, int> location = NameToLocation((sender as Button).Name);
+                        if (enc.GetGrid()[location.Item1, location.Item2].HasTurret())
+                        {
+                            UpdateEnemyHealth(location);
+                        }
+                        break;
+                    }
+                case RESULT.VICTORY:
+                    {
+                        this.Close();
+                        break;
+                    }
+            }
+            
         }
 
         protected void btn_mouse_Enter(object sender, EventArgs e)
@@ -69,8 +103,7 @@ namespace Bot_Invasion_A_D.forms.encounters
             Tuple<int, int> location = NameToLocation((sender as Button).Name);
             if (enc.GetGrid()[location.Item1, location.Item2].GetEntity() != null)
             {
-                hInfo.Text = enc.GetGrid()[location.Item1, location.Item2].GetEntity().GetInfo();
-                
+                UpdateEnemyHealth(location);
             }
             else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == MOUNTAIN)
             {
@@ -91,12 +124,6 @@ namespace Bot_Invasion_A_D.forms.encounters
             highlighted.BackgroundImage = Resources.nothing;
             hInfo.Text = "<UNKNOWN>";
         }
-
-        public void UpdatePlayerHealth(string health)
-        {
-            pHealth.Text = health;
-        }
-
         protected void btn_Escape_Enter(object sender, EventArgs e)
         {
             escButton.Text = "YOU WILL TAKE\n" + enc.EscapeDamage().ToString("F2") + "\nDAMAGE!";
@@ -112,6 +139,5 @@ namespace Bot_Invasion_A_D.forms.encounters
             enc.GetPlayer().SetHealth(enc.GetPlayer().GetHealth() - enc.EscapeDamage());
             this.Close();
         }
-
     }
 }
