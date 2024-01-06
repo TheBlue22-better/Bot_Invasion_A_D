@@ -40,7 +40,7 @@ namespace Bot_Invasion_A_D.forms.worlds
             encounter.ShowDialog();
             UpdatePlayerInfo();
             if (openWorld.GetPlayer().IsDead()) ShowGameOverScreen();
-            if (encounters[btn.Name].GetType() == ENCOUNTER_TYPE.BOSS) ShowWinScreen();
+            else if (encounters[btn.Name].GetType() == ENCOUNTER_TYPE.BOSS) ShowWinScreen();
         }
         private void UpdateAvailable(Button btn)
         {
@@ -51,8 +51,6 @@ namespace Bot_Invasion_A_D.forms.worlds
                 if (!encounterBtns[neigbour].Enabled) encounterBtns[neigbour].Enabled = true;
             }
         }
-
-        // extemely ugly, a better way to do this maybe?
         private void EncounterBtnsFill()
         {
             this.encounterBtns = new Dictionary<string, Button>();

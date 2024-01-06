@@ -57,6 +57,10 @@ namespace Bot_Invasion_A_D.code.helping_functions
             else return new RangedTurret();
         }
 
+        public static void Damage(Entity dealer, Entity receiver, DIFFICULTY wDiff)
+        {
+            receiver.SetHealth(receiver.GetHealth() - dealer.DealDamage(wDiff));
+        }
 
     }
 }

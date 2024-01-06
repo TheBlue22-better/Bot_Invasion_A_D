@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.entities;
+using Bot_Invasion_A_D.forms.menu;
+using Bot_Invasion_A_D.code.enums;
+using Bot_Invasion_A_D.code.entities.child_turrets;
 
 namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
 {
@@ -52,7 +55,6 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
                         }
                 }
             }
-            
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using Bot_Invasion_A_D.code.world.encounter_tile;
 using static Bot_Invasion_A_D.code.helping_functions.GridHelper;
+using static Bot_Invasion_A_D.code.helping_functions.Helper;
 using Bot_Invasion_A_D.Properties;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Bot_Invasion_A_D.code.enums.STATE;
 using Bot_Invasion_A_D.code.enums;
+using System.Numerics;
 
 namespace Bot_Invasion_A_D.code.entities
 {
@@ -40,6 +42,22 @@ namespace Bot_Invasion_A_D.code.entities
         public virtual bool DropsMedkit(DIFFICULTY diff)
         {
             return false;
+        }
+
+        public virtual void TurretTurn(Tuple<int, int> myPos, Player player, DIFFICULTY worldDiff)
+        {
+            if (state == STATE.AIM && PositionNextToPlayer(myPos, player.GetPosition(), range))
+            {
+                state = STATE.FIRE;
+            }
+            else if (state == STATE.FIRE && !PositionNextToPlayer(myPos, player.GetPosition(), range))
+            {
+                state = STATE.AIM;
+            }
+            else if (state == STATE.FIRE && PositionNextToPlayer(myPos, player.GetPosition(), range))
+            {
+                Damage(this, player, worldDiff);
+            }
         }
     }
 }

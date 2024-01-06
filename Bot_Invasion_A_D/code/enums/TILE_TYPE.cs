@@ -12,6 +12,7 @@ namespace Bot_Invasion_A_D.code.enums
         TURRET,
         MOUNTAIN,
         PLAYER,
-        FINISH
+        FINISH,
+        BOSS
     }
 }

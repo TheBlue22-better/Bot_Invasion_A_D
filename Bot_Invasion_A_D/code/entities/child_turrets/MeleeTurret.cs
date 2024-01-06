@@ -27,17 +27,14 @@ namespace Bot_Invasion_A_D.code.entities.enemies
                 case DIFFICULTY.EASY:
                     {
                         return random.NextDouble() * (75.0 - 50.0) + (50.0);
-                        break;
                     }
                 case DIFFICULTY.MEDIUM:
                     {
                         return random.NextDouble() * (150.0 - 70.0) + (70.0);
-                        break;
                     }
                 case DIFFICULTY.HARD:
                     {
                         return random.NextDouble() * (250.0 - 120.0) + (120.0);
-                        break;
                     }
             }
             return 0;       // not possible as long as the world is one of 3 chosen difficulties

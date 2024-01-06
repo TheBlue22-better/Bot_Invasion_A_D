@@ -7,17 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Bot_Invasion_A_D.code.entities;
 using Bot_Invasion_A_D.code.world.encounter_tile;
+using Bot_Invasion_A_D.code.enums;
+using Bot_Invasion_A_D.code.world.encounter_tile.child_tiles;
 
 namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static ParentTile[,] FillGrid(ParentTile[,] grid, Player player,Dictionary<Tuple<int,int>, Turret> enemies)
+        public static void FillGrid(ParentTile[,] grid, Player player,Dictionary<Tuple<int,int>, Turret> enemies, ENCOUNTER_TYPE eType)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
 
-            // mountain
+
+            // mountain  /////////////////////////////////////////////////////////////////
             int maxMountains = rows - 1;        // rows == cols; rows is dym
             for (int i = 0; i < rows; i++)      // y
             {
@@ -26,23 +29,31 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     grid[i, j] = tryFillTile(new TileFactory(MOUNTAIN).GetTile(), 10, ref maxMountains);
                 }
             }
-            // finish
+
+            // finish  ///////////////////////////////////////////////////////////////////
+            int finishLocation = 0;
             int maxFinish = 1;
-            for (int i = 0; i < rows; i++)      // x
+            for (int i = 0; i < rows; i++)
             {
-                if (!grid[0, i].IsFull())
-                {
-                    grid[0, i] = tryFillTile(new TileFactory(FINISH).GetTile(), 30, ref maxFinish);
-                }
+                grid[0, i] = tryFillTile(new TileFactory(FINISH).GetTile(), 30, ref maxFinish);
+                if (grid[0, i].GetType() == TILE_TYPE.FINISH) finishLocation = i;
             }
             if (maxFinish == 1)
             {                                                // in case we got no finish generated
                 grid[0, 0] = new TileFactory(FINISH).GetTile();
+                finishLocation = 0;
             }
 
-            // player
+            // boss (if eType is BOSS)  //////////////////////////////////////////////////
+            if (eType == ENCOUNTER_TYPE.BOSS)
+            {
+                grid[1, finishLocation] = new TileFactory(BOSS).GetTile();
+                (grid[0, finishLocation] as FinishTile).bossAlive = true;
+            }
+
+            // player  //////////////////////////////////////////////////////////////////
             int maxPlayer = 1;
-            for (int i = 0; i < rows; i++)      // x
+            for (int i = 0; i < rows; i++)
             {
                 if (!grid[rows - 1, i].IsFull())
                 {
@@ -53,8 +64,9 @@ namespace Bot_Invasion_A_D.code.helping_functions
             if (maxPlayer == 1) {                                                // in case we got no player generated
                 grid[rows - 1, cols - 1] = new TileFactory(PLAYER).GetTile();
                 player.SetPosition(new Tuple<int, int>(rows - 1, cols - 1));
-            }                               
-            // enemies
+            }         
+            
+            // enemies  ///////////////////////////////////////////////////////////////////
             int maxEnemies = (rows - 3) * (cols - 3);
             for (int i = 0; i < rows - 2; i++)
             {
@@ -70,7 +82,6 @@ namespace Bot_Invasion_A_D.code.helping_functions
                     }
                 }
             }
-            return grid;
         }
 
         public static ParentTile tryFillTile(ParentTile tile, int percent, ref int maxAmount)

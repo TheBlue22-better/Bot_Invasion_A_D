@@ -13,6 +13,7 @@ using Bot_Invasion_A_D.code.entities.enemies;
 using Bot_Invasion_A_D.code.world.encounter_tile;
 using System.Diagnostics;
 using Bot_Invasion_A_D.code.world.encounter_tile.child_tiles;
+using Bot_Invasion_A_D.code.entities.child_turrets;
 
 namespace Bot_Invasion_A_D.code.world
 {
@@ -88,7 +89,7 @@ namespace Bot_Invasion_A_D.code.world
             }
             enc = enc.DimEncounter(dim);
             tileGrid = InitializeGrid(tileGrid, dim);
-            FillGrid(tileGrid, player, turrets);
+            FillGrid(tileGrid, player, turrets, enType);
             ShowGrid(tileGrid, enc.getDictionary());
             enc.UpdateEncounter(this);
             enc.UpdatePlayerHealth(player.GetInfo());
@@ -116,7 +117,8 @@ namespace Bot_Invasion_A_D.code.world
         {
             if (PositionNextToPlayer(position, player.GetPosition()))
             {
-                switch (tileGrid[position.Item1, position.Item2].GetType()) {
+                ParentTile tile = tileGrid[position.Item1, position.Item2];
+                switch (tile.GetType()) {
                     case EMPTY:
                         {
                             MoveEntity(tileGrid, player.GetPosition(), position);
@@ -126,10 +128,10 @@ namespace Bot_Invasion_A_D.code.world
                         }
                     case TURRET:
                         {
-                            Damage(this.player, tileGrid[position.Item1, position.Item2].GetEntity());
-                            if (tileGrid[position.Item1, position.Item2].GetEntity().IsDead())
+                            Damage(this.player, tile.GetEntity(), wDiff);
+                            if (tile.GetEntity().IsDead())
                             {
-                                if ((tileGrid[position.Item1, position.Item2].GetEntity() as Turret).DropsMedkit(wDiff)) player.GiveMedkit();
+                                if ((tile.GetEntity() as Turret).DropsMedkit(wDiff)) player.GiveMedkit();
                                 turrets.Remove(position);
                                 tileGrid[position.Item1, position.Item2] = new EmptyTile();
                                 tileGrid[position.Item1, position.Item2].SetSprite();
@@ -137,9 +139,24 @@ namespace Bot_Invasion_A_D.code.world
                             skipTurn = false;
                             break;
                         }
+                    case BOSS:
+                        {
+                            Damage(this.player, tile.GetEntity(), wDiff);
+                            if (tile.GetEntity().IsDead() && (tile.GetEntity() as BossTurret).HasNextStage())
+                            {
+                                (tile.GetEntity() as BossTurret).NextStage();
+                                tileGrid[position.Item1, position.Item2].SetSprite();
+                            }
+                            else if (tile.GetEntity().IsDead())
+                            {
+                                (tile.GetEntity() as BossTurret).FinalAttack(tileGrid);
+                                (tileGrid[position.Item1, position.Item2 - 1] as FinishTile).bossAlive = false;
+                            }
+                            break;
+                        }
                     case FINISH:
                         {
-                            win = true;
+                            if ((tileGrid[position.Item1, position.Item2] as FinishTile).canEscape()) win = true;
                             skipTurn = true;
                             break;
                         }
@@ -162,26 +179,9 @@ namespace Bot_Invasion_A_D.code.world
         {
             foreach (var turret in turrets)
             {
-                if (turret.Value.GetState() == STATE.AIM && PositionNextToPlayer(turret.Key, player.GetPosition(), turret.Value.GetRange()))
-                {
-                    turret.Value.SetState(STATE.FIRE);
-                    tileGrid[turret.Key.Item1, turret.Key.Item2].SetSprite();
-                }
-                else if (turret.Value.GetState() == STATE.FIRE && !PositionNextToPlayer(turret.Key, player.GetPosition(), turret.Value.GetRange()))
-                {
-                    turret.Value.SetState(STATE.AIM);
-                    tileGrid[turret.Key.Item1, turret.Key.Item2].SetSprite();
-                }
-                else if (turret.Value.GetState() == STATE.FIRE && PositionNextToPlayer(turret.Key, player.GetPosition(), turret.Value.GetRange()))
-                {
-                    Damage(turret.Value, player);
-                }
+                turret.Value.TurretTurn(turret.Key, player, wDiff);
+                tileGrid[turret.Key.Item1, turret.Key.Item2].SetSprite();
             }
-        }
-
-        public void Damage(Entity dealer, Entity receiver)
-        {
-            receiver.SetHealth(receiver.GetHealth() - dealer.DealDamage(this.wDiff));
         }
 
         public double EscapeDamage()

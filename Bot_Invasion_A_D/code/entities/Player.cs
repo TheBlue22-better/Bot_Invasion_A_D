@@ -47,6 +47,8 @@ namespace Bot_Invasion_A_D.code.entities
             if (diff == DIFFICULTY.EASY) this.health += maxHealth / 4;
             else if (diff == DIFFICULTY.MEDIUM) this.health += maxHealth / 6;
             else this.health += maxHealth / 10;
+
+            if (health > maxHealth) health = maxHealth;
             medkits--;
         }
         public int GetMedkits() { return medkits; }

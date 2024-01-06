@@ -25,7 +25,7 @@ namespace Bot_Invasion_A_D.code.entities
 
         public double GetHealth() { return this.health; }
 
-        public bool IsDead()
+        public virtual bool IsDead()
         {
             if (health <= 0) return true;
             return false;

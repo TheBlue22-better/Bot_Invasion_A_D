@@ -63,6 +63,36 @@ namespace Bot_Invasion_A_D.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BossPhase1 {
+            get {
+                object obj = ResourceManager.GetObject("BossPhase1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BossPhase2 {
+            get {
+                object obj = ResourceManager.GetObject("BossPhase2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BossPhase3 {
+            get {
+                object obj = ResourceManager.GetObject("BossPhase3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emptyTile {
             get {
                 object obj = ResourceManager.GetObject("emptyTile", resourceCulture);
