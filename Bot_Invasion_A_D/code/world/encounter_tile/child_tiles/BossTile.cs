@@ -21,19 +21,19 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
         {
             if ((entity as Turret).GetState() == enums.STATE.AIM)
             {
-                switch (entity.GetName())
+                switch ((entity as BossTurret).GetStage())
                 {
-                    case "bossTurretPhase1":
+                    case 1:
                         {
                             this.sprite = Resources.BossPhase1;
                             break;
                         }
-                    case "bossTurretPhase2":
+                    case 2:
                         {
                             this.sprite = Resources.BossPhase2;
                             break;
                         }
-                    case "bossTurretPhase3":
+                    case 3:
                         {
                             this.sprite = Resources.BossPhase3;
                             break;
@@ -42,9 +42,18 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
             }
             else
             {
-                switch (entity.GetName())
+                switch ((entity as BossTurret).GetStage())
                 {
-                    
+                    case 1:
+                        {
+                            this.sprite = Resources.BossPhase1Attack;
+                            break;
+                        }
+                    case 2:
+                        {
+                            this.sprite = Resources.BossPhase2Attack;
+                            break;
+                        }
                 }
             }
         }

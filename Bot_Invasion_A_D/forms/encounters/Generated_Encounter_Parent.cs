@@ -129,7 +129,7 @@ namespace Bot_Invasion_A_D.forms.encounters
         // player can escape and skip the encounter, they will they damage, if they hover over the button before clicking it, they will see how much
         protected void btn_Escape_Enter(object sender, EventArgs e)
         {
-            escButton.Text = "YOU WILL TAKE\n" + enc.EscapeDamage().ToString("F2") + "\nDAMAGE!";
+            escButton.Text = "YOU WILL TAKE\n" + enc.GetEscapeDamage().ToString("F2") + "\nDAMAGE!";
         }
 
         // defaut state of the escape button
@@ -140,7 +140,7 @@ namespace Bot_Invasion_A_D.forms.encounters
 
         protected void btn_Escape_Click(object sender, EventArgs e)
         {
-            enc.GetPlayer().SetHealth(enc.GetPlayer().GetHealth() - enc.EscapeDamage());
+            enc.GetPlayer().SetHealth(enc.GetPlayer().GetHealth() - enc.GetEscapeDamage());
             this.Close();
         }
 

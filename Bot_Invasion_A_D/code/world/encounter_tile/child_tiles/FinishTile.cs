@@ -14,7 +14,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
         public override void SetSprite()
         {
             if (!bossAlive) sprite = Resources.finish;
-
+            else sprite = Resources.finishLocked;
         }
     }
 }

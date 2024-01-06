@@ -121,8 +121,14 @@
   <data name="BossPhase1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BossPhase1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BossPhase1Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BossPhase1Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BossPhase2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BossPhase2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BossPhase2Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>BossPhase2Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BossPhase3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>BossPhase3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,6 +141,9 @@
   </data>
   <data name="finish" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>finish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="finishLocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>finishLocked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="map_medium_v11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>map_medium_v1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

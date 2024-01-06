@@ -73,9 +73,29 @@ namespace Bot_Invasion_A_D.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BossPhase1Attack {
+            get {
+                object obj = ResourceManager.GetObject("BossPhase1Attack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BossPhase2 {
             get {
                 object obj = ResourceManager.GetObject("BossPhase2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BossPhase2Attack {
+            get {
+                object obj = ResourceManager.GetObject("BossPhase2Attack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +136,16 @@ namespace Bot_Invasion_A_D.Properties {
         internal static System.Drawing.Bitmap finish {
             get {
                 object obj = ResourceManager.GetObject("finish", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap finishLocked {
+            get {
+                object obj = ResourceManager.GetObject("finishLocked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

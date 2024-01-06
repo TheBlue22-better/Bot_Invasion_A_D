@@ -20,9 +20,10 @@ namespace Bot_Invasion_A_D.code.entities.child_turrets
             this.maxHealth = 500;
             this.name = "bossTurretPhase1";
             this.range = 2;
-            this.state = enums.STATE.AIM;
+            this.state = STATE.AIM;
         }
 
+        public int GetStage() { return bossStage; }
         public override double DealDamage()
         {
             Random random = new Random();
