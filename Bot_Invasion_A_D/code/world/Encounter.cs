@@ -87,9 +87,9 @@ namespace Bot_Invasion_A_D.code.world
                 }
             }
             enc = enc.DimEncounter(dim);
-            InitializeGrid(ref tileGrid, dim);
-            FillGrid(tileGrid, ref player, ref turrets);
-            ShowGrid(tileGrid, ref enc.getDictionary());
+            tileGrid = InitializeGrid(tileGrid, dim);
+            FillGrid(tileGrid, player, turrets);
+            ShowGrid(tileGrid, enc.getDictionary());
             enc.UpdateEncounter(this);
             enc.UpdatePlayerHealth(player.GetInfo());
             enc.UpdateMedkitButton();
@@ -119,7 +119,7 @@ namespace Bot_Invasion_A_D.code.world
                 switch (tileGrid[position.Item1, position.Item2].GetType()) {
                     case EMPTY:
                         {
-                            MoveEntity(ref tileGrid, player.GetPosition(), position);
+                            MoveEntity(tileGrid, player.GetPosition(), position);
                             player.SetPosition(position);
                             skipTurn = false;
                             break;

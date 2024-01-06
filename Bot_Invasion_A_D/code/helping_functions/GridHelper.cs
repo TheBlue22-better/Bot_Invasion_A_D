@@ -12,7 +12,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
 {
     public static class GridHelper
     {
-        public static ParentTile[,] FillGrid(ParentTile[,] grid, ref Player player, ref Dictionary<Tuple<int,int>, Turret> enemies)
+        public static ParentTile[,] FillGrid(ParentTile[,] grid, Player player,Dictionary<Tuple<int,int>, Turret> enemies)
         {
             int rows = grid.GetLength(0);
             int cols = grid.GetLength(1);
@@ -87,7 +87,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
             else return new TileFactory(EMPTY).GetTile();
         }
 
-        public static void ShowGrid(ParentTile[,] tileGrid, ref SortedDictionary<string, Button> buttonDictionary)                    
+        public static void ShowGrid(ParentTile[,] tileGrid, SortedDictionary<string, Button> buttonDictionary)                    
         {
             int rows = tileGrid.GetLength(0);
             int cols = tileGrid.GetLength(1);
@@ -104,9 +104,9 @@ namespace Bot_Invasion_A_D.code.helping_functions
             }
         }
 
-        public static void InitializeGrid(ref ParentTile[,] tileGrid, int dim)
+        public static ParentTile[,] InitializeGrid(ParentTile[,] tileGrid, int dim)
         {
-            tileGrid = new ParentTile[dim,dim];
+            return new ParentTile[dim,dim];
         }
 
         public static bool PositionNextToPlayer(Tuple<int, int> pos, Tuple<int,int> playerPos, int range = 1)
@@ -118,7 +118,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
             else return false;
         }
 
-        public static void MoveEntity(ref ParentTile[,] tileGrid, Tuple<int, int> oldPos, Tuple<int, int> newPos)
+        public static void MoveEntity(ParentTile[,] tileGrid, Tuple<int, int> oldPos, Tuple<int, int> newPos)
         {
             if (oldPos != newPos)
             {

@@ -78,7 +78,7 @@ namespace Bot_Invasion_A_D.forms.encounters
             {
                 case RESULT.NOTHING:
                     {
-                        GridHelper.ShowGrid(enc.GetGrid(), ref buttonDictionary);
+                        GridHelper.ShowGrid(enc.GetGrid(), buttonDictionary);
                         UpdatePlayerHealth(enc.GetPlayer().GetInfo());
                         UpdateMedkitButton();
 
