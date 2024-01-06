@@ -16,5 +16,10 @@ namespace Bot_Invasion_A_D.forms.menu
         {
             InitializeComponent();
         }
+
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

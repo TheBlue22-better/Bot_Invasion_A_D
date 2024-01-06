@@ -49,6 +49,7 @@
             btn_menu.TabIndex = 1;
             btn_menu.Text = "Back to Main Menu";
             btn_menu.UseVisualStyleBackColor = true;
+            btn_menu.Click += btn_menu_Click;
             // 
             // Win_Screen
             // 

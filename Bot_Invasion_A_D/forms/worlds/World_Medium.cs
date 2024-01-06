@@ -40,6 +40,7 @@ namespace Bot_Invasion_A_D.forms.worlds
             encounter.ShowDialog();
             UpdatePlayerInfo();
             if (openWorld.GetPlayer().IsDead()) ShowGameOverScreen();
+            if (encounters[btn.Name].GetType() == ENCOUNTER_TYPE.BOSS) ShowWinScreen();
         }
         private void UpdateAvailable(Button btn)
         {
@@ -123,6 +124,14 @@ namespace Bot_Invasion_A_D.forms.worlds
             this.Hide();
             Game_Over gameOverScreen = new Game_Over();
             gameOverScreen.ShowDialog();
+            this.Close();
+        }
+
+        private void ShowWinScreen()
+        {
+            this.Hide();
+            Win_Screen winScreen = new Win_Screen();
+            winScreen.ShowDialog();
             this.Close();
         }
     }
