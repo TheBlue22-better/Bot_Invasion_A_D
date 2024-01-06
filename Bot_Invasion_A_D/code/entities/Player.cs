@@ -19,34 +19,16 @@ namespace Bot_Invasion_A_D.code.entities
             this.medkits = 0;
         }
 
-        public override double DealDamage(DIFFICULTY diff)
+        public override double DealDamage()
         {
             Random random = new Random();
-            switch (diff)
-            {
-                case DIFFICULTY.EASY:
-                    {
-                        return random.NextDouble() * (75.0 - 50.0) + (50.0);
-
-                    }
-                case DIFFICULTY.MEDIUM:
-                    {
-                        return random.NextDouble() * (50.0 - 25.0) + (25.0);
-                    }
-                case DIFFICULTY.HARD:
-                    {
-                        return random.NextDouble() * 25.0;
-                    }
-            }
-            return 0;       // not possible as long as the world is one of 3 chosen difficulties
+            return random.NextDouble() * (50.0 - 25.0) + (25.0);
         }
 
         public void GiveMedkit() { medkits++; }
-        public void ConsumeMedkit(DIFFICULTY diff) 
+        public void ConsumeMedkit() 
         {
-            if (diff == DIFFICULTY.EASY) this.health += maxHealth / 4;
-            else if (diff == DIFFICULTY.MEDIUM) this.health += maxHealth / 6;
-            else this.health += maxHealth / 10;
+            health += maxHealth / 6;
 
             if (health > maxHealth) health = maxHealth;
             medkits--;

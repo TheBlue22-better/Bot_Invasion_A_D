@@ -49,6 +49,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
             {
                 grid[1, finishLocation] = new TileFactory(BOSS).GetTile();
                 (grid[0, finishLocation] as FinishTile).bossAlive = true;
+                enemies.Add(new Tuple<int, int>(1, finishLocation), (grid[1, finishLocation].GetEntity() as Turret));
             }
 
             // player  //////////////////////////////////////////////////////////////////

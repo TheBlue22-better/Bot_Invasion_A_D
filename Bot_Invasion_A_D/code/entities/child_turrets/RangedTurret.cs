@@ -19,35 +19,15 @@ namespace Bot_Invasion_A_D.code.entities.enemies
             this.state = enums.STATE.AIM;
         }
 
-        public override double DealDamage(DIFFICULTY diff)
+        public override double DealDamage()
         {
             Random random = new Random();
-            switch (diff)
-            {
-                case DIFFICULTY.EASY:
-                    {
-                        return random.NextDouble() * (50 - 25.0) + (25.0);
-                        break;
-                    }
-                case DIFFICULTY.MEDIUM:
-                    {
-                        return random.NextDouble() * (100.0 - 60.0) + (60.0);
-                        break;
-                    }
-                case DIFFICULTY.HARD:
-                    {
-                        return random.NextDouble() * (180.0 - 100.0) + (100.0);
-                        break;
-                    }
-            }
-            return 0;
+            return random.NextDouble() * (100.0 - 60.0) + 60.0;
         }
 
-        public override bool DropsMedkit(DIFFICULTY diff)
+        public override bool DropsMedkit()
         {
-            if (diff == DIFFICULTY.EASY) return GetChance(25);
-            else if (diff == DIFFICULTY.MEDIUM) return GetChance(40);
-            else return GetChance(50);
+            return GetChance(40);
         }
     }
 }

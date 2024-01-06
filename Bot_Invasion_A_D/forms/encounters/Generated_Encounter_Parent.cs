@@ -148,7 +148,7 @@ namespace Bot_Invasion_A_D.forms.encounters
 
         protected void btn_Medkit_Click(object sender, EventArgs e)
         {
-            enc.GetPlayer().ConsumeMedkit(enc.GetWorldDifficulty());
+            enc.GetPlayer().ConsumeMedkit();
             UpdatePlayerHealth(enc.GetPlayer().GetInfo());
             UpdateMedkitButton();
         }

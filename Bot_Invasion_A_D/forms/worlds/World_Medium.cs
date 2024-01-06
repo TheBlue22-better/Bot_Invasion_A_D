@@ -113,7 +113,7 @@ namespace Bot_Invasion_A_D.forms.worlds
 
         private void btn_medkit_Click(object sender, EventArgs e)
         {
-            openWorld.GetPlayer().ConsumeMedkit(openWorld.GetDifficulty());
+            openWorld.GetPlayer().ConsumeMedkit();
             UpdatePlayerInfo();
         }
 

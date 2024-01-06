@@ -21,17 +21,15 @@ namespace Bot_Invasion_A_D.code.world
     {
         ENCOUNTER_TYPE enType;
         DIFFICULTY encDiff;
-        DIFFICULTY wDiff;
         List<String> neigbours;
         ParentTile[,] tileGrid;
         Player player;
         Dictionary<Tuple<int,int>,Turret> turrets;
 
-        public Encounter(ENCOUNTER_TYPE type, DIFFICULTY encDiff, DIFFICULTY wDiff, List<String> neigbour)
+        public Encounter(ENCOUNTER_TYPE type, DIFFICULTY encDiff, List<String> neigbour)
         {
             this.enType = type;
             this.encDiff = encDiff;
-            this.wDiff = wDiff;
             this.neigbours = neigbour;
             this.turrets = new Dictionary<Tuple<int, int>, Turret>();
         }
@@ -42,11 +40,6 @@ namespace Bot_Invasion_A_D.code.world
         public DIFFICULTY GetEncounterDifficulty()
         {
             return encDiff;
-        }
-
-        public DIFFICULTY GetWorldDifficulty()
-        {
-            return wDiff;
         }
         public ENCOUNTER_TYPE GetType()
         {
@@ -128,10 +121,10 @@ namespace Bot_Invasion_A_D.code.world
                         }
                     case TURRET:
                         {
-                            Damage(this.player, tile.GetEntity(), wDiff);
+                            Damage(this.player, tile.GetEntity());
                             if (tile.GetEntity().IsDead())
                             {
-                                if ((tile.GetEntity() as Turret).DropsMedkit(wDiff)) player.GiveMedkit();
+                                if ((tile.GetEntity() as Turret).DropsMedkit()) player.GiveMedkit();
                                 turrets.Remove(position);
                                 tileGrid[position.Item1, position.Item2] = new EmptyTile();
                                 tileGrid[position.Item1, position.Item2].SetSprite();
@@ -141,7 +134,7 @@ namespace Bot_Invasion_A_D.code.world
                         }
                     case BOSS:
                         {
-                            Damage(this.player, tile.GetEntity(), wDiff);
+                            Damage(this.player, tile.GetEntity());
                             if (tile.GetEntity().IsDead() && (tile.GetEntity() as BossTurret).HasNextStage())
                             {
                                 (tile.GetEntity() as BossTurret).NextStage();
@@ -181,7 +174,7 @@ namespace Bot_Invasion_A_D.code.world
         {
             foreach (var turret in turrets)
             {
-                turret.Value.TurretTurn(turret.Key, player, wDiff);
+                turret.Value.TurretTurn(turret.Key, player);
                 tileGrid[turret.Key.Item1, turret.Key.Item2].SetSprite();
             }
         }
@@ -191,7 +184,7 @@ namespace Bot_Invasion_A_D.code.world
             double damage = 0;
             foreach(var turret in turrets)
             {
-                damage += turret.Value.DealDamage(this.wDiff);
+                damage += turret.Value.DealDamage();
             }
             return damage;
         }

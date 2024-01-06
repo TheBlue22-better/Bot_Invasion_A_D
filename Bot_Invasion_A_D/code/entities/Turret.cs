@@ -30,17 +30,17 @@ namespace Bot_Invasion_A_D.code.entities
 
         public STATE GetState() { return state;}
 
-        public override double DealDamage(DIFFICULTY diff)
+        public override double DealDamage()
         {
             return 0; // it is overridden in child turrets
         }
 
-        public virtual bool DropsMedkit(DIFFICULTY diff)
+        public virtual bool DropsMedkit()
         {
             return false;
         }
 
-        public virtual void TurretTurn(Tuple<int, int> myPos, Player player, DIFFICULTY worldDiff)
+        public virtual void TurretTurn(Tuple<int, int> myPos, Player player)
         {
             if (state == STATE.AIM && PositionNextToPlayer(myPos, player.GetPosition(), range))
             {
@@ -52,7 +52,7 @@ namespace Bot_Invasion_A_D.code.entities
             }
             else if (state == STATE.FIRE && PositionNextToPlayer(myPos, player.GetPosition(), range))
             {
-                Damage(this, player, worldDiff);
+                Damage(this, player);
             }
         }
     }

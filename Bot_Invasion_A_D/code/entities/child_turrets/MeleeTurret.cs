@@ -19,32 +19,15 @@ namespace Bot_Invasion_A_D.code.entities.enemies
             this.state = enums.STATE.AIM;
         }
 
-        public override double DealDamage(DIFFICULTY diff)
+        public override double DealDamage()
         {
             Random random = new Random();
-            switch (diff)
-            {
-                case DIFFICULTY.EASY:
-                    {
-                        return random.NextDouble() * (75.0 - 50.0) + (50.0);
-                    }
-                case DIFFICULTY.MEDIUM:
-                    {
-                        return random.NextDouble() * (150.0 - 70.0) + (70.0);
-                    }
-                case DIFFICULTY.HARD:
-                    {
-                        return random.NextDouble() * (250.0 - 120.0) + (120.0);
-                    }
-            }
-            return 0;       // not possible as long as the world is one of 3 chosen difficulties
+            return random.NextDouble() * (150.0 - 70.0) + 70.0;
         }
 
-        public override bool DropsMedkit(DIFFICULTY diff)
+        public override bool DropsMedkit()
         {
-            if (diff == DIFFICULTY.EASY) return GetChance(35);
-            else if (diff == DIFFICULTY.MEDIUM) return GetChance(60);
-            else return GetChance(80);
+            return GetChance(60);
         }
     }
 }
