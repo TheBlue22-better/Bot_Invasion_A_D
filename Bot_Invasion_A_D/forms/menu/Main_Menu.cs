@@ -11,7 +11,6 @@ namespace Sem_Testing
         {
             InitializeComponent();
         }
-
         private void btnNewGame_Click(object sender, EventArgs e)
         {
             Form wrld_medium = new World_Medium(new OpenWorld());
@@ -31,6 +30,11 @@ namespace Sem_Testing
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void btnContinueGame_MouseEnter(object sender, EventArgs e)
+        {
+            btnContinueGame.Text = "In Development!";
+            btnContinueGame.Enabled = false;
         }
     }
 }

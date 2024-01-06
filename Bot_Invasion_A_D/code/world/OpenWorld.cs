@@ -21,16 +21,12 @@ namespace Bot_Invasion_A_D.code.world
 
         public Player GetPlayer() { return player; }
 
-        public List<String> Neigbours(String Encounter)
-        {
-            return encounters[Encounter].GetNeigbours();
-        }
-
         public Dictionary<String, Encounter> Encounters()
         {
             return encounters;
         }
 
+        // as the open world is pre-made, encounters have to be filled by hand with their neigbours
         private void FillEncounter()
         {
             Dictionary<string, Encounter> filledEnc = new Dictionary<string, Encounter>();
@@ -57,9 +53,9 @@ namespace Bot_Invasion_A_D.code.world
             encounters.Add("E20", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.MEDIUM, new List<String> { "E21" }));
             encounters.Add("E21", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.EASY, new List<String> { "E22" }));
             encounters.Add("E22", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.EASY, new List<String> { "E23" }));
-            encounters.Add("E23", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.EASY, new List<String> { "E24" })); //we cannot go back.
-            encounters.Add("E24", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.MEDIUM, new List<String> { "E27", "E25" }));
-            encounters.Add("E25", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.MEDIUM, new List<String> { "E26" }));
+            encounters.Add("E23", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.EASY, new List<String> { "E24" }));              // connection point does not have neigbours
+            encounters.Add("E24", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.MEDIUM, new List<String> { "E27", "E25" }));     // that lead back to the start
+            encounters.Add("E25", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.MEDIUM, new List<String> { "E26" }));            // to avoid complexity
             encounters.Add("E26", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.MEDIUM, new List<String> { "E40" }));
             encounters.Add("E27", new Encounter(ENCOUNTER_TYPE.REGULAR, DIFFICULTY.EASY, new List<String> { "E28", "E36" }));
             encounters.Add("E28", new Encounter(ENCOUNTER_TYPE.OPTIONAL, DIFFICULTY.EASY, new List<String> { "E29" }));

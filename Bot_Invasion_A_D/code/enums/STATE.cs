@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.enums
 {
+    // state of a turret
     public enum STATE
     {
         AIM,

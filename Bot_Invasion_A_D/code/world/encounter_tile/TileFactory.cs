@@ -12,6 +12,7 @@ using Bot_Invasion_A_D.code.world.encounter_tile.child_tiles;
 
 namespace Bot_Invasion_A_D.code.world.encounter_tile
 {
+    // factory used for creating different tiles
     public class TileFactory
     {
         ParentTile tile;

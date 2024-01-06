@@ -20,6 +20,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
             this.entity = RandomTurret();
         }
 
+        // sprite is set based on the individual turret and its state
         public override void SetSprite()
         {
             

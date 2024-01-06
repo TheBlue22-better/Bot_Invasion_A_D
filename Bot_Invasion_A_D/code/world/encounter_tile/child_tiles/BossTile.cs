@@ -16,6 +16,7 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
             this.entity = new BossTurret();
         }
 
+        // sprite is set based on boss state and phase
         public override void SetSprite()
         {
             if ((entity as Turret).GetState() == enums.STATE.AIM)

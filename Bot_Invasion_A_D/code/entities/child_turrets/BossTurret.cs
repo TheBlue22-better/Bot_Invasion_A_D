@@ -12,6 +12,7 @@ namespace Bot_Invasion_A_D.code.entities.child_turrets
 {
     public class BossTurret : Turret
     {
+        // boss spawn stage
         int bossStage = 1;
         public BossTurret() 
         {
@@ -38,22 +39,6 @@ namespace Bot_Invasion_A_D.code.entities.child_turrets
         public override bool DropsMedkit()
         {
             return true;
-        }
-
-        public override void TurretTurn(Tuple<int, int> myPos, Player player)
-        {
-            if (state == STATE.AIM && PositionNextToPlayer(myPos, player.GetPosition(), range))
-            {
-                state = STATE.FIRE;
-            }
-            else if (state == STATE.FIRE && !PositionNextToPlayer(myPos, player.GetPosition(), range))
-            {
-                state = STATE.AIM;
-            }
-            else if (state == STATE.FIRE && PositionNextToPlayer(myPos, player.GetPosition(), range))
-            {
-                Damage(this, player);
-            }
         }
 
         public bool HasNextStage()

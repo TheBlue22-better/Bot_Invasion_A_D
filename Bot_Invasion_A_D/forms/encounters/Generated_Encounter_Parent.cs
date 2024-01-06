@@ -33,11 +33,6 @@ namespace Bot_Invasion_A_D.forms.encounters
             else return new Generated_Encounter_7x7(enc);
         }
 
-        public void SetEncounter(Encounter enc)
-        {
-            this.enc = enc;
-        }
-
         public ref SortedDictionary<string, Button> getDictionary()
         {
             return ref buttonDictionary;
@@ -46,13 +41,11 @@ namespace Bot_Invasion_A_D.forms.encounters
         protected void CreateButtonDictionary(Control container)
         {
             buttonDictionary = new SortedDictionary<string, Button>();
-            // Use LINQ to filter controls to only include buttons
             var buttons = container.Controls.OfType<Button>();
 
-            // Add buttons to the dictionary with their names as keys
-            foreach (var button in buttons)
+            foreach (Button btn in buttons)
             {
-                buttonDictionary.Add(button.Name, button);
+                buttonDictionary.Add(btn.Name, btn);
             }
         }
 
@@ -71,12 +64,12 @@ namespace Bot_Invasion_A_D.forms.encounters
             if (enc.GetPlayer().GetMedkits() == 0) medkitButton.Enabled = false;
             else medkitButton.Enabled = true;
         }
-
+        // any "tile" button on any encounter does the same thing
         protected void btn_general_Click(object sender, EventArgs e)
         {
             switch (enc.UpdateEncounter((sender as Button).Name))
             {
-                case RESULT.NOTHING:
+                case RESULT.NOTHING:                                        // player was not killed nor anyone escaped
                     {
                         GridHelper.ShowGrid(enc.GetGrid(), buttonDictionary);
                         UpdatePlayerHealth(enc.GetPlayer().GetInfo());
@@ -89,12 +82,12 @@ namespace Bot_Invasion_A_D.forms.encounters
                         }
                         break;
                     }
-                case RESULT.VICTORY:
+                case RESULT.VICTORY:                                            // player has escaped
                     {
                         this.Close();
                         break;
                     }
-                case RESULT.DEATH:
+                case RESULT.DEATH:                                              // player has died
                     {
                         this.Close();
                         break;
@@ -103,15 +96,16 @@ namespace Bot_Invasion_A_D.forms.encounters
             
         }
 
+        // hovering over a tile shows its sprite and info about the tile
         protected void btn_mouse_Enter(object sender, EventArgs e)
         {
-            highlighted.BackgroundImage = (sender as Button).BackgroundImage;
-            Tuple<int, int> location = NameToLocation((sender as Button).Name);
-            if (enc.GetGrid()[location.Item1, location.Item2].GetEntity() != null)
+            highlighted.BackgroundImage = (sender as Button).BackgroundImage;               // sprite of the tile
+            Tuple<int, int> location = NameToLocation((sender as Button).Name);             // each tile has different info, some given by entity inside that tile
+            if (enc.GetGrid()[location.Item1, location.Item2].GetEntity() != null)          // entity gives info
             {
                 UpdateEnemyHealth(location);
             }
-            else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == MOUNTAIN)
+            else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == MOUNTAIN)   // other is based on the given tile
             {
                 hInfo.Text = "IMPASSABLE.";
             }
@@ -125,16 +119,20 @@ namespace Bot_Invasion_A_D.forms.encounters
             }
         }
 
+        // default state of the highlight 
         protected void btn_mouse_Exit(object sender, EventArgs e)
         {
             highlighted.BackgroundImage = Resources.nothing;
             hInfo.Text = "<UNKNOWN>";
         }
+
+        // player can escape and skip the encounter, they will they damage, if they hover over the button before clicking it, they will see how much
         protected void btn_Escape_Enter(object sender, EventArgs e)
         {
             escButton.Text = "YOU WILL TAKE\n" + enc.EscapeDamage().ToString("F2") + "\nDAMAGE!";
         }
 
+        // defaut state of the escape button
         protected void btn_Escape_Exit(object sender, EventArgs e)
         {
             escButton.Text = "<ESCAPE!>";

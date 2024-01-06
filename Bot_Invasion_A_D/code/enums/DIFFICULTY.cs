@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bot_Invasion_A_D.code.enums
 {
+    // difficulty of the encounter
     public enum DIFFICULTY
     {
         EASY,

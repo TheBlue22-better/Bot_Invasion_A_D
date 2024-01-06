@@ -18,13 +18,11 @@ namespace Bot_Invasion_A_D.code.entities
             this.health = 1000;
             this.medkits = 0;
         }
-
         public override double DealDamage()
         {
             Random random = new Random();
             return random.NextDouble() * (50.0 - 25.0) + (25.0);
         }
-
         public void GiveMedkit() { medkits++; }
         public void ConsumeMedkit() 
         {

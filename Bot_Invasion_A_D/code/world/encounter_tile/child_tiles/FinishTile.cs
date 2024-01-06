@@ -9,15 +9,12 @@ namespace Bot_Invasion_A_D.code.world.encounter_tile.child_tiles
 {
     public class FinishTile : ParentTile
     {
+        // sprite is set based on if boss is alive, if it is, finish cannot be used and player cant escape
         public bool bossAlive = false;
         public override void SetSprite()
         {
-            this.sprite = Resources.finish;
-        }
+            if (!bossAlive) sprite = Resources.finish;
 
-        public bool canEscape()
-        {
-            return !bossAlive;
         }
     }
 }

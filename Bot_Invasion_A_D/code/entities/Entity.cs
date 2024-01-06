@@ -30,9 +30,7 @@ namespace Bot_Invasion_A_D.code.entities
             if (health <= 0) return true;
             return false;
         }
-
         public abstract string GetInfo();
-
         public abstract double DealDamage();
     }
 }

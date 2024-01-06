@@ -14,6 +14,7 @@ using System.Numerics;
 
 namespace Bot_Invasion_A_D.code.entities
 {
+    // parent turret is never actually interacted with, only serves as a template
     public class Turret : Entity
     {
         protected int range;
@@ -23,34 +24,29 @@ namespace Bot_Invasion_A_D.code.entities
         {
             return health.ToString("F2") + "/" + maxHealth.ToString("F2") + "\nCurrent State: " + state + "\nRange: " + range.ToString();
         }
-
-        public int GetRange() { return range;}
-
-        public void SetState(STATE state) { this.state = state; }
-
         public STATE GetState() { return state;}
 
         public override double DealDamage()
         {
-            return 0; // it is overridden in child turrets
+            return 0;           // overriden in child turrets
         }
 
         public virtual bool DropsMedkit()
         {
-            return false;
+            return false;       // overriden in child turrets also
         }
 
-        public virtual void TurretTurn(Tuple<int, int> myPos, Player player)
+        public void TurretTurn(Tuple<int, int> myPos, Player player)
         {
-            if (state == STATE.AIM && PositionNextToPlayer(myPos, player.GetPosition(), range))
+            if (state == AIM && PositionNextToPlayer(myPos, player.GetPosition(), range))                   // turret is aming and sees a player, changes state, cant fire yet
             {
-                state = STATE.FIRE;
+                state = FIRE;
             }
-            else if (state == STATE.FIRE && !PositionNextToPlayer(myPos, player.GetPosition(), range))
+            else if (state == FIRE && !PositionNextToPlayer(myPos, player.GetPosition(), range))            // turret lost sight of the player, stops aiming
             {
-                state = STATE.AIM;
+                state = AIM;
             }
-            else if (state == STATE.FIRE && PositionNextToPlayer(myPos, player.GetPosition(), range))
+            else if (state == FIRE && PositionNextToPlayer(myPos, player.GetPosition(), range))             // turret is aiming and see the player, deals damage
             {
                 Damage(this, player);
             }

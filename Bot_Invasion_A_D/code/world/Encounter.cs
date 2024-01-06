@@ -151,7 +151,7 @@ namespace Bot_Invasion_A_D.code.world
                         }
                     case FINISH:
                         {
-                            if ((tileGrid[position.Item1, position.Item2] as FinishTile).canEscape()) win = true;
+                            if (!(tileGrid[position.Item1, position.Item2] as FinishTile).bossAlive) win = true;
                             skipTurn = true;
                             break;
                         }

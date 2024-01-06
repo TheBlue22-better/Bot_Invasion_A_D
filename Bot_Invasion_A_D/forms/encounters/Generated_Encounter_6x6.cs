@@ -14,7 +14,8 @@ namespace Bot_Invasion_A_D.forms.encounters
 {
     public partial class Generated_Encounter_6x6 : Generated_Encounter_Parent
     {
-        public Generated_Encounter_6x6(Encounter enc)   // i hate that i have to copy the same damn constructor 3 times...
+        // constructor serves to connect actual winforms to unassigned winforms in parent
+        public Generated_Encounter_6x6(Encounter enc)
         {
             this.enc = enc;
             InitializeComponent();
