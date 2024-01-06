@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bot_Invasion_A_D.code.world.encounter_tile.child_tiles;
 
 namespace Bot_Invasion_A_D.forms.encounters
 {
@@ -109,9 +110,13 @@ namespace Bot_Invasion_A_D.forms.encounters
             {
                 hInfo.Text = "IMPASSABLE.";
             }
-            else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == FINISH)
-            {
+            else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == FINISH && !(enc.GetGrid()[location.Item1, location.Item2] as FinishTile).bossAlive)
+            {                                                                               // finish is unlocked
                 hInfo.Text = "MOVE HERE\nTO ESCAPE.";
+            }
+            else if (enc.GetGrid()[location.Item1, location.Item2].GetType() == FINISH && (enc.GetGrid()[location.Item1, location.Item2] as FinishTile).bossAlive)
+            {                                                                               // finish is unlocked
+                hInfo.Text = "LOCKED\nKILL BOSS\nTO ESCAPE.";
             }
             else
             {

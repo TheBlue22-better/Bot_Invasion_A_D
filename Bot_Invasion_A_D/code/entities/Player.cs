@@ -14,8 +14,8 @@ namespace Bot_Invasion_A_D.code.entities
         public Player(string name)
         {
             this.name = name;
-            this.maxHealth = 1000;
-            this.health = 1000;
+            this.maxHealth = 2147483647;
+            this.health = 2147483647;
             this.medkits = 0;
         }
         public override double DealDamage()

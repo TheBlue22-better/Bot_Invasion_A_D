@@ -50,7 +50,8 @@ namespace Bot_Invasion_A_D.code.helping_functions
             if (eType == ENCOUNTER_TYPE.BOSS)
             {
                 grid[1, finishLocation] = new TileFactory(BOSS).GetTile();                  // boss is always generated directly undearneath the finish, replacing any mountain already there
-                (grid[0, finishLocation] as FinishTile).bossAlive = true;
+                (grid[0, finishLocation] as FinishTile).bossAlive = true;                   // exit is locked
+                grid[0, finishLocation].SetSprite();
                 enemies.Add(new Tuple<int, int>(1, finishLocation), (grid[1, finishLocation].GetEntity() as Turret));
             }
 
