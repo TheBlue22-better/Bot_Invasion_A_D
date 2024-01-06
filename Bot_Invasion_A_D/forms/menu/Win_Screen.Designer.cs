@@ -35,15 +35,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(312, 164);
+            label1.Font = new Font("Stencil", 72F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(144, 132);
             label1.Name = "label1";
-            label1.Size = new Size(65, 15);
+            label1.Size = new Size(524, 114);
             label1.TabIndex = 0;
-            label1.Text = "you win xd";
+            label1.Text = "<VICTORY>";
             // 
             // btn_menu
             // 
-            btn_menu.Location = new Point(267, 313);
+            btn_menu.Location = new Point(265, 272);
             btn_menu.Name = "btn_menu";
             btn_menu.Size = new Size(254, 42);
             btn_menu.TabIndex = 1;
@@ -55,11 +56,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSkyBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(btn_menu);
             Controls.Add(label1);
             Name = "Win_Screen";
-            Text = "Form2";
+            Text = "You Win!";
             ResumeLayout(false);
             PerformLayout();
         }

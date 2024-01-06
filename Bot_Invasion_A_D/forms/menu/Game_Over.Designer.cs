@@ -30,20 +30,24 @@
         {
             label1 = new Label();
             btn_menu = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(252, 157);
+            label1.Font = new Font("Stencil", 50F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(51, 41);
             label1.Name = "label1";
-            label1.Size = new Size(81, 15);
+            label1.Size = new Size(695, 320);
             label1.TabIndex = 0;
-            label1.Text = "you lose lmao";
+            label1.Text = "<DEATH>\r\n\r\n<SEND IN \r\nANOTHER ANDROID!>";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btn_menu
             // 
-            btn_menu.Location = new Point(252, 304);
+            btn_menu.Location = new Point(263, 364);
             btn_menu.Name = "btn_menu";
             btn_menu.Size = new Size(254, 42);
             btn_menu.TabIndex = 2;
@@ -51,15 +55,27 @@
             btn_menu.UseVisualStyleBackColor = true;
             btn_menu.Click += btn_menu_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.grave;
+            pictureBox1.Location = new Point(346, 111);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // Game_Over
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.IndianRed;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(btn_menu);
             Controls.Add(label1);
             Name = "Game_Over";
-            Text = "Form1";
+            Text = "You Lose, lol!";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -68,5 +84,6 @@
 
         private Label label1;
         private Button btn_menu;
+        private PictureBox pictureBox1;
     }
 }

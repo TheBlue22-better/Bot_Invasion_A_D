@@ -724,7 +724,7 @@
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "World_Medium";
-            Text = "Form2";
+            Text = "The Only World There Is! (for now!)";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)playerPicture).EndInit();

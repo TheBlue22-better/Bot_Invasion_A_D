@@ -33,8 +33,6 @@
             btnExit = new Button();
             btnContinueGame = new Button();
             gameName = new Label();
-            logoBox = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)logoBox).BeginInit();
             SuspendLayout();
             // 
             // btnNewGame
@@ -85,27 +83,18 @@
             // 
             gameName.AutoSize = true;
             gameName.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
-            gameName.Location = new Point(20, 18);
+            gameName.Location = new Point(43, 18);
             gameName.Name = "gameName";
             gameName.Size = new Size(435, 72);
             gameName.TabIndex = 4;
             gameName.Text = "Bot Invasion A.D.";
             // 
-            // logoBox
-            // 
-            logoBox.Location = new Point(284, 106);
-            logoBox.Margin = new Padding(3, 2, 3, 2);
-            logoBox.Name = "logoBox";
-            logoBox.Size = new Size(335, 243);
-            logoBox.TabIndex = 5;
-            logoBox.TabStop = false;
-            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Crimson;
             ClientSize = new Size(800, 450);
-            Controls.Add(logoBox);
             Controls.Add(gameName);
             Controls.Add(btnContinueGame);
             Controls.Add(btnExit);
@@ -113,7 +102,6 @@
             Controls.Add(btnNewGame);
             Name = "MainMenu";
             Text = "Bot Invasion A.D.";
-            ((System.ComponentModel.ISupportInitialize)logoBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,6 +113,5 @@
         private Button btnExit;
         private Button btnContinueGame;
         private Label gameName;
-        private PictureBox logoBox;
     }
 }

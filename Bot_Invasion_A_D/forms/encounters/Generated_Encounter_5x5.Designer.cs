@@ -56,8 +56,6 @@
             buttonPanel = new Panel();
             tooltipPanel = new Panel();
             btn_medkit = new Button();
-            toottipLabel = new Label();
-            label4 = new Label();
             highlitedInfo = new Label();
             label3 = new Label();
             highlightPicture = new PictureBox();
@@ -432,8 +430,6 @@
             // tooltipPanel
             // 
             tooltipPanel.Controls.Add(btn_medkit);
-            tooltipPanel.Controls.Add(toottipLabel);
-            tooltipPanel.Controls.Add(label4);
             tooltipPanel.Controls.Add(highlitedInfo);
             tooltipPanel.Controls.Add(label3);
             tooltipPanel.Controls.Add(highlightPicture);
@@ -454,24 +450,6 @@
             btn_medkit.Text = "  Medkit(s) left";
             btn_medkit.UseVisualStyleBackColor = true;
             btn_medkit.Click += btn_Medkit_Click;
-            // 
-            // toottipLabel
-            // 
-            toottipLabel.AutoSize = true;
-            toottipLabel.Location = new Point(187, 57);
-            toottipLabel.Name = "toottipLabel";
-            toottipLabel.Size = new Size(62, 15);
-            toottipLabel.TabIndex = 8;
-            toottipLabel.Text = "DONT DIE!";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(122, 57);
-            label4.Name = "label4";
-            label4.Size = new Size(59, 15);
-            label4.TabIndex = 7;
-            label4.Text = "_TOOLTIP:";
             // 
             // highlitedInfo
             // 
@@ -591,8 +569,6 @@
         private Button btn_0_0;
         private Panel buttonPanel;
         private Panel tooltipPanel;
-        private Label toottipLabel;
-        private Label label4;
         private Label highlitedInfo;
         private Label label3;
         private PictureBox highlightPicture;
