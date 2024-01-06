@@ -56,10 +56,5 @@ namespace Bot_Invasion_A_D.code.entities.child_turrets
             maxHealth -= 200;
             health = maxHealth;
         }
-
-        public void FinalAttack(ParentTile[,] tileGrid)
-        {
-
-        }
     }
 }

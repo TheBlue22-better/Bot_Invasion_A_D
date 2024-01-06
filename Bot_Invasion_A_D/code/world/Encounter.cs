@@ -148,9 +148,8 @@ namespace Bot_Invasion_A_D.code.world
                                 (tile.GetEntity() as BossTurret).NextStage();
                                 tileGrid[position.Item1, position.Item2].SetSprite();
                             }
-                            else if (tile.GetEntity().IsDead())                                                 // after death in last stage, boss does its final attack and
+                            else if (tile.GetEntity().IsDead())                                                 // after death in last stage it
                             {                                                                                   // is removed just as any other turret
-                                (tile.GetEntity() as BossTurret).FinalAttack(tileGrid);
                                 (tileGrid[position.Item1-1, position.Item2] as FinishTile).bossAlive = false;   // finish is now unlocked
                                 tileGrid[position.Item1 - 1, position.Item2].SetSprite();
                                 tileGrid[position.Item1, position.Item2] = new EmptyTile();
