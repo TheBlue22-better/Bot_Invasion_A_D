@@ -150,7 +150,9 @@ namespace Bot_Invasion_A_D.code.world
                             else if (tile.GetEntity().IsDead())
                             {
                                 (tile.GetEntity() as BossTurret).FinalAttack(tileGrid);
-                                (tileGrid[position.Item1, position.Item2 - 1] as FinishTile).bossAlive = false;
+                                (tileGrid[position.Item1-1, position.Item2] as FinishTile).bossAlive = false;
+                                tileGrid[position.Item1, position.Item2] = new EmptyTile();
+                                tileGrid[position.Item1, position.Item2].SetSprite();
                             }
                             break;
                         }

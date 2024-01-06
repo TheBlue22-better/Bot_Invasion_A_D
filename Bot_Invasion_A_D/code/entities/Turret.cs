@@ -18,10 +18,6 @@ namespace Bot_Invasion_A_D.code.entities
     {
         protected int range;
         protected STATE state;
-        public Turret()
-        {
-
-        }
 
         public override string GetInfo()
         {
