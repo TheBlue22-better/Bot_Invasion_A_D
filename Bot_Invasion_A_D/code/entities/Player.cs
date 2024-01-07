@@ -26,7 +26,7 @@ namespace Bot_Invasion_A_D.code.entities
         public void GiveMedkit() { medkits++; }
         public void ConsumeMedkit() 
         {
-            health += maxHealth / 6;
+            health += maxHealth / 3;
 
             if (health > maxHealth) health = maxHealth;
             medkits--;

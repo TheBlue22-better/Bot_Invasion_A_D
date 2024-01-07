@@ -35,12 +35,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(39, 24);
+            label1.Font = new Font("Comic Sans MS", 24.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(52, 9);
             label1.Name = "label1";
-            label1.Size = new Size(716, 282);
+            label1.Size = new Size(714, 368);
             label1.TabIndex = 0;
-            label1.Text = "All sprites created by:\r\n\r\nDaniel Šušuk\r\n\r\nProject for Component Software Engineering\r\nin CZU FEM INFO Prague";
+            label1.Text = "All sprites created by:\r\n\r\nDaniel Šušuk\r\n\r\nProject for Component Software Engineering\r\nin CZU FEM INFO Prague\r\n\r\n2023/24";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // btn_menu

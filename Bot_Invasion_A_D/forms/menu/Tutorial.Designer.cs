@@ -232,6 +232,7 @@
             // pictureBox5
             // 
             pictureBox5.BackgroundImage = Properties.Resources.meleeTurret;
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.Location = new Point(478, 211);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(100, 100);

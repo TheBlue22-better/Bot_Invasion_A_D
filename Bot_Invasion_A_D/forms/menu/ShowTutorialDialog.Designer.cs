@@ -74,6 +74,8 @@
             Controls.Add(btn_no);
             Controls.Add(btn_yes);
             Controls.Add(label1);
+            MaximumSize = new Size(450, 186);
+            MinimumSize = new Size(450, 186);
             Name = "ShowTutorialDialog";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "First Time?";
