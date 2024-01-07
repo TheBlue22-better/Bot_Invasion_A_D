@@ -38,17 +38,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Stencil", 50F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(51, 41);
+            label1.Location = new Point(135, 41);
             label1.Name = "label1";
-            label1.Size = new Size(695, 320);
+            label1.Size = new Size(534, 320);
             label1.TabIndex = 0;
-            label1.Text = "<DEATH>\r\n\r\n<SEND IN \r\nANOTHER ANDROID!>";
+            label1.Text = "<DEATH>\r\n\r\n<SEND IN \r\nANOTHER BOT!>";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btn_menu
             // 
             btn_menu.Anchor = AnchorStyles.None;
-            btn_menu.Location = new Point(263, 364);
+            btn_menu.Location = new Point(265, 364);
             btn_menu.Name = "btn_menu";
             btn_menu.Size = new Size(254, 42);
             btn_menu.TabIndex = 2;
@@ -79,6 +79,7 @@
             MaximumSize = new Size(816, 489);
             MinimumSize = new Size(816, 489);
             Name = "Game_Over";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "You Lose, lol!";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

@@ -104,6 +104,7 @@
             MaximumSize = new Size(816, 489);
             MinimumSize = new Size(816, 489);
             Name = "MainMenu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Bot Invasion A.D.";
             ResumeLayout(false);
             PerformLayout();

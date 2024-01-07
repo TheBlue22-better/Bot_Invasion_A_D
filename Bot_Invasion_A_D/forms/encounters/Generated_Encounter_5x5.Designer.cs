@@ -530,7 +530,10 @@
             Controls.Add(tooltipPanel);
             Controls.Add(buttonPanel);
             Margin = new Padding(3, 2, 3, 2);
+            MaximumSize = new Size(788, 679);
+            MinimumSize = new Size(788, 679);
             Name = "Generated_Encounter_5x5";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "This place feels cramped...";
             buttonPanel.ResumeLayout(false);
             tooltipPanel.ResumeLayout(false);

@@ -890,7 +890,10 @@
             Controls.Add(escapeButton);
             Controls.Add(buttonPanel);
             Margin = new Padding(3, 2, 3, 2);
+            MaximumSize = new Size(800, 800);
+            MinimumSize = new Size(800, 800);
             Name = "Generated_Encounter_7x7";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "This place is huge!";
             buttonPanel.ResumeLayout(false);
             tooltipPanel.ResumeLayout(false);

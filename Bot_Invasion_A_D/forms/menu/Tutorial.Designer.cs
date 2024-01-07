@@ -157,7 +157,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(28, 459);
+            label9.Location = new Point(28, 468);
             label9.Name = "label9";
             label9.Size = new Size(263, 84);
             label9.TabIndex = 10;
@@ -171,7 +171,7 @@
             label10.Name = "label10";
             label10.Size = new Size(183, 84);
             label10.TabIndex = 11;
-            label10.Text = "If you keep in their range\r\nwhile they look like this\r\n<--------------------\r\nYou take damage!";
+            label10.Text = "If you keep in their range\r\nwhile they look like this\r\n<--------------------\r\nYou will take damage!";
             // 
             // label11
             // 
@@ -297,8 +297,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 984);
-            ControlBox = false;
+            ClientSize = new Size(984, 961);
             Controls.Add(pictureBox10);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox8);
@@ -323,6 +322,7 @@
             Controls.Add(btn_menu);
             Controls.Add(btn_playGame);
             Controls.Add(label1);
+            MaximizeBox = false;
             MaximumSize = new Size(1000, 1000);
             MinimumSize = new Size(1000, 1000);
             Name = "Tutorial";

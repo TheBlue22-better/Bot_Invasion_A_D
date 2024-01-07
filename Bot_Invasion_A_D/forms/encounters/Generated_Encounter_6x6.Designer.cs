@@ -695,7 +695,10 @@
             Controls.Add(escapeButton);
             Controls.Add(buttonPanel);
             Margin = new Padding(3, 2, 3, 2);
+            MaximumSize = new Size(788, 679);
+            MinimumSize = new Size(788, 679);
             Name = "Generated_Encounter_6x6";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Seems better";
             buttonPanel.ResumeLayout(false);
             tooltipPanel.ResumeLayout(false);

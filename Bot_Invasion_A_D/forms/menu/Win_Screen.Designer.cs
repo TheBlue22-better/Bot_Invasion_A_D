@@ -37,7 +37,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Stencil", 72F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(144, 132);
+            label1.Location = new Point(144, 121);
             label1.Name = "label1";
             label1.Size = new Size(524, 114);
             label1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // btn_menu
             // 
             btn_menu.Anchor = AnchorStyles.None;
-            btn_menu.Location = new Point(287, 272);
+            btn_menu.Location = new Point(287, 261);
             btn_menu.Name = "btn_menu";
             btn_menu.Size = new Size(254, 42);
             btn_menu.TabIndex = 1;
@@ -66,6 +66,7 @@
             MaximumSize = new Size(816, 489);
             MinimumSize = new Size(816, 489);
             Name = "Win_Screen";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "You Win!";
             ResumeLayout(false);
             PerformLayout();

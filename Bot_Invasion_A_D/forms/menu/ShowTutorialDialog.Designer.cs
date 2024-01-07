@@ -53,7 +53,7 @@
             btn_yes.TabIndex = 1;
             btn_yes.Text = "YES";
             btn_yes.UseVisualStyleBackColor = true;
-            btn_yes.Click += this.btn_yes_Click;
+            btn_yes.Click += btn_yes_Click;
             // 
             // btn_no
             // 
@@ -63,7 +63,7 @@
             btn_no.TabIndex = 2;
             btn_no.Text = "NO";
             btn_no.UseVisualStyleBackColor = true;
-            btn_no.Click += this.btn_no_Click;
+            btn_no.Click += btn_no_Click;
             // 
             // ShowTutorialDialog
             // 
@@ -75,6 +75,7 @@
             Controls.Add(btn_yes);
             Controls.Add(label1);
             Name = "ShowTutorialDialog";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "First Time?";
             ResumeLayout(false);
             PerformLayout();
