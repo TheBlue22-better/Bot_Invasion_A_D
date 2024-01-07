@@ -100,6 +100,9 @@
             Controls.Add(btnExit);
             Controls.Add(btnCredits);
             Controls.Add(btnNewGame);
+            MaximizeBox = false;
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "MainMenu";
             Text = "Bot Invasion A.D.";
             ResumeLayout(false);

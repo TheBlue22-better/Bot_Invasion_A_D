@@ -62,6 +62,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btn_menu);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "Credits";
             Text = "Form1";
             ResumeLayout(false);

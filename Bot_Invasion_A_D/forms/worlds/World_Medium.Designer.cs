@@ -81,8 +81,9 @@
             // 
             // E1
             // 
+            E1.Anchor = AnchorStyles.None;
             E1.BackColor = Color.FromArgb(255, 255, 128);
-            E1.Location = new Point(429, 867);
+            E1.Location = new Point(429, 836);
             E1.Margin = new Padding(3, 2, 3, 2);
             E1.Name = "E1";
             E1.Size = new Size(29, 27);
@@ -93,9 +94,10 @@
             // 
             // E4
             // 
+            E4.Anchor = AnchorStyles.None;
             E4.BackColor = Color.Silver;
             E4.Enabled = false;
-            E4.Location = new Point(512, 671);
+            E4.Location = new Point(512, 645);
             E4.Margin = new Padding(3, 2, 3, 2);
             E4.Name = "E4";
             E4.Size = new Size(29, 27);
@@ -106,9 +108,10 @@
             // 
             // E2
             // 
+            E2.Anchor = AnchorStyles.None;
             E2.BackColor = Color.Silver;
             E2.Enabled = false;
-            E2.Location = new Point(521, 775);
+            E2.Location = new Point(523, 749);
             E2.Margin = new Padding(3, 2, 3, 2);
             E2.Name = "E2";
             E2.Size = new Size(29, 27);
@@ -119,9 +122,10 @@
             // 
             // E10
             // 
+            E10.Anchor = AnchorStyles.None;
             E10.BackColor = Color.Silver;
             E10.Enabled = false;
-            E10.Location = new Point(445, 605);
+            E10.Location = new Point(445, 586);
             E10.Margin = new Padding(3, 2, 3, 2);
             E10.Name = "E10";
             E10.Size = new Size(29, 27);
@@ -132,9 +136,10 @@
             // 
             // E11
             // 
+            E11.Anchor = AnchorStyles.None;
             E11.BackColor = Color.Silver;
             E11.Enabled = false;
-            E11.Location = new Point(403, 503);
+            E11.Location = new Point(400, 485);
             E11.Margin = new Padding(3, 2, 3, 2);
             E11.Name = "E11";
             E11.Size = new Size(29, 27);
@@ -145,9 +150,10 @@
             // 
             // E12
             // 
+            E12.Anchor = AnchorStyles.None;
             E12.BackColor = Color.Silver;
             E12.Enabled = false;
-            E12.Location = new Point(468, 415);
+            E12.Location = new Point(465, 399);
             E12.Margin = new Padding(3, 2, 3, 2);
             E12.Name = "E12";
             E12.Size = new Size(29, 27);
@@ -158,9 +164,10 @@
             // 
             // E13
             // 
+            E13.Anchor = AnchorStyles.None;
             E13.BackColor = Color.Silver;
             E13.Enabled = false;
-            E13.Location = new Point(532, 347);
+            E13.Location = new Point(532, 335);
             E13.Margin = new Padding(3, 2, 3, 2);
             E13.Name = "E13";
             E13.Size = new Size(29, 27);
@@ -171,9 +178,10 @@
             // 
             // E14
             // 
+            E14.Anchor = AnchorStyles.None;
             E14.BackColor = Color.Silver;
             E14.Enabled = false;
-            E14.Location = new Point(597, 264);
+            E14.Location = new Point(594, 256);
             E14.Margin = new Padding(3, 2, 3, 2);
             E14.Name = "E14";
             E14.Size = new Size(29, 27);
@@ -184,9 +192,10 @@
             // 
             // E20
             // 
+            E20.Anchor = AnchorStyles.None;
             E20.BackColor = Color.Silver;
             E20.Enabled = false;
-            E20.Location = new Point(817, 256);
+            E20.Location = new Point(807, 247);
             E20.Margin = new Padding(3, 2, 3, 2);
             E20.Name = "E20";
             E20.Size = new Size(29, 27);
@@ -197,9 +206,10 @@
             // 
             // E21
             // 
+            E21.Anchor = AnchorStyles.None;
             E21.BackColor = Color.Silver;
             E21.Enabled = false;
-            E21.Location = new Point(925, 259);
+            E21.Location = new Point(914, 247);
             E21.Margin = new Padding(3, 2, 3, 2);
             E21.Name = "E21";
             E21.Size = new Size(29, 27);
@@ -210,9 +220,10 @@
             // 
             // E22
             // 
+            E22.Anchor = AnchorStyles.None;
             E22.BackColor = Color.Silver;
             E22.Enabled = false;
-            E22.Location = new Point(1001, 359);
+            E22.Location = new Point(990, 347);
             E22.Margin = new Padding(3, 2, 3, 2);
             E22.Name = "E22";
             E22.Size = new Size(29, 27);
@@ -223,9 +234,10 @@
             // 
             // E23
             // 
+            E23.Anchor = AnchorStyles.None;
             E23.BackColor = Color.Silver;
             E23.Enabled = false;
-            E23.Location = new Point(1006, 431);
+            E23.Location = new Point(1002, 412);
             E23.Margin = new Padding(3, 2, 3, 2);
             E23.Name = "E23";
             E23.Size = new Size(29, 27);
@@ -236,9 +248,10 @@
             // 
             // E24
             // 
+            E24.Anchor = AnchorStyles.None;
             E24.BackColor = Color.Silver;
             E24.Enabled = false;
-            E24.Location = new Point(1094, 463);
+            E24.Location = new Point(1083, 446);
             E24.Margin = new Padding(3, 2, 3, 2);
             E24.Name = "E24";
             E24.Size = new Size(29, 27);
@@ -249,9 +262,10 @@
             // 
             // E25
             // 
+            E25.Anchor = AnchorStyles.None;
             E25.BackColor = Color.Silver;
             E25.Enabled = false;
-            E25.Location = new Point(1146, 579);
+            E25.Location = new Point(1135, 555);
             E25.Margin = new Padding(3, 2, 3, 2);
             E25.Name = "E25";
             E25.Size = new Size(29, 27);
@@ -262,9 +276,10 @@
             // 
             // E26
             // 
+            E26.Anchor = AnchorStyles.None;
             E26.BackColor = Color.Silver;
             E26.Enabled = false;
-            E26.Location = new Point(1189, 716);
+            E26.Location = new Point(1181, 690);
             E26.Margin = new Padding(3, 2, 3, 2);
             E26.Name = "E26";
             E26.Size = new Size(29, 27);
@@ -275,9 +290,10 @@
             // 
             // E40
             // 
+            E40.Anchor = AnchorStyles.None;
             E40.BackColor = Color.Silver;
             E40.Enabled = false;
-            E40.Location = new Point(1349, 853);
+            E40.Location = new Point(1335, 824);
             E40.Margin = new Padding(3, 2, 3, 2);
             E40.Name = "E40";
             E40.Size = new Size(29, 27);
@@ -288,9 +304,10 @@
             // 
             // E41
             // 
+            E41.Anchor = AnchorStyles.None;
             E41.BackColor = Color.Silver;
             E41.Enabled = false;
-            E41.Location = new Point(1354, 946);
+            E41.Location = new Point(1335, 908);
             E41.Margin = new Padding(3, 2, 3, 2);
             E41.Name = "E41";
             E41.Size = new Size(55, 45);
@@ -301,9 +318,10 @@
             // 
             // E27
             // 
+            E27.Anchor = AnchorStyles.None;
             E27.BackColor = Color.Silver;
             E27.Enabled = false;
-            E27.Location = new Point(1177, 423);
+            E27.Location = new Point(1169, 412);
             E27.Margin = new Padding(3, 2, 3, 2);
             E27.Name = "E27";
             E27.Size = new Size(29, 27);
@@ -314,9 +332,10 @@
             // 
             // E36
             // 
+            E36.Anchor = AnchorStyles.None;
             E36.BackColor = Color.Silver;
             E36.Enabled = false;
-            E36.Location = new Point(1276, 446);
+            E36.Location = new Point(1264, 427);
             E36.Margin = new Padding(3, 2, 3, 2);
             E36.Name = "E36";
             E36.Size = new Size(29, 27);
@@ -327,9 +346,10 @@
             // 
             // E37
             // 
+            E37.Anchor = AnchorStyles.None;
             E37.BackColor = Color.Silver;
             E37.Enabled = false;
-            E37.Location = new Point(1344, 485);
+            E37.Location = new Point(1335, 464);
             E37.Margin = new Padding(3, 2, 3, 2);
             E37.Name = "E37";
             E37.Size = new Size(29, 27);
@@ -340,9 +360,10 @@
             // 
             // E38
             // 
+            E38.Anchor = AnchorStyles.None;
             E38.BackColor = Color.Silver;
             E38.Enabled = false;
-            E38.Location = new Point(1359, 586);
+            E38.Location = new Point(1349, 565);
             E38.Margin = new Padding(3, 2, 3, 2);
             E38.Name = "E38";
             E38.Size = new Size(29, 27);
@@ -353,9 +374,10 @@
             // 
             // E39
             // 
+            E39.Anchor = AnchorStyles.None;
             E39.BackColor = Color.Silver;
             E39.Enabled = false;
-            E39.Location = new Point(1383, 690);
+            E39.Location = new Point(1371, 662);
             E39.Margin = new Padding(3, 2, 3, 2);
             E39.Name = "E39";
             E39.Size = new Size(29, 27);
@@ -366,9 +388,10 @@
             // 
             // E3
             // 
+            E3.Anchor = AnchorStyles.None;
             E3.BackColor = Color.Silver;
             E3.Enabled = false;
-            E3.Location = new Point(609, 873);
+            E3.Location = new Point(604, 836);
             E3.Margin = new Padding(3, 2, 3, 2);
             E3.Name = "E3";
             E3.Size = new Size(29, 27);
@@ -379,9 +402,10 @@
             // 
             // E5
             // 
+            E5.Anchor = AnchorStyles.None;
             E5.BackColor = Color.Silver;
             E5.Enabled = false;
-            E5.Location = new Point(614, 694);
+            E5.Location = new Point(604, 671);
             E5.Margin = new Padding(3, 2, 3, 2);
             E5.Name = "E5";
             E5.Size = new Size(29, 27);
@@ -392,9 +416,10 @@
             // 
             // E6
             // 
+            E6.Anchor = AnchorStyles.None;
             E6.BackColor = Color.Silver;
             E6.Enabled = false;
-            E6.Location = new Point(703, 694);
+            E6.Location = new Point(699, 671);
             E6.Margin = new Padding(3, 2, 3, 2);
             E6.Name = "E6";
             E6.Size = new Size(29, 27);
@@ -405,9 +430,10 @@
             // 
             // E7
             // 
+            E7.Anchor = AnchorStyles.None;
             E7.BackColor = Color.Silver;
             E7.Enabled = false;
-            E7.Location = new Point(796, 689);
+            E7.Location = new Point(790, 662);
             E7.Margin = new Padding(3, 2, 3, 2);
             E7.Name = "E7";
             E7.Size = new Size(29, 27);
@@ -418,9 +444,10 @@
             // 
             // E8
             // 
+            E8.Anchor = AnchorStyles.None;
             E8.BackColor = Color.Silver;
             E8.Enabled = false;
-            E8.Location = new Point(878, 680);
+            E8.Location = new Point(872, 662);
             E8.Margin = new Padding(3, 2, 3, 2);
             E8.Name = "E8";
             E8.Size = new Size(29, 27);
@@ -431,9 +458,10 @@
             // 
             // E9
             // 
+            E9.Anchor = AnchorStyles.None;
             E9.BackColor = Color.Silver;
             E9.Enabled = false;
-            E9.Location = new Point(1002, 621);
+            E9.Location = new Point(990, 599);
             E9.Margin = new Padding(3, 2, 3, 2);
             E9.Name = "E9";
             E9.Size = new Size(29, 27);
@@ -444,9 +472,10 @@
             // 
             // E15
             // 
+            E15.Anchor = AnchorStyles.None;
             E15.BackColor = Color.Silver;
             E15.Enabled = false;
-            E15.Location = new Point(514, 273);
+            E15.Location = new Point(512, 264);
             E15.Margin = new Padding(3, 2, 3, 2);
             E15.Name = "E15";
             E15.Size = new Size(29, 27);
@@ -457,9 +486,10 @@
             // 
             // E16
             // 
+            E16.Anchor = AnchorStyles.None;
             E16.BackColor = Color.Silver;
             E16.Enabled = false;
-            E16.Location = new Point(436, 270);
+            E16.Location = new Point(429, 256);
             E16.Margin = new Padding(3, 2, 3, 2);
             E16.Name = "E16";
             E16.Size = new Size(29, 27);
@@ -470,9 +500,10 @@
             // 
             // E17
             // 
+            E17.Anchor = AnchorStyles.None;
             E17.BackColor = Color.Silver;
             E17.Enabled = false;
-            E17.Location = new Point(417, 199);
+            E17.Location = new Point(413, 196);
             E17.Margin = new Padding(3, 2, 3, 2);
             E17.Name = "E17";
             E17.Size = new Size(29, 27);
@@ -483,9 +514,10 @@
             // 
             // E18
             // 
+            E18.Anchor = AnchorStyles.None;
             E18.BackColor = Color.Silver;
             E18.Enabled = false;
-            E18.Location = new Point(496, 123);
+            E18.Location = new Point(488, 123);
             E18.Margin = new Padding(3, 2, 3, 2);
             E18.Name = "E18";
             E18.Size = new Size(29, 27);
@@ -496,9 +528,10 @@
             // 
             // E19
             // 
+            E19.Anchor = AnchorStyles.None;
             E19.BackColor = Color.Silver;
             E19.Enabled = false;
-            E19.Location = new Point(566, 88);
+            E19.Location = new Point(559, 84);
             E19.Margin = new Padding(3, 2, 3, 2);
             E19.Name = "E19";
             E19.Size = new Size(29, 27);
@@ -509,9 +542,10 @@
             // 
             // E28
             // 
+            E28.Anchor = AnchorStyles.None;
             E28.BackColor = Color.Silver;
             E28.Enabled = false;
-            E28.Location = new Point(1122, 370);
+            E28.Location = new Point(1110, 356);
             E28.Margin = new Padding(3, 2, 3, 2);
             E28.Name = "E28";
             E28.Size = new Size(29, 27);
@@ -522,9 +556,10 @@
             // 
             // E29
             // 
+            E29.Anchor = AnchorStyles.None;
             E29.BackColor = Color.Silver;
             E29.Enabled = false;
-            E29.Location = new Point(1110, 288);
+            E29.Location = new Point(1100, 278);
             E29.Margin = new Padding(3, 2, 3, 2);
             E29.Name = "E29";
             E29.Size = new Size(29, 27);
@@ -535,9 +570,10 @@
             // 
             // E30
             // 
+            E30.Anchor = AnchorStyles.None;
             E30.BackColor = Color.Silver;
             E30.Enabled = false;
-            E30.Location = new Point(1083, 211);
+            E30.Location = new Point(1071, 201);
             E30.Margin = new Padding(3, 2, 3, 2);
             E30.Name = "E30";
             E30.Size = new Size(29, 27);
@@ -548,9 +584,10 @@
             // 
             // E31
             // 
+            E31.Anchor = AnchorStyles.None;
             E31.BackColor = Color.Silver;
             E31.Enabled = false;
-            E31.Location = new Point(1169, 170);
+            E31.Location = new Point(1158, 162);
             E31.Margin = new Padding(3, 2, 3, 2);
             E31.Name = "E31";
             E31.Size = new Size(29, 27);
@@ -561,9 +598,10 @@
             // 
             // E32
             // 
+            E32.Anchor = AnchorStyles.None;
             E32.BackColor = Color.Silver;
             E32.Enabled = false;
-            E32.Location = new Point(1239, 137);
+            E32.Location = new Point(1228, 132);
             E32.Margin = new Padding(3, 2, 3, 2);
             E32.Name = "E32";
             E32.Size = new Size(29, 27);
@@ -574,9 +612,10 @@
             // 
             // E33
             // 
+            E33.Anchor = AnchorStyles.None;
             E33.BackColor = Color.Silver;
             E33.Enabled = false;
-            E33.Location = new Point(1306, 220);
+            E33.Location = new Point(1297, 213);
             E33.Margin = new Padding(3, 2, 3, 2);
             E33.Name = "E33";
             E33.Size = new Size(29, 27);
@@ -587,9 +626,10 @@
             // 
             // E34
             // 
+            E34.Anchor = AnchorStyles.None;
             E34.BackColor = Color.Silver;
             E34.Enabled = false;
-            E34.Location = new Point(1392, 196);
+            E34.Location = new Point(1383, 196);
             E34.Margin = new Padding(3, 2, 3, 2);
             E34.Name = "E34";
             E34.Size = new Size(29, 27);
@@ -600,9 +640,10 @@
             // 
             // E35
             // 
+            E35.Anchor = AnchorStyles.None;
             E35.BackColor = Color.Silver;
             E35.Enabled = false;
-            E35.Location = new Point(1433, 113);
+            E35.Location = new Point(1416, 109);
             E35.Margin = new Padding(3, 2, 3, 2);
             E35.Name = "E35";
             E35.Size = new Size(29, 27);
@@ -613,6 +654,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.DarkGray;
             panel1.Controls.Add(medkitLabel);
             panel1.Controls.Add(btn_medkit);
@@ -656,6 +698,7 @@
             // 
             // playerPicture
             // 
+            playerPicture.BackgroundImageLayout = ImageLayout.Stretch;
             playerPicture.Location = new Point(20, 21);
             playerPicture.Name = "playerPicture";
             playerPicture.Size = new Size(100, 100);
@@ -678,6 +721,7 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.Silver;
             BackgroundImage = Properties.Resources.map_medium_v2;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1904, 1041);
             Controls.Add(panel1);
             Controls.Add(E35);
@@ -723,7 +767,11 @@
             Controls.Add(E1);
             DoubleBuffered = true;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MaximumSize = new Size(1920, 1080);
+            MinimumSize = new Size(1918, 1038);
             Name = "World_Medium";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "The Only World There Is! (for now!)";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

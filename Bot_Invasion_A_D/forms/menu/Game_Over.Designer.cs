@@ -47,6 +47,7 @@
             // 
             // btn_menu
             // 
+            btn_menu.Anchor = AnchorStyles.None;
             btn_menu.Location = new Point(263, 364);
             btn_menu.Name = "btn_menu";
             btn_menu.Size = new Size(254, 42);
@@ -58,6 +59,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.grave;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(346, 111);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 100);
@@ -70,9 +72,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.IndianRed;
             ClientSize = new Size(800, 450);
+            ControlBox = false;
             Controls.Add(pictureBox1);
             Controls.Add(btn_menu);
             Controls.Add(label1);
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "Game_Over";
             Text = "You Lose, lol!";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

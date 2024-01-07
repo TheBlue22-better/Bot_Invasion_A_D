@@ -1,6 +1,6 @@
 ﻿namespace Bot_Invasion_A_D.forms.menu
 {
-    partial class Win_Screen
+    partial class ShowTutorialDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -29,44 +29,53 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            btn_menu = new Button();
+            btn_yes = new Button();
+            btn_no = new Button();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Stencil", 72F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(144, 132);
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
+            label1.MaximumSize = new Size(396, 37);
+            label1.MinimumSize = new Size(396, 37);
             label1.Name = "label1";
-            label1.Size = new Size(524, 114);
+            label1.Size = new Size(396, 37);
             label1.TabIndex = 0;
-            label1.Text = "<VICTORY>";
+            label1.Text = "Do you want to see the tutorial?";
             // 
-            // btn_menu
+            // btn_yes
             // 
-            btn_menu.Anchor = AnchorStyles.None;
-            btn_menu.Location = new Point(287, 272);
-            btn_menu.Name = "btn_menu";
-            btn_menu.Size = new Size(254, 42);
-            btn_menu.TabIndex = 1;
-            btn_menu.Text = "Back to Main Menu";
-            btn_menu.UseVisualStyleBackColor = true;
-            btn_menu.Click += btn_menu_Click;
+            btn_yes.Location = new Point(60, 79);
+            btn_yes.Name = "btn_yes";
+            btn_yes.Size = new Size(102, 29);
+            btn_yes.TabIndex = 1;
+            btn_yes.Text = "YES";
+            btn_yes.UseVisualStyleBackColor = true;
+            btn_yes.Click += this.btn_yes_Click;
             // 
-            // Win_Screen
+            // btn_no
+            // 
+            btn_no.Location = new Point(246, 79);
+            btn_no.Name = "btn_no";
+            btn_no.Size = new Size(102, 29);
+            btn_no.TabIndex = 2;
+            btn_no.Text = "NO";
+            btn_no.UseVisualStyleBackColor = true;
+            btn_no.Click += this.btn_no_Click;
+            // 
+            // ShowTutorialDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightSkyBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(434, 147);
             ControlBox = false;
-            Controls.Add(btn_menu);
+            Controls.Add(btn_no);
+            Controls.Add(btn_yes);
             Controls.Add(label1);
-            MaximumSize = new Size(816, 489);
-            MinimumSize = new Size(816, 489);
-            Name = "Win_Screen";
-            Text = "You Win!";
+            Name = "ShowTutorialDialog";
+            Text = "First Time?";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -74,6 +83,7 @@
         #endregion
 
         private Label label1;
-        private Button btn_menu;
+        private Button btn_yes;
+        private Button btn_no;
     }
 }

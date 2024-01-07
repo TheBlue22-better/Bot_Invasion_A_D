@@ -13,9 +13,9 @@ namespace Sem_Testing
         }
         private void btnNewGame_Click(object sender, EventArgs e)
         {
-            Form wrld_medium = new World_Medium(new OpenWorld());
+            Form showDialogue = new ShowTutorialDialog();
             this.Hide();
-            wrld_medium.ShowDialog();
+            showDialogue.ShowDialog();
             this.Show();
         }
 
