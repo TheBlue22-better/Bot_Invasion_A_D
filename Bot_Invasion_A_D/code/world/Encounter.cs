@@ -191,7 +191,7 @@ namespace Bot_Invasion_A_D.code.world
             int timesAttacked;
             if (encDiff == DIFFICULTY.EASY) timesAttacked = 1;
             else if (encDiff == DIFFICULTY.MEDIUM) timesAttacked = 2;
-            timesAttacked = 3;
+            else timesAttacked = 3;
             
             foreach(var turret in turrets)
             {

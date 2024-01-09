@@ -45,7 +45,7 @@ namespace Bot_Invasion_A_D.code.helping_functions
         public static bool GetChance(int percent)
         {
             Random rnd = new Random();
-            if (percent >= rnd.Next(100)) return true; else return false;
+            if (percent >= rnd.Next(101)) return true; else return false;
         }
 
         // method transforms button name of a encounter button into a tuple of its location
